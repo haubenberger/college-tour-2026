@@ -199,7 +199,7 @@
     border: 1px solid var(--border); margin-bottom: 6px;
     height: 280px; position: relative;
   }
-  .campus-map-wrap .leaflet-map { width: 100%; height: 100%; }
+  .campus-map-wrap .leaflet-map { width: 100%; height: 280px; display: block; }
   .map-caption { font-size: 0.7rem; color: var(--muted); margin-bottom: 10px; }
   .map-caption a { color: var(--accent); text-decoration: none; }
   /* Numbered Leaflet markers */
@@ -414,17 +414,20 @@ function renderToday(data) {
   return html;
 }
 
-const _initializedMaps = new Set();
+const _maps = {};
 
 function initLeafletMap(schoolId, tour) {
-  if (_initializedMaps.has(schoolId)) return;
-  _initializedMaps.add(schoolId);
+  if (_maps[schoolId]) {
+    _maps[schoolId].invalidateSize();
+    return;
+  }
 
   const el = document.getElementById('leaflet-' + schoolId);
   if (!el) return;
 
   const map = L.map(el, { zoomControl: true, scrollWheelZoom: false })
     .setView(tour.mapCenter, tour.mapZoom);
+  _maps[schoolId] = map;
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
@@ -448,6 +451,9 @@ function initLeafletMap(schoolId, tour) {
       .addTo(map)
       .bindPopup(`<strong>${s.num}. ${s.name}</strong><br><span style="font-size:.8em">${s.notes}</span>`);
   });
+
+  // Force correct size once tiles are ready
+  map.whenReady(() => setTimeout(() => map.invalidateSize(), 100));
 }
 
 function renderProfile(briefing) {
@@ -502,8 +508,10 @@ function toggleProfile(btn, id, tour) {
   btn.classList.toggle('open');
   profile.classList.toggle('open');
   if (opening && tour) {
-    // Defer slightly so the div is visible before Leaflet measures it
-    setTimeout(() => initLeafletMap(id, tour), 50);
+    // Wait for display:block + any CSS transition to fully apply before Leaflet measures the container
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      initLeafletMap(id, tour);
+    }));
   }
 }
 
