@@ -538,5 +538,78 @@
     { "dates": "Jul 25–27", "city": "Philadelphia", "temp": "87° / 69°F", "conditions": "Hot, humid; PM thunderstorm chance" },
     { "dates": "Jul 27–29", "city": "Princeton, NJ", "temp": "86° / 65°F", "conditions": "Hot, humid" },
     { "dates": "Jul 29–31", "city": "Baltimore / DC / Potomac", "temp": "89° / 71°F", "conditions": "Hot, humid; PM thunderstorm chance" }
+  ],
+  "collegeBriefings": [
+    {
+      "schoolId": "A2",
+      "school": "University of Rochester",
+      "hasProfile": true,
+      "history": "Founded in 1850 and relocated to its neoclassical River Campus in 1930, Rochester was shaped by one transformative donor — George Eastman of Kodak — whose gifts built the Eastman School of Music, the medical school, and much of the campus you'll walk today. His statue presides over the Eastman Quadrangle. Two Rochester figures anchor the university's moral throughline: Susan B. Anthony, whose advocacy helped open the university to women in 1900, and Frederick Douglass, who published the North Star in Rochester — both are memorialized on campus. Motto: Meliora — 'ever better.'",
+      "programUniqueness": "The Rochester Curriculum has no general-education core: beyond a major, students build two self-chosen 'clusters' (a trio of related courses) in each of the two divisions outside their major. This means Theo could pair a Brain & Cognitive Sciences or neuroscience major (a national flagship, with direct ties to his UCSD work) with deliberate clusters in philosophy and political science — rather than checking distribution boxes. All four of his interests live in one degree. The 'Rochester School' (William Riker's rational-choice tradition) anchors the poli-sci side; the Institute of Optics was the nation's first. Undergraduate research is the norm. Two signature programs extend the runway: Take Five (a tuition-free extra semester/year outside the major) and the Kauffman Entrepreneurial Year (KEY). Rochester also awards open merit scholarships — relevant given the family's aid picture.",
+      "walkingTour": {
+        "duration": "~75 min",
+        "startNote": "Self-guided loop — follow stops 1→8",
+        "parking": "Free weekend parking at the Library / Susan B. Anthony lots",
+        "mapEmbed": "https://www.openstreetmap.org/export/embed.html?bbox=-77.6380%2C43.1240%2C-77.6180%2C43.1330&layer=mapnik&marker=43.1284%2C-77.6279",
+        "mapLink": "https://www.openstreetmap.org/?mlat=43.1284&mlon=-77.6279#map=16/43.1284/-77.6279",
+        "stops": [
+          {
+            "num": 1,
+            "name": "Wilson Commons",
+            "notes": "I.M. Pei glass-atrium student union — grab a campus map here. The social hub of River Campus."
+          },
+          {
+            "num": 2,
+            "name": "Frederick Douglass Commons",
+            "notes": "Main dining hub + Douglass statue. He published the North Star in Rochester — this is where students gather daily."
+          },
+          {
+            "num": 3,
+            "name": "Susan B. Anthony Halls",
+            "notes": "First-year residence complex. The namesake helped win coeducation in 1900. Good sense of the residential-community feel."
+          },
+          {
+            "num": 4,
+            "name": "Rush Rhees Library",
+            "notes": "1930 domed landmark — step inside the rotunda and Great Hall. The intellectual core of campus; architecturally the most striking building."
+          },
+          {
+            "num": 5,
+            "name": "Eastman Quadrangle",
+            "notes": "Historic academic heart. George Eastman statue, Kodak colonnade, Dewey / Morey / Lattimore halls surrounding the open quad."
+          },
+          {
+            "num": 6,
+            "name": "Meliora Hall",
+            "notes": "Home of Brain & Cognitive Sciences and neuroscience — Theo's direct tie to his UCSD work. Research-forward; note the lab signage."
+          },
+          {
+            "num": 7,
+            "name": "Harkness Hall",
+            "notes": "Political Science & Philosophy — home of the 'Rochester School' of rational-choice theory (William Riker). Theo's poli-sci and philosophy base."
+          },
+          {
+            "num": 8,
+            "name": "Hutchison Hall",
+            "notes": "Biology & chemistry, beside the Hajim engineering quad and Wegmans Hall (data science). The STEM core — loop back to Wilson Commons from here."
+          }
+        ]
+      }
+    },
+    { "schoolId": "A3", "school": "Harvard", "hasProfile": false },
+    { "schoolId": "A4", "school": "Tufts", "hasProfile": false },
+    { "schoolId": "A5", "school": "MIT", "hasProfile": false },
+    { "schoolId": "A5b", "school": "Boston University", "hasProfile": false },
+    { "schoolId": "A6", "school": "Boston College", "hasProfile": false },
+    { "schoolId": "A7", "school": "Brown", "hasProfile": false },
+    { "schoolId": "A8", "school": "Yale", "hasProfile": false },
+    { "schoolId": "A9", "school": "Stony Brook", "hasProfile": false },
+    { "schoolId": "A10", "school": "Fordham", "hasProfile": false },
+    { "schoolId": "A11", "school": "Penn", "hasProfile": false },
+    { "schoolId": "A12", "school": "Villanova", "hasProfile": false },
+    { "schoolId": "A13", "school": "Princeton", "hasProfile": false },
+    { "schoolId": "A14", "school": "Johns Hopkins", "hasProfile": false },
+    { "schoolId": "A15", "school": "GWU", "hasProfile": false },
+    { "schoolId": "A16", "school": "Georgetown", "hasProfile": false }
   ]
 }
