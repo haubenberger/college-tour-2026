@@ -250,6 +250,17 @@
   },
   "campusVisits": [
     {
+      "id": "UofR",
+      "school": "University of Rochester",
+      "date": "Sun Jul 19, ~5:00 PM",
+      "type": "Self-guided campus walk (~75 min)",
+      "conf": null,
+      "checkin": "River Campus — start at Wilson Commons. Park at Library / Susan B. Anthony lot (free weekends).",
+      "parking": "Free weekend parking at the Library / Susan B. Anthony lots.",
+      "contact": null,
+      "notes": "Follow the 8-stop self-guided loop below. Campus profile includes the full walking tour with map."
+    },
+    {
       "id": "A2",
       "school": "Cornell",
       "date": "Mon Jul 20, 1:00–2:15 PM",
@@ -541,7 +552,7 @@
   ],
   "collegeBriefings": [
     {
-      "schoolId": "A2",
+      "schoolId": "UofR",
       "school": "University of Rochester",
       "hasProfile": true,
       "history": "Founded in 1850 and relocated to its neoclassical River Campus in 1930, Rochester was shaped by one transformative donor — George Eastman of Kodak — whose gifts built the Eastman School of Music, the medical school, and much of the campus you'll walk today. His statue presides over the Eastman Quadrangle. Two Rochester figures anchor the university's moral throughline: Susan B. Anthony, whose advocacy helped open the university to women in 1900, and Frederick Douglass, who published the North Star in Rochester — both are memorialized on campus. Motto: Meliora — 'ever better.'",
@@ -550,52 +561,62 @@
         "duration": "~75 min",
         "startNote": "Self-guided loop — follow stops 1→8",
         "parking": "Free weekend parking at the Library / Susan B. Anthony lots",
-        "mapEmbed": "https://www.openstreetmap.org/export/embed.html?bbox=-77.6380%2C43.1240%2C-77.6180%2C43.1330&layer=mapnik&marker=43.1284%2C-77.6279",
-        "mapLink": "https://www.openstreetmap.org/?mlat=43.1284&mlon=-77.6279#map=16/43.1284/-77.6279",
+        "mapCenter": [43.1275, -77.6270],
+        "mapZoom": 16,
+        "mapLink": "https://www.openstreetmap.org/?mlat=43.1275&mlon=-77.6270#map=16/43.1275/-77.6270",
         "stops": [
           {
             "num": 1,
             "name": "Wilson Commons",
+            "lat": 43.1284, "lng": -77.6261,
             "notes": "I.M. Pei glass-atrium student union — grab a campus map here. The social hub of River Campus."
           },
           {
             "num": 2,
             "name": "Frederick Douglass Commons",
+            "lat": 43.1278, "lng": -77.6256,
             "notes": "Main dining hub + Douglass statue. He published the North Star in Rochester — this is where students gather daily."
           },
           {
             "num": 3,
             "name": "Susan B. Anthony Halls",
+            "lat": 43.1295, "lng": -77.6249,
             "notes": "First-year residence complex. The namesake helped win coeducation in 1900. Good sense of the residential-community feel."
           },
           {
             "num": 4,
             "name": "Rush Rhees Library",
+            "lat": 43.1281, "lng": -77.6273,
             "notes": "1930 domed landmark — step inside the rotunda and Great Hall. The intellectual core of campus; architecturally the most striking building."
           },
           {
             "num": 5,
             "name": "Eastman Quadrangle",
+            "lat": 43.1272, "lng": -77.6281,
             "notes": "Historic academic heart. George Eastman statue, Kodak colonnade, Dewey / Morey / Lattimore halls surrounding the open quad."
           },
           {
             "num": 6,
             "name": "Meliora Hall",
+            "lat": 43.1269, "lng": -77.6267,
             "notes": "Home of Brain & Cognitive Sciences and neuroscience — Theo's direct tie to his UCSD work. Research-forward; note the lab signage."
           },
           {
             "num": 7,
             "name": "Harkness Hall",
+            "lat": 43.1263, "lng": -77.6274,
             "notes": "Political Science & Philosophy — home of the 'Rochester School' of rational-choice theory (William Riker). Theo's poli-sci and philosophy base."
           },
           {
             "num": 8,
             "name": "Hutchison Hall",
+            "lat": 43.1259, "lng": -77.6258,
             "notes": "Biology & chemistry, beside the Hajim engineering quad and Wegmans Hall (data science). The STEM core — loop back to Wilson Commons from here."
           }
         ]
       }
     },
+    { "schoolId": "A2", "school": "Cornell", "hasProfile": false },
     { "schoolId": "A3", "school": "Harvard", "hasProfile": false },
     { "schoolId": "A4", "school": "Tufts", "hasProfile": false },
     { "schoolId": "A5", "school": "MIT", "hasProfile": false },
