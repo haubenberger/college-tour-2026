@@ -1,0 +1,542 @@
+{
+  "meta": {
+    "version": "6.0",
+    "created": "Jul 19, 2026 · 2:05 PM PT",
+    "title": "College Tour 2026",
+    "travelers": "Dietrich, Theo & Simona — joined by Silke (Fri–Mon)",
+    "disclaimer": "Times are planning targets; align with booked slots and confirm live schedules & rates."
+  },
+  "summary": {
+    "legs": "Leg 1: Rochester → New York (Jul 18–25, car) • Leg 2: Philadelphia → Washington DC (Jul 25–31, car)",
+    "flights": "Sat Jul 18 SAN→IAD; onward upstate-NY flights cancelled by storms — overnight Reston (Dulles). Sun Jul 19 UA4335 IAD→Buffalo (BUF) + Ithaca Limousine BUF→ROC (rebooked). Dietrich home Jul 25 EWR 4:59 PM→SAN (JX3T42) · Simona Jul 25 AA 2955 → PHL 2:40 PM",
+    "cars": "Leg 1: Hertz Camry — pick up ROC Sun Jul 19 ~4:30 PM (conf. L6042669403) → EWR Jul 25. Leg 2: Avis — PHL 3:30 PM Jul 25 → DCA 8:30 AM Jul 31 (conf. 20655662US6)",
+    "keyEvents": "World Cup Final Sun Jul 19 · The Odyssey IMAX 70mm Wed Jul 22 9:45 PM, Providence · Red Sox Tue Jul 21 7:10 PM · Mets Fri Jul 24 7:10 PM · Phillies Sun Jul 26"
+  },
+  "timeline": [
+    {
+      "date": "2026-07-18",
+      "label": "Sat Jul 18",
+      "title": "Travel disrupted — stranded at Dulles",
+      "leg": 1,
+      "alert": null,
+      "entries": [
+        { "time": "Aft.", "text": "SAN → Washington Dulles (IAD)." },
+        { "time": "Eve.", "text": "Onward flights to upstate NY cancelled by Northeast thunderstorms; overnight near Dulles (Reston). The Courtyard Rochester (C1) was cancelled — no Rochester overnight now." }
+      ]
+    },
+    {
+      "date": "2026-07-19",
+      "label": "Sun Jul 19",
+      "title": "Rebooked BUF → U of R walk + World Cup → Ithaca",
+      "leg": 1,
+      "alert": null,
+      "entries": [
+        { "time": "AM", "text": "Breakfast / check out at Reston (Dulles)." },
+        { "time": "Midday", "text": "UA4335 IAD → Buffalo (BUF)." },
+        { "time": "3:15 PM", "text": "Ithaca Limousine pickup at BUF (rebooked) → drive to Rochester (~1 hr 15)." },
+        { "time": "~4:30 PM", "text": "Arrive ROC airport; pick up the Hertz Camry (conf. L6042669403). Allow ~15–20 min at the counter." },
+        { "time": "~4:50 PM", "text": "Drive to the U of R River Campus (~10 min). Park Library / Susan B. Anthony lot (free weekends)." },
+        { "time": "~5:00 PM", "text": "University of Rochester — self-guided campus walk (~75 min). See campus briefing section.", "ref": "UofR" },
+        { "time": "~6:20 PM", "text": "Short drive to The Distillery (Mt. Hope, ~5 min)." },
+        { "time": "~6:30 PM", "text": "Early dinner with Elise at The Distillery. World Cup Final (kickoff ~3 PM ET) caught on the road en route.", "ref": "B5" },
+        { "time": "~8:00 PM", "text": "Depart for Ithaca (~1 hr 30)." },
+        { "time": "~9:30 PM", "text": "Check into Ithaca Marriott Downtown; dinner on the Commons if hungry. Overnight Ithaca.", "ref": "C2" }
+      ],
+      "note": "The Sun 8:00 AM Rochester Odyssey showing was missed in the reroute and refunded — rebooked to Providence, Wed Jul 22."
+    },
+    {
+      "date": "2026-07-20",
+      "label": "Mon Jul 20",
+      "title": "Cornell → Boston (long drive)",
+      "leg": 1,
+      "alert": null,
+      "entries": [
+        { "time": "8:30 AM", "text": "Breakfast, check out. Free morning in Ithaca (the Commons, gorges, self-guided Cornell walk)." },
+        { "time": "12:00 PM", "text": "Lunch near campus; park at Forest Home Garage (reserved ePermit — short walk to the Tang Welcome Center). Arrive campus 30 min before the tour." },
+        { "time": "1:00 PM", "text": "Cornell General Campus Tour, 1:00–2:15 PM (conf. CU5856UY).", "ref": "A2" },
+        { "time": "~2:45 PM", "text": "Depart Ithaca for Boston (~5 hr 30)." },
+        { "time": "~8:30 PM", "text": "Arrive Cambridge; check into Residence Inn Boston Cambridge (Kendall). Overnight (2 nts).", "ref": "C3" }
+      ]
+    },
+    {
+      "date": "2026-07-21",
+      "label": "Tue Jul 21",
+      "title": "Harvard, Tufts + Fenway",
+      "leg": 1,
+      "alert": null,
+      "entries": [
+        { "time": "10:30 AM", "text": "Walk/T to Harvard (~10 min); check in at Agassiz House, Radcliffe Yard. Mobile check-in once within 1.2 mi.", "ref": "A3" },
+        { "time": "11:00 AM", "text": "Harvard information session (~45 min) — no tour; self-guided walk after." },
+        { "time": "12:15 PM", "text": "Lunch in Harvard Square." },
+        { "time": "1:15 PM", "text": "Drive to Tufts (Medford, ~20 min); GPS to the Boston Ave garage entrance, 419 Boston Ave." },
+        { "time": "2:00 PM", "text": "Tufts campus tour — check in Eaton Hall, 5 The Green. Arrive ~20 min early.", "ref": "A4" },
+        { "time": "6:15 PM", "text": "Head to Fenway (~20 min)." },
+        { "time": "7:10 PM", "text": "Red Sox vs. Orioles @ Fenway. Overnight Cambridge.", "ref": "B1" }
+      ]
+    },
+    {
+      "date": "2026-07-22",
+      "label": "Wed Jul 22",
+      "title": "MIT, BU (walk-by), Boston College → Providence + The Odyssey",
+      "leg": 1,
+      "alert": null,
+      "entries": [
+        { "time": "8:30 AM", "text": "Breakfast, check out (bags in the car — MIT can't store luggage)." },
+        { "time": "9:45 AM", "text": "Walk to MIT Welcome Center, 292 Main St (~5 min); arrive 15 min early." },
+        { "time": "10:00 AM", "text": "MIT info session + tour (~90 min).", "ref": "A5" },
+        { "time": "11:45 AM", "text": "Drive to BU (~15 min); park near Marsh Plaza / Comm Ave." },
+        { "time": "12:00 PM", "text": "BU self-guided walk-by + lunch on Comm Ave (~75 min).", "ref": "A5b" },
+        { "time": "1:20 PM", "text": "Drive BU → Boston College (Chestnut Hill, ~20 min)." },
+        { "time": "2:30 PM", "text": "Boston College Eagle Eye visit — Devlin Hall (arrive 20–30 min early; bring parking ticket).", "ref": "A6" },
+        { "time": "4:00 PM", "text": "Depart for Providence (~1 hr)." },
+        { "time": "~5:15 PM", "text": "Check into Aloft Providence Downtown; dinner on Thayer St.", "ref": "C4" },
+        { "time": "9:45 PM", "text": "The Odyssey — IMAX 70mm, Apple Cinemas Providence Place (~10 min from the Aloft). Ends ~12:37 AM.", "ref": "B0" }
+      ],
+      "alert": "~12:37 AM finish sits right before Brown check-in at 9:30 AM Thu — short night before the trip's tightest day."
+    },
+    {
+      "date": "2026-07-23",
+      "label": "Thu Jul 23",
+      "title": "Brown → Yale (+ Jonathan Edwards College)",
+      "leg": 1,
+      "alert": null,
+      "entries": [
+        { "time": "9:30 AM", "text": "Walk to Brown; check in Manning Hall, 21 Prospect St (15 min early). QR code ready.", "ref": "A7" },
+        { "time": "10:00 AM", "text": "Brown info session + student panel + tour (~90 min)." },
+        { "time": "11:30 AM", "text": "Check out of the Aloft; grab-and-go lunch." },
+        { "time": "11:50 AM", "text": "Depart Providence → New Haven (~1 hr 45). Leave promptly for the 2 PM tour." },
+        { "time": "12–1 PM", "text": "Dietrich's work Zoom (12–1 PM ET / 9–10 AM PT) — hands-free, camera off, from the car while Theo co-pilots." },
+        { "time": "~1:40 PM", "text": "Straight to Yale — park near campus, walk to SSS Hall, 1 Prospect St (Grove St side).", "ref": "A8" },
+        { "time": "2:00 PM", "text": "Yale campus tour (~70 min)." },
+        { "time": "3:15 PM", "text": "Walk to Jonathan Edwards College, 68 High St (~10 min) — Yale's oldest residential college.", "ref": "A8b" },
+        { "time": "4:00 PM", "text": "Check into Courtyard New Haven at Yale; dinner. Overnight New Haven.", "ref": "C5" }
+      ]
+    },
+    {
+      "date": "2026-07-24",
+      "label": "Fri Jul 24",
+      "title": "Ferry (7:30) → pick up Silke → Stony Brook → Brooklyn → Mets",
+      "leg": 1,
+      "alert": null,
+      "entries": [
+        { "time": "6:00 AM", "text": "Grab-and-go breakfast, check out." },
+        { "time": "6:15 AM", "text": "Drive to Bridgeport ferry terminal, 1 Ferry Access Rd (~30–35 min)." },
+        { "time": "7:30 AM", "text": "Car ferry Bridgeport → Port Jefferson (75 min) — conf. 20260717-32111128.", "ref": "B3" },
+        { "time": "8:45 AM", "text": "Arrive Port Jefferson, 102 W Broadway; coffee/bagels in the village." },
+        { "time": "9:24 AM", "text": "Pick up Silke at Port Jefferson Station (LIRR) — she joins through Monday." },
+        { "time": "10:00 AM", "text": "Stony Brook — self-guided walk (~90 min): map at Admissions, Academic Mall, library, Wang Center, science quad.", "ref": "A9" },
+        { "time": "11:45 AM", "text": "Lunch (Port Jefferson / Stony Brook)." },
+        { "time": "12:30 PM", "text": "Drive to Park Slope, Brooklyn (~1 hr 45 via LIE/BQE)." },
+        { "time": "~2:30 PM", "text": "Arrive Silke's in Park Slope; park the car, start laundry, settle in.", "ref": "C6" },
+        { "time": "5:15 PM", "text": "Subway together to Citi Field (~45–60 min)." },
+        { "time": "7:10 PM", "text": "Mets vs. Dodgers @ Citi Field (Dietrich, Theo, Silke + Sam). Subway back to Park Slope; overnight.", "ref": "B2" }
+      ]
+    },
+    {
+      "date": "2026-07-25",
+      "label": "Sat Jul 25",
+      "title": "Fordham, then the 3-way split",
+      "leg": "split",
+      "alert": null,
+      "entries": [
+        { "time": "8:15 AM", "text": "Depart Park Slope; coffee/bagels en route." },
+        { "time": "9:00 AM", "text": "Drive to Fordham Rose Hill, 2691 Southern Blvd, Bronx (~40 min); self-guided walk (~45–60 min).", "ref": "A10" },
+        { "time": "10:15 AM", "text": "Drive Fordham → Newark (EWR), ~45–60 min." },
+        { "time": "~11:15 AM", "text": "At EWR — the group splits:" },
+        { "time": "Dietrich", "text": "Return the Hertz car; United terminal. UA 210, EWR 4:59 PM → SAN." },
+        { "time": "Silke+Theo", "text": "AirTrain → Newark Airport rail station → Amtrak NE Regional 147, EWR 1:12 PM → Philadelphia 30th St 2:19 PM (conf. 97BF45, seats 3A/B).", "ref": "B4" },
+        { "time": "Simona", "text": "AA 2955 lands PHL ~2:40 PM; pick up the Avis rental at PHL, 3:30 PM (conf. 20655662US6), drive to meet the others.", "ref": "B6" },
+        { "time": "~3:30 PM", "text": "Silke, Theo & Simona converge in Philadelphia; check into the Canopy. Leg 2 begins." },
+        { "time": "~4:00 PM", "text": "Check into Canopy by Hilton Philadelphia Center City, 1180 Ludlow St; dinner near Reading Terminal Market. Overnight Philly (night 1).", "ref": "C7" }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "label": "Sun Jul 26",
+      "title": "Philadelphia + Phillies",
+      "leg": 2,
+      "alert": null,
+      "entries": [
+        { "time": "Daytime", "text": "Independence Hall, Liberty Bell, Old City, Reading Terminal Market, Art Museum steps." },
+        { "time": "4:30 PM", "text": "Early dinner at Pizzeria Beddia, 1313 N Lee St, Fishtown — party of 5 (Simona, Theo, Silke + 2 Philly friends). Reserve ahead." },
+        { "time": "~6:15 PM", "text": "Uber to Citizens Bank Park (~15–20 min)." },
+        { "time": "Night", "text": "Phillies vs. Yankees @ Citizens Bank Park — Silke joins. Overnight Philly (night 2).", "ref": "B7" }
+      ]
+    },
+    {
+      "date": "2026-07-27",
+      "label": "Mon Jul 27",
+      "title": "Silke → NYC | Penn + Villanova → Princeton",
+      "leg": 2,
+      "alert": null,
+      "entries": [
+        { "time": "Morning", "text": "Silke takes the train back to NYC. Simona + Theo check out of the Canopy by noon (bags in car)." },
+        { "time": "9:30 AM", "text": "Penn info session; 10:15 AM tour — Cohen Hall, University City.", "ref": "A11" },
+        { "time": "2:30 PM", "text": "Villanova Nova Nation presentation + tour (~30 min drive; free I-1 Garage).", "ref": "A12" },
+        { "time": "~4:00 PM", "text": "Drive to Princeton (~1 hr 15); stay with Raphaela (2 nts). Overnight Princeton.", "ref": "C8" }
+      ]
+    },
+    {
+      "date": "2026-07-28",
+      "label": "Tue Jul 28",
+      "title": "Princeton",
+      "leg": 2,
+      "alert": null,
+      "entries": [
+        { "time": "12:15 PM", "text": "Princeton info session + tour (~2 hrs), 36 University Place. Explore Nassau St. Overnight Princeton.", "ref": "A13" }
+      ]
+    },
+    {
+      "date": "2026-07-29",
+      "label": "Wed Jul 29",
+      "title": "Princeton → Johns Hopkins → Potomac",
+      "leg": 2,
+      "alert": null,
+      "entries": [
+        { "time": "~10:15 AM", "text": "Drive Princeton → Baltimore (~2 hr 45); lunch near Homewood." },
+        { "time": "2:15 PM", "text": "Johns Hopkins session + tour, 2:15–4:15 PM, Mason Hall (South Garage).", "ref": "A14" },
+        { "time": "4:30 PM", "text": "Drive Baltimore → Potomac, MD (~1 hr); stay with Nicole. Overnight Potomac.", "ref": "C9" }
+      ]
+    },
+    {
+      "date": "2026-07-30",
+      "label": "Thu Jul 30",
+      "title": "GWU + Georgetown (park-and-ride + Metro)",
+      "leg": 2,
+      "alert": null,
+      "entries": [
+        { "time": "8:45 AM", "text": "Drive Potomac → Grosvenor–Strathmore park-and-ride (~15 min); Red Line into the city." },
+        { "time": "10:00 AM", "text": "GWU Foggy Bottom tour (~1 hr), 800 21st St NW (transfer to Foggy Bottom/GWU station).", "ref": "A15" },
+        { "time": "2:00 PM", "text": "Georgetown info session + tour (~2 hrs) — bus/rideshare from Foggy Bottom.", "ref": "A16" },
+        { "time": "Evening", "text": "Metro back to Grosvenor; drive to Potomac. Overnight Potomac (Nicole).", "ref": "C9" }
+      ]
+    },
+    {
+      "date": "2026-07-31",
+      "label": "Fri Jul 31",
+      "title": "Depart",
+      "leg": 2,
+      "alert": null,
+      "entries": [
+        { "time": "8:30 AM", "text": "Drive Potomac → Reagan National (DCA); drop the Avis car, 2600 Richmond Hwy (conf. 20655662US6).", "ref": "B6" },
+        { "time": "Morning", "text": "Simona & Theo fly home from DCA (flight TBD). Trip ends." }
+      ]
+    }
+  ],
+  "actionItems": {
+    "open": [
+      { "text": "Return flights", "detail": "Confirm Simona & Theo home from DCA, Fri Jul 31 (after the 8:30 AM car drop)." },
+      { "text": "Pizzeria Beddia (Sun Jul 26)", "detail": "Reserve the party of 5 ahead." }
+    ],
+    "done": [
+      "Flights (rebooked via BUF)",
+      "Both rental cars (Hertz + Avis)",
+      "Ithaca Limousine",
+      "Ferry (conf. 20260717-32111128)",
+      "Amtrak NE Regional 147 (Silke + Theo, conf. 97BF45)",
+      "Leg 1 hotels C2–C5",
+      "Philadelphia hotel (Canopy, B_56678931)",
+      "Mets tickets (4, Sec 407)",
+      "Phillies tickets (3, Sec 320)",
+      "The Odyssey rebooked (Providence, Jul 22, 9:45 PM)",
+      "Cornell parking (Forest Home Garage ePermit)",
+      "Brown party of 2 confirmed",
+      "14 campus visits registered"
+    ],
+    "cancelled": [
+      "Courtyard Rochester (C1) — storm reroute, never used",
+      "Original Sun 8 AM Odyssey (Rochester) — refunded"
+    ]
+  },
+  "campusVisits": [
+    {
+      "id": "A2",
+      "school": "Cornell",
+      "date": "Mon Jul 20, 1:00–2:15 PM",
+      "type": "General Campus Tour",
+      "conf": "CU5856UY",
+      "checkin": "Martin Y. Tang Welcome Center at Noyes Lodge; ends Ho Plaza. Arrive 30 min early.",
+      "parking": "RESERVED — Forest Home Garage (ParkMobile ePermit, valid all day Jul 20; covered). Bring printed ePermit for dash.",
+      "contact": "607-254-4636 / info@cornell.edu",
+      "notes": "Watch the recorded info session in advance. Guest: Dietrich Haubenberger."
+    },
+    {
+      "id": "A3",
+      "school": "Harvard",
+      "date": "Tue Jul 21, 11:00 AM",
+      "type": "Information Session ONLY — no guided tour",
+      "conf": null,
+      "checkin": "Elizabeth Cary Agassiz House, Radcliffe Yard, 77 Brattle St — enter via Brattle / Mason / Garden St gates.",
+      "parking": "Street parking not advised (2-hr max) — use area garages. No luggage storage.",
+      "contact": "Office of Admissions 617-495-1551",
+      "notes": "Mobile check-in once within 1.2 mi of campus (Chrome + location services on). Allow +30–60 min travel."
+    },
+    {
+      "id": "A4",
+      "school": "Tufts",
+      "date": "Tue Jul 21, 2:00 PM",
+      "type": "Walking Tour (Theo + 1 guest)",
+      "conf": null,
+      "checkin": "Eaton Hall, 5 The Green (Dowling garage elevator to the 7th floor). Arrive ≥20 min early.",
+      "parking": "FREE for registered visitors — Dowling Hall garage, 419 Boston Ave. GPS to Boston Ave entrance (summer construction closes North Hill Rd). Plates scanned; register vehicle online day-of. If full → Cousens Lot, 161 College Ave.",
+      "contact": null,
+      "notes": "Rideshare drop: 180 Packard Ave (Academic Quad). One last reminder sent 4 hrs prior."
+    },
+    {
+      "id": "A5",
+      "school": "MIT",
+      "date": "Wed Jul 22, 10:00 AM",
+      "type": "Info Session + Tour (~90 min)",
+      "conf": null,
+      "checkin": "MIT Welcome Center, 292 Main St (Kendall/MIT T). Arrive 15 min early.",
+      "parking": "Public transit recommended — 'Don't drive.'",
+      "contact": null,
+      "notes": "No luggage storage."
+    },
+    {
+      "id": "A5b",
+      "school": "Boston University",
+      "date": "Wed Jul 22, ~12:00 PM",
+      "type": "Self-guided walk-by",
+      "conf": null,
+      "checkin": "Park near Marsh Plaza / Comm Ave.",
+      "parking": null,
+      "contact": null,
+      "notes": "Walk: Marsh Plaza → BU Beach → Comm Ave → 'Jenga' data-sciences tower → Esplanade. Lunch on Comm Ave."
+    },
+    {
+      "id": "A6",
+      "school": "Boston College",
+      "date": "Wed Jul 22, 2:30 PM",
+      "type": "Eagle Eye Visit (Theo + 1). Middle Campus only.",
+      "conf": null,
+      "checkin": "Devlin Hall, 140 Commonwealth Ave. Arrive 20–30 min early. Bring parking ticket.",
+      "parking": "Drive to 2004 Campanella Way → Commonwealth Ave Garage, floors 3–6 → 7th floor → Devlin. If full → Beacon Street Garage.",
+      "contact": "617-552-3100",
+      "notes": "No recording."
+    },
+    {
+      "id": "A7",
+      "school": "Brown",
+      "date": "Thu Jul 23, 10:00 AM",
+      "type": "Info session + student panel + tour (~90 min). Party of 2 confirmed.",
+      "conf": "QR code in email",
+      "checkin": "Manning Hall, Admission Welcome Center, 21 Prospect St. Arrive 15 min early.",
+      "parking": "Power St. Visitor lot (pay at lot stations) → ~10–15 min walk up Thayer St; or meters via Passport Parking app.",
+      "contact": null,
+      "notes": "Tours run in most weather."
+    },
+    {
+      "id": "A8",
+      "school": "Yale",
+      "date": "Thu Jul 23, 2:00 PM",
+      "type": "Campus Tour (~70 min)",
+      "conf": "QR check-in",
+      "checkin": "SSS (Sheffield-Sterling-Strathcona) Hall, 1 Prospect St — Grove St side entrance. Arrive 5 min early.",
+      "parking": "Metered on-street (Parkmobile, $1.50/hr) or Audubon Court / Grove Street garages; allow ~15 min to park and walk.",
+      "contact": null,
+      "notes": "Tours depart rain or shine."
+    },
+    {
+      "id": "A8b",
+      "school": "Jonathan Edwards College (Yale)",
+      "date": "Thu Jul 23, ~3:15 PM",
+      "type": "Residential college visit",
+      "conf": null,
+      "checkin": "68 High St, ~10 min from SSS Hall.",
+      "parking": null,
+      "contact": null,
+      "notes": "One of Yale's oldest residential colleges, Gothic courtyard. Colleges are gated; courtyard/exterior is the public view. Inside needs a Yale affiliate to swipe in."
+    },
+    {
+      "id": "A9",
+      "school": "Stony Brook",
+      "date": "Fri Jul 24, ~10:00 AM",
+      "type": "Self-guided (~90 min)",
+      "conf": null,
+      "checkin": "Stop at Undergraduate Admissions (Administration Building) for a self-guided map.",
+      "parking": "Visitor parking by the Administration Building.",
+      "contact": null,
+      "notes": "Walk: Academic Mall → Frank Melville Library → Charles B. Wang Center → Student Activities Center → Life Sciences / science quad."
+    },
+    {
+      "id": "A10",
+      "school": "Fordham",
+      "date": "Sat Jul 25, ~9:00 AM",
+      "type": "Self-guided, Rose Hill / Bronx",
+      "conf": null,
+      "checkin": "2691 Southern Blvd, Bronx NY 10458. Ask campus security for a self-guided booklet.",
+      "parking": "Parking garages near campus.",
+      "contact": null,
+      "notes": "Any time 9 AM–5 PM. ~40 min from Park Slope. University quiet on weekends (limited access)."
+    },
+    {
+      "id": "A11",
+      "school": "Penn",
+      "date": "Mon Jul 27, 9:30 AM + 10:15 AM",
+      "type": "9:30 AM Info Session + 10:15 AM Tour (2 attendees)",
+      "conf": null,
+      "checkin": "Undergraduate Admissions Visitor Center, Claudia Cohen Hall, Ground Floor (University City).",
+      "parking": null,
+      "contact": null,
+      "notes": null
+    },
+    {
+      "id": "A12",
+      "school": "Villanova",
+      "date": "Mon Jul 27, 2:30 PM",
+      "type": "Nova Nation Presentation + Tour",
+      "conf": null,
+      "checkin": "Mullen Center for the Performing Arts, Lobby — 800 E Lancaster Ave. Arrive 15 min early.",
+      "parking": "Free in the I-1 Garage (~30 min drive from Center City).",
+      "contact": null,
+      "notes": "Final visit details emailed ~48 hrs prior."
+    },
+    {
+      "id": "A13",
+      "school": "Princeton",
+      "date": "Tue Jul 28, 12:15 PM",
+      "type": "Info session + student-led tour (~2 hrs; party of 2)",
+      "conf": null,
+      "checkin": "Admission Information Center, 36 University Place. Arrive 30 min early.",
+      "parking": "Stadium Drive Garage (register vehicle day-of) + free Tiger Transit shuttle.",
+      "contact": null,
+      "notes": "No luggage storage."
+    },
+    {
+      "id": "A14",
+      "school": "Johns Hopkins",
+      "date": "Wed Jul 29, 2:15–4:15 PM",
+      "type": "Admissions Session + Guided Tour",
+      "conf": null,
+      "checkin": "Lobby, 1st floor of Mason Hall — 3101 Wyman Park Dr, Baltimore.",
+      "parking": "South Garage beneath Mason Hall (hourly; no validation).",
+      "contact": null,
+      "notes": null
+    },
+    {
+      "id": "A15",
+      "school": "GWU",
+      "date": "Thu Jul 30, 10:00 AM",
+      "type": "In-Person Foggy Bottom Campus Tour (~1 hr)",
+      "conf": null,
+      "checkin": "Admissions Welcome Center, University Student Center, 800 21st St NW. Arrive 10 min early.",
+      "parking": "From Grosvenor park-and-ride: Red Line → transfer at Metro Center to Foggy Bottom/GWU.",
+      "contact": null,
+      "notes": null
+    },
+    {
+      "id": "A16",
+      "school": "Georgetown",
+      "date": "Thu Jul 30, 2:00 PM",
+      "type": "Info session (35–40 min) + tour (~1 hr)",
+      "conf": null,
+      "checkin": "Office of Undergraduate Admissions, White-Gravenor Hall, Room 103 (first stone building past the gates).",
+      "parking": "Main gates 3700 O St NW. No Metro — bus/rideshare from Foggy Bottom (~15 min).",
+      "contact": null,
+      "notes": null
+    }
+  ],
+  "eventsAndTransport": [
+    {
+      "id": "B0",
+      "title": "The Odyssey (IMAX 70mm)",
+      "date": "Wed Jul 22, 9:45 PM",
+      "badge": "movie",
+      "where": "Apple Cinemas Providence Place, 10 Providence Place, Providence RI — Screen 17, seats B16 & B15 (2 adult).",
+      "conf": "6a5c312e5d3eb739c6705f41",
+      "detail": "Runtime 2 hr 52 min — starts 9:45 PM, ends ~12:37 AM. ~10-min walk / short drive from the Aloft (191 Dorrance St). $53 paid. Replaces the missed/refunded Sun 8 AM Rochester showing.",
+      "alert": "Late finish sits before Brown check-in 9:30 AM Thu — plan a short night."
+    },
+    {
+      "id": "B1",
+      "title": "Red Sox vs. Orioles",
+      "date": "Tue Jul 21, 7:10 PM",
+      "badge": "baseball",
+      "where": "Fenway — Loge Box 132, seats 1–2.",
+      "conf": "RSXV-226907257",
+      "detail": null,
+      "alert": null
+    },
+    {
+      "id": "B2",
+      "title": "Mets vs. Dodgers",
+      "date": "Fri Jul 24, 7:10 PM",
+      "badge": "baseball",
+      "where": "Citi Field, Section 407, Row 3 — 4 tickets: Dietrich + Theo, seats 5–6; Silke + Sam, seats 8–9.",
+      "conf": "NYM-10546301-77183294 (D+T) / 648933917 (S+S)",
+      "detail": "Subway from Park Slope (~45–60 min).",
+      "alert": null
+    },
+    {
+      "id": "B3",
+      "title": "Bridgeport → Port Jefferson Ferry",
+      "date": "Fri Jul 24, 7:30 AM",
+      "badge": "transport",
+      "where": "1 Ferry Access Rd, Bridgeport CT → 102 W Broadway, Port Jefferson NY.",
+      "conf": "20260717-32111128",
+      "detail": "Car + driver + 1 adult passenger (75-min crossing). Arrive ~30 min early.",
+      "alert": null
+    },
+    {
+      "id": "B4",
+      "title": "Amtrak — Silke + Theo",
+      "date": "Sat Jul 25",
+      "badge": "transport",
+      "where": "Newark Liberty Intl (EWR) 1:12 PM → Philadelphia 30th St 2:19 PM.",
+      "conf": "97BF45, seats 3A/B",
+      "detail": "AirTrain from EWR to the Newark Liberty airport rail station for the train.",
+      "alert": null
+    },
+    {
+      "id": "B5",
+      "title": "World Cup Final",
+      "date": "Sun Jul 19, kickoff ~3 PM ET",
+      "badge": "soccer",
+      "where": "The Distillery, 1142 Mt Hope Ave (by College Town, ~5 min from U of R). (585) 271-4105.",
+      "conf": null,
+      "detail": "Caught on the road during the BUF→ROC drive (radio/stream). Meet Elise for an early dinner at The Distillery ~6:30 PM after the U of R walk. Fine for under-21 with a parent.",
+      "alert": null
+    },
+    {
+      "id": "B6",
+      "title": "Leg 2 Rental Car — Avis",
+      "date": "Jul 25–31",
+      "badge": "transport",
+      "where": "Pick-up: Philadelphia Intl Airport (PHL), 1 Arrivals Rd. Drop-off: Reagan National (DCA), 2600 Richmond Hwy.",
+      "conf": "20655662US6",
+      "detail": "Pick-up Sat Jul 25, 3:30 PM (Driver: Simona, 25+). Drop-off Fri Jul 31, 8:30 AM. Intermediate (Toyota Corolla or similar), automatic. $700.92, pay at pickup.",
+      "alert": null
+    },
+    {
+      "id": "B7",
+      "title": "Phillies vs. Yankees",
+      "date": "Sun Jul 26 (night)",
+      "badge": "baseball",
+      "where": "Citizens Bank Park — Section 320, Row 2, seats 13–15 (Simona, Theo & Silke).",
+      "conf": null,
+      "detail": "Pre-game: 4:30 PM early dinner at Pizzeria Beddia, 1313 N Lee St, Fishtown (party of 5) — reserve ahead. Uber from Fishtown to ballpark (~15–20 min).",
+      "alert": null
+    }
+  ],
+  "lodging": [
+    { "ref": "C2", "dates": "Jul 19–20", "name": "Ithaca Marriott Downtown on the Commons", "conf": "81591120", "type": "hotel" },
+    { "ref": "C3", "dates": "Jul 20–22", "name": "Residence Inn Boston Cambridge (Kendall)", "conf": "81603932", "type": "hotel" },
+    { "ref": "C4", "dates": "Jul 22–23", "name": "Aloft Providence Downtown (191 Dorrance St)", "conf": "81680286", "type": "hotel" },
+    { "ref": "C5", "dates": "Jul 23–24", "name": "Courtyard New Haven at Yale (30 Whalley Ave)", "conf": "81683827", "type": "hotel" },
+    { "ref": "C6", "dates": "Fri Jul 24", "name": "Silke's — Park Slope, Brooklyn", "conf": null, "type": "friend" },
+    { "ref": "C7", "dates": "Jul 25–27", "name": "Canopy by Hilton Philadelphia Center City (1180 Ludlow St) — 2 Queen Premium", "conf": "B_56678931", "type": "hotel" },
+    { "ref": "C8", "dates": "Jul 27–29", "name": "Princeton — Raphaela's", "conf": null, "type": "friend" },
+    { "ref": "C9", "dates": "Jul 29–31", "name": "Potomac MD — Nicole's", "conf": null, "type": "friend" }
+  ],
+  "weather": [
+    { "dates": "Jul 19–20", "city": "Rochester / Ithaca, NY", "temp": "80–81° / 58–61°F", "conditions": "Warm; Rochester Sun ~78°, mostly sunny after Sat storms" },
+    { "dates": "Jul 20–22", "city": "Boston / Cambridge", "temp": "82° / 66°F", "conditions": "Warm, humid" },
+    { "dates": "Jul 22–23", "city": "Providence, RI", "temp": "83° / 64°F", "conditions": "Warm, humid" },
+    { "dates": "Jul 23–24", "city": "New Haven, CT", "temp": "82° / 65°F", "conditions": "Warm, humid (coastal)" },
+    { "dates": "Jul 24–25", "city": "Long Island / Brooklyn", "temp": "84° / 69°F", "conditions": "Hot, humid" },
+    { "dates": "Jul 25–27", "city": "Philadelphia", "temp": "87° / 69°F", "conditions": "Hot, humid; PM thunderstorm chance" },
+    { "dates": "Jul 27–29", "city": "Princeton, NJ", "temp": "86° / 65°F", "conditions": "Hot, humid" },
+    { "dates": "Jul 29–31", "city": "Baltimore / DC / Potomac", "temp": "89° / 71°F", "conditions": "Hot, humid; PM thunderstorm chance" }
+  ]
+}

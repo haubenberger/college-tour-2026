@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>College Tour 2026</title>
+<style>
+  :root {
+    --navy: #1a2e4a;
+    --navy-mid: #233a5c;
+    --navy-light: #2e4d78;
+    --accent: #c8a84b;
+    --accent-light: #f0d98a;
+    --red: #c0392b;
+    --green: #27ae60;
+    --text: #1a1a2e;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --today-bg: #fffbeb;
+    --today-border: #c8a84b;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --navy: #0f1f35;
+      --navy-mid: #1a2e4a;
+      --navy-light: #233a5c;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --border: #1e3352;
+      --bg: #0a1628;
+      --card: #111f35;
+      --today-bg: #1a1600;
+      --today-border: #c8a84b;
+    }
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
+
+  /* HEADER */
+  .site-header {
+    background: var(--navy);
+    color: #fff;
+    padding: 20px 16px 0;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .site-header h1 { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em; }
+  .site-header h1 span { color: var(--accent-light); }
+  .header-meta { font-size: 0.72rem; color: #94b4d4; margin-top: 2px; }
+
+  /* NAV TABS */
+  .tabs {
+    display: flex; gap: 2px; overflow-x: auto; margin-top: 14px;
+    scrollbar-width: none;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab {
+    padding: 9px 14px; font-size: 0.8rem; font-weight: 600;
+    color: #94b4d4; background: transparent; border: none; cursor: pointer;
+    border-bottom: 3px solid transparent; white-space: nowrap;
+    transition: color .15s, border-color .15s;
+  }
+  .tab.active { color: var(--accent-light); border-bottom-color: var(--accent); }
+
+  /* MAIN */
+  main { padding: 16px; max-width: 800px; margin: 0 auto; }
+  section { display: none; }
+  section.active { display: block; }
+
+  /* TODAY BANNER */
+  .today-banner {
+    background: var(--today-bg);
+    border: 1.5px solid var(--today-border);
+    border-radius: 10px; padding: 12px 14px; margin-bottom: 16px;
+    font-size: 0.82rem;
+  }
+  .today-banner strong { color: var(--accent); font-size: 0.75rem; text-transform: uppercase; letter-spacing: .05em; display: block; margin-bottom: 4px; }
+
+  /* DAY CARDS */
+  .day-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; margin-bottom: 12px; overflow: hidden;
+  }
+  .day-card.today { border-color: var(--today-border); box-shadow: 0 0 0 2px color-mix(in srgb, var(--today-border) 30%, transparent); }
+  .day-card.past { opacity: 0.65; }
+
+  .day-header {
+    background: var(--navy-mid); color: #fff;
+    padding: 10px 14px; display: flex; align-items: center; gap: 10px;
+    cursor: pointer; user-select: none;
+  }
+  .day-card.today .day-header { background: var(--navy-light); }
+  .day-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #94b4d4; min-width: 70px; }
+  .day-title { font-size: 0.88rem; font-weight: 600; flex: 1; }
+  .day-badge { font-size: 0.65rem; font-weight: 700; padding: 2px 7px; border-radius: 9px; text-transform: uppercase; letter-spacing: .04em; }
+  .badge-today { background: var(--accent); color: #1a1a00; }
+  .badge-leg1 { background: #2e4d7830; color: #94b4d4; }
+  .badge-leg2 { background: #7c2d1230; color: #f5a97c; }
+  .day-chevron { color: #94b4d4; font-size: 0.8rem; transition: transform .2s; margin-left: 4px; }
+  .day-card.open .day-chevron { transform: rotate(180deg); }
+
+  .day-body { display: none; }
+  .day-card.open .day-body { display: block; }
+
+  .day-entries { padding: 4px 0; }
+  .entry { display: flex; gap: 12px; padding: 8px 14px; border-top: 1px solid var(--border); }
+  .entry:first-child { border-top: none; }
+  .entry-time {
+    font-size: 0.72rem; font-weight: 700; color: var(--accent); min-width: 68px;
+    text-align: right; padding-top: 1px; white-space: nowrap;
+  }
+  .entry-text { font-size: 0.83rem; color: var(--text); flex: 1; }
+  .entry-ref { font-size: 0.7rem; color: var(--muted); font-weight: 600; }
+
+  .day-note {
+    margin: 0 14px 10px; padding: 8px 10px;
+    background: color-mix(in srgb, var(--muted) 10%, transparent);
+    border-radius: 6px; font-size: 0.76rem; color: var(--muted); font-style: italic;
+  }
+  .day-alert {
+    margin: 0 14px 10px; padding: 8px 10px;
+    background: color-mix(in srgb, var(--red) 10%, transparent);
+    border-left: 3px solid var(--red);
+    border-radius: 0 6px 6px 0; font-size: 0.78rem; color: var(--red); font-weight: 600;
+  }
+
+  /* COLLEGE CARDS */
+  .school-grid { display: grid; gap: 12px; }
+  .school-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  .school-header {
+    background: var(--navy-mid); color: #fff; padding: 10px 14px;
+    display: flex; align-items: center; gap: 10px; cursor: pointer;
+  }
+  .school-name { font-size: 0.95rem; font-weight: 700; flex: 1; }
+  .school-date { font-size: 0.72rem; color: #94b4d4; }
+  .school-body { display: none; padding: 12px 14px; }
+  .school-card.open .school-body { display: block; }
+  .school-card.open .school-header .day-chevron { transform: rotate(180deg); }
+
+  .detail-row { display: flex; gap: 10px; margin-bottom: 8px; font-size: 0.82rem; }
+  .detail-label { font-weight: 700; color: var(--accent); min-width: 72px; font-size: 0.72rem; text-transform: uppercase; letter-spacing: .04em; padding-top: 1px; }
+  .detail-val { flex: 1; color: var(--text); }
+  .conf-tag { font-family: monospace; font-size: 0.78rem; background: color-mix(in srgb, var(--accent) 15%, transparent); color: var(--accent); padding: 1px 6px; border-radius: 4px; }
+
+  /* EVENTS */
+  .event-list { display: grid; gap: 10px; }
+  .event-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; }
+  .event-top { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; }
+  .event-icon { font-size: 1.4rem; flex-shrink: 0; }
+  .event-name { font-size: 0.9rem; font-weight: 700; }
+  .event-date { font-size: 0.75rem; color: var(--muted); }
+  .event-detail { font-size: 0.8rem; color: var(--text); }
+  .event-conf { font-size: 0.72rem; color: var(--muted); margin-top: 6px; }
+  .event-conf span { font-family: monospace; color: var(--accent); }
+
+  /* LODGING */
+  .lodging-list { display: grid; gap: 8px; }
+  .lodge-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; display: flex; gap: 12px; }
+  .lodge-ref { font-weight: 700; font-size: 0.7rem; color: var(--accent); min-width: 30px; text-transform: uppercase; }
+  .lodge-info { flex: 1; }
+  .lodge-dates { font-size: 0.72rem; color: var(--muted); }
+  .lodge-name { font-size: 0.86rem; font-weight: 600; margin: 2px 0; }
+  .lodge-conf { font-size: 0.72rem; font-family: monospace; color: var(--muted); }
+  .lodge-type-friend { background: color-mix(in srgb, var(--green) 15%, transparent); border-color: color-mix(in srgb, var(--green) 30%, transparent); }
+
+  /* ACTION ITEMS */
+  .action-section { margin-bottom: 20px; }
+  .action-section h3 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 10px; }
+  .action-item { display: flex; gap: 10px; padding: 10px 12px; background: var(--card); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 6px; }
+  .action-item.open { border-left: 3px solid var(--red); }
+  .action-item.done { border-left: 3px solid var(--green); opacity: 0.7; }
+  .action-item.cancelled { border-left: 3px solid var(--muted); opacity: 0.5; text-decoration: line-through; }
+  .action-check { font-size: 1rem; flex-shrink: 0; }
+  .action-text { font-size: 0.83rem; }
+  .action-detail { font-size: 0.76rem; color: var(--muted); margin-top: 2px; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 20px 16px; font-size: 0.7rem; color: var(--muted); border-top: 1px solid var(--border); margin-top: 20px; }
+
+  /* WEATHER TABLE */
+  .weather-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+  .weather-table th { background: var(--navy-mid); color: #fff; padding: 8px 10px; text-align: left; font-size: 0.7rem; text-transform: uppercase; letter-spacing: .05em; }
+  .weather-table td { padding: 8px 10px; border-bottom: 1px solid var(--border); }
+  .weather-table tr:last-child td { border-bottom: none; }
+  .weather-table tr:nth-child(even) td { background: color-mix(in srgb, var(--border) 30%, transparent); }
+  .weather-wrap { background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-top: 10px; overflow-x: auto; }
+
+  /* SUMMARY TABLE */
+  .summary-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+  .summary-table tr { border-bottom: 1px solid var(--border); }
+  .summary-table tr:last-child { border-bottom: none; }
+  .summary-table td:first-child { font-weight: 700; padding: 10px 14px 10px 0; white-space: nowrap; color: var(--accent); font-size: 0.72rem; text-transform: uppercase; letter-spacing: .04em; width: 80px; }
+  .summary-table td { padding: 10px 14px; vertical-align: top; }
+
+  .leg-label { display: inline-block; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; padding: 2px 7px; border-radius: 8px; margin-bottom: 6px; }
+  .leg1 { background: #2e4d7830; color: #5b9bd5; }
+  .leg2 { background: #7c2d1230; color: #f5a97c; }
+
+  @media (max-width: 480px) {
+    .day-title { font-size: 0.82rem; }
+    .school-name { font-size: 0.88rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <h1>College Tour <span>2026</span></h1>
+  <div class="header-meta" id="header-meta">Loading…</div>
+  <nav class="tabs">
+    <button class="tab active" onclick="showTab('today')">Today</button>
+    <button class="tab" onclick="showTab('timeline')">Timeline</button>
+    <button class="tab" onclick="showTab('colleges')">Colleges</button>
+    <button class="tab" onclick="showTab('events')">Events & Transport</button>
+    <button class="tab" onclick="showTab('lodging')">Lodging</button>
+    <button class="tab" onclick="showTab('action')">Action Items</button>
+  </nav>
+</header>
+
+<main>
+  <section id="today" class="active"></section>
+  <section id="timeline"></section>
+  <section id="colleges"></section>
+  <section id="events"></section>
+  <section id="lodging"></section>
+  <section id="action"></section>
+</main>
+
+<footer id="footer"></footer>
+
+<script>
+const TODAY_ISO = new Date().toISOString().slice(0, 10);
+
+function showTab(id) {
+  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+function esc(s) {
+  return s ? s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') : '';
+}
+
+function badgeIcon(b) {
+  const icons = { baseball: '⚾', soccer: '⚽', movie: '🎬', transport: '🚗' };
+  return icons[b] || '📍';
+}
+
+function dayStatus(iso) {
+  if (iso === TODAY_ISO) return 'today';
+  if (iso < TODAY_ISO) return 'past';
+  return 'upcoming';
+}
+
+function legBadge(leg) {
+  if (leg === 1) return '<span class="day-badge badge-leg1">Leg 1</span>';
+  if (leg === 2) return '<span class="day-badge badge-leg2">Leg 2</span>';
+  return '';
+}
+
+function renderDayCard(day, open) {
+  const status = dayStatus(day.date);
+  const isToday = status === 'today';
+  const isPast = status === 'past';
+  const cardClass = [
+    'day-card',
+    isToday ? 'today open' : '',
+    isPast ? 'past' : '',
+    open ? 'open' : ''
+  ].filter(Boolean).join(' ');
+
+  const entries = day.entries.map(e => `
+    <div class="entry">
+      <div class="entry-time">${esc(e.time)}</div>
+      <div class="entry-text">${esc(e.text)}${e.ref ? ` <span class="entry-ref">[${esc(e.ref)}]</span>` : ''}</div>
+    </div>
+  `).join('');
+
+  const note = day.note ? `<div class="day-note">${esc(day.note)}</div>` : '';
+  const alert = day.alert ? `<div class="day-alert">⚠️ ${esc(day.alert)}</div>` : '';
+
+  return `
+    <div class="${cardClass}" id="day-${day.date}">
+      <div class="day-header" onclick="toggleCard(this.parentElement)">
+        <div class="day-label">${esc(day.label)}</div>
+        <div class="day-title">${esc(day.title)}</div>
+        ${isToday ? '<span class="day-badge badge-today">TODAY</span>' : legBadge(day.leg)}
+        <div class="day-chevron">▼</div>
+      </div>
+      <div class="day-body">
+        <div class="day-entries">${entries}</div>
+        ${alert}${note}
+      </div>
+    </div>
+  `;
+}
+
+function toggleCard(card) {
+  card.classList.toggle('open');
+}
+
+function renderTimeline(days) {
+  return days.map((d, i) => renderDayCard(d, dayStatus(d.date) !== 'past')).join('');
+}
+
+function renderToday(data) {
+  const todayDay = data.timeline.find(d => d.date === TODAY_ISO);
+  const nextDay = data.timeline.find(d => d.date > TODAY_ISO);
+
+  let html = '';
+
+  // Summary box
+  html += `
+    <div class="today-banner">
+      <strong>Trip Overview</strong>
+      <div>${esc(data.summary.legs)}</div>
+    </div>
+  `;
+
+  if (todayDay) {
+    html += `<div style="margin-bottom:6px;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);">Today's Schedule</div>`;
+    html += renderDayCard(todayDay, true);
+  } else if (data.timeline[0].date > TODAY_ISO) {
+    html += `<div class="today-banner"><strong>Trip starts ${esc(data.timeline[0].label)}</strong></div>`;
+  } else {
+    html += `<div class="today-banner"><strong>Trip complete! Safe travels home.</strong></div>`;
+  }
+
+  if (nextDay) {
+    html += `<div style="margin-top:16px;margin-bottom:6px;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);">Tomorrow</div>`;
+    html += renderDayCard(nextDay, true);
+  }
+
+  // Key logistics
+  html += `
+    <div style="margin-top:16px">
+      <div style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:8px;">Trip Logistics</div>
+      <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:0 14px">
+        <table class="summary-table">
+          <tr><td>Flights</td><td>${esc(data.summary.flights)}</td></tr>
+          <tr><td>Cars</td><td>${esc(data.summary.cars)}</td></tr>
+          <tr><td>Events</td><td>${esc(data.summary.keyEvents)}</td></tr>
+        </table>
+      </div>
+    </div>
+  `;
+
+  return html;
+}
+
+function renderColleges(visits) {
+  return visits.map(v => `
+    <div class="school-card" id="${v.id}">
+      <div class="school-header" onclick="toggleCard(this.parentElement)">
+        <div>
+          <div class="school-name">${esc(v.school)}</div>
+          <div class="school-date">${esc(v.date)}</div>
+        </div>
+        <div class="day-chevron">▼</div>
+      </div>
+      <div class="school-body">
+        <div class="detail-row"><div class="detail-label">Type</div><div class="detail-val">${esc(v.type)}</div></div>
+        ${v.conf ? `<div class="detail-row"><div class="detail-label">Conf.</div><div class="detail-val"><span class="conf-tag">${esc(v.conf)}</span></div></div>` : ''}
+        <div class="detail-row"><div class="detail-label">Check-in</div><div class="detail-val">${esc(v.checkin)}</div></div>
+        ${v.parking ? `<div class="detail-row"><div class="detail-label">Parking</div><div class="detail-val">${esc(v.parking)}</div></div>` : ''}
+        ${v.contact ? `<div class="detail-row"><div class="detail-label">Contact</div><div class="detail-val">${esc(v.contact)}</div></div>` : ''}
+        ${v.notes ? `<div class="detail-row"><div class="detail-label">Notes</div><div class="detail-val">${esc(v.notes)}</div></div>` : ''}
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderEvents(items) {
+  return items.map(e => `
+    <div class="event-card" id="${e.id}">
+      <div class="event-top">
+        <div class="event-icon">${badgeIcon(e.badge)}</div>
+        <div>
+          <div class="event-name">${esc(e.title)}</div>
+          <div class="event-date">${esc(e.date)}</div>
+        </div>
+      </div>
+      <div class="event-detail">${esc(e.where)}</div>
+      ${e.detail ? `<div class="event-detail" style="margin-top:6px;color:var(--muted)">${esc(e.detail)}</div>` : ''}
+      ${e.conf ? `<div class="event-conf">Conf: <span>${esc(e.conf)}</span></div>` : ''}
+      ${e.alert ? `<div class="day-alert" style="margin:8px 0 0">${esc(e.alert)}</div>` : ''}
+    </div>
+  `).join('');
+}
+
+function renderLodging(items, weather) {
+  const hotels = items.map(l => `
+    <div class="lodge-card ${l.type === 'friend' ? 'lodge-type-friend' : ''}">
+      <div class="lodge-ref">${esc(l.ref)}</div>
+      <div class="lodge-info">
+        <div class="lodge-dates">${esc(l.dates)}</div>
+        <div class="lodge-name">${esc(l.name)}</div>
+        ${l.conf ? `<div class="lodge-conf">Conf: ${esc(l.conf)}</div>` : ''}
+      </div>
+    </div>
+  `).join('');
+
+  const weatherRows = weather.map(w => `
+    <tr>
+      <td>${esc(w.dates)}</td>
+      <td>${esc(w.city)}</td>
+      <td>${esc(w.temp)}</td>
+      <td>${esc(w.conditions)}</td>
+    </tr>
+  `).join('');
+
+  return `
+    <div class="lodging-list">${hotels}</div>
+    <div style="margin-top:20px;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:4px;">Weather — Typical Late-July</div>
+    <div style="font-size:.72rem;color:var(--muted);margin-bottom:6px;">Check a live forecast closer to travel.</div>
+    <div class="weather-wrap">
+      <table class="weather-table">
+        <thead><tr><th>Dates</th><th>City</th><th>Temp</th><th>Conditions</th></tr></thead>
+        <tbody>${weatherRows}</tbody>
+      </table>
+    </div>
+  `;
+}
+
+function renderAction(items) {
+  const open = items.open.map(i => `
+    <div class="action-item open">
+      <div class="action-check">☐</div>
+      <div><div class="action-text"><strong>${esc(i.text)}</strong></div><div class="action-detail">${esc(i.detail)}</div></div>
+    </div>
+  `).join('');
+
+  const done = items.done.map(t => `
+    <div class="action-item done"><div class="action-check">✓</div><div class="action-text">${esc(t)}</div></div>
+  `).join('');
+
+  const cancelled = items.cancelled.map(t => `
+    <div class="action-item cancelled"><div class="action-check">✗</div><div class="action-text">${esc(t)}</div></div>
+  `).join('');
+
+  return `
+    <div class="action-section"><h3>Open (${items.open.length})</h3>${open}</div>
+    <div class="action-section"><h3>Done (${items.done.length})</h3>${done}</div>
+    <div class="action-section"><h3>Cancelled</h3>${cancelled}</div>
+  `;
+}
+
+async function init() {
+  let data;
+  try {
+    const resp = await fetch('./itinerary.json?' + Date.now());
+    data = await resp.json();
+  } catch (e) {
+    document.querySelector('main').innerHTML = '<p style="padding:20px;color:var(--red)">Could not load itinerary.json — make sure you\'re serving this file from a web server.</p>';
+    return;
+  }
+
+  document.getElementById('header-meta').textContent =
+    `v${data.meta.version} · ${data.meta.created} · ${data.meta.travelers}`;
+
+  document.getElementById('today').innerHTML = renderToday(data);
+  document.getElementById('timeline').innerHTML = renderTimeline(data.timeline);
+  document.getElementById('colleges').innerHTML = `<div class="school-grid">${renderColleges(data.campusVisits)}</div>`;
+  document.getElementById('events').innerHTML = `<div class="event-list">${renderEvents(data.eventsAndTransport)}</div>`;
+  document.getElementById('lodging').innerHTML = renderLodging(data.lodging, data.weather);
+  document.getElementById('action').innerHTML = renderAction(data.actionItems);
+
+  document.getElementById('footer').innerHTML =
+    `${esc(data.meta.disclaimer)}<br>v${data.meta.version} · Updated ${esc(data.meta.created)}`;
+}
+
+init();
+</script>
+</body>
+</html>
