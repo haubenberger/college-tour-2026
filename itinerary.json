@@ -1,7 +1,7 @@
 {
   "meta": {
-    "version": "6.1",
-    "created": "Jul 19, 2026 · afternoon PT",
+    "version": "6.2",
+    "created": "Jul 20, 2026 · 11:15 AM ET",
     "title": "College Tour 2026",
     "travelers": "Dietrich, Theo & Simona — joined by Silke (Fri–Mon)",
     "disclaimer": "Times are planning targets; align with booked slots and confirm live schedules & rates."
@@ -52,28 +52,31 @@
       "alert": null,
       "entries": [
         { "time": "7:30 AM", "text": "Wake." },
-        { "time": "8:00–9:30 AM", "text": "Workout — hotel gym or a run through Cascadilla Gorge." },
-        { "time": "~9:45 AM", "text": "Check out; bags in the car." },
-        { "time": "~10:30 AM", "text": "Brunch downtown Ithaca / the Commons — Simeon's on the Commons or Waffle Frolic." },
-        { "time": "12:00 PM", "text": "Drive to campus; park at Forest Home Garage (reserved ePermit — short walk to the Tang Welcome Center)." },
-        { "time": "12:30 PM", "text": "Arrive campus; explore before the tour." },
+        { "time": "8:00 AM", "text": "Workout, 8:00–9:30 (hotel fitness center or a run — the Cascadilla Gorge trail is right by the Commons)." },
+        { "time": "9:45 AM", "text": "Shower, pack, check out — bags in the car." },
+        { "time": "10:30 AM", "text": "Brunch at Milkstand (215 N Meadow St) — hearty local diner, a Cornell-visit favorite." },
+        { "time": "12:00 PM", "text": "Drive to campus (~10 min); park Forest Home Garage (reserved ePermit) — walk to the Tang Welcome Center." },
+        { "time": "12:30 PM", "text": "On campus, 30 min before the tour. Briefing + walking map in section D2.", "ref": "D2" },
         { "time": "1:00 PM", "text": "Cornell General Campus Tour, 1:00–2:15 PM (conf. CU5856UY).", "ref": "A2" },
-        { "time": "~2:45 PM", "text": "Depart Ithaca for Boston (~5 hr 30)." },
-        { "time": "~8:30 PM", "text": "Arrive Cambridge; check into Residence Inn Boston Cambridge (Kendall). Overnight (2 nts).", "ref": "C3" }
+        { "time": "~2:45 PM", "text": "Depart Ithaca for Boston (~5 hr 15 driving)." },
+        { "time": "~7:45 PM", "text": "Dinner on the road — Wegmans Natick (1245 Worcester St), right off the Mass Pike: sit-down Pub upstairs + a big prepared-foods hall with seating. ~30 min out from Cambridge." },
+        { "time": "~9:00 PM", "text": "Arrive Cambridge; check into Residence Inn Boston Cambridge (Kendall). Overnight (2 nts).", "ref": "C3" }
       ]
     },
     {
       "date": "2026-07-21",
       "label": "Tue Jul 21",
-      "title": "Harvard, Tufts + Fenway",
+      "title": "Harvard, Tufts, MIT bookstore + Fenway",
       "leg": 1,
-      "alert": null,
+      "alert": "Rain likely in the afternoon — umbrella in the bag.",
       "entries": [
         { "time": "10:30 AM", "text": "Walk/T to Harvard (~10 min); check in at Agassiz House, Radcliffe Yard. Mobile check-in once within 1.2 mi.", "ref": "A3" },
-        { "time": "11:00 AM", "text": "Harvard information session (~45 min) — no tour; self-guided walk after." },
-        { "time": "12:15 PM", "text": "Lunch in Harvard Square." },
-        { "time": "1:15 PM", "text": "Drive to Tufts (Medford, ~20 min); GPS to the Boston Ave garage entrance, 419 Boston Ave." },
-        { "time": "2:00 PM", "text": "Tufts campus tour — check in Eaton Hall, 5 The Green. Arrive ~20 min early.", "ref": "A4" },
+        { "time": "11:00 AM", "text": "Harvard information session (~45 min) — no tour." },
+        { "time": "11:45 AM", "text": "Self-guided Harvard Yard walk. Briefing + map in section D3.", "ref": "D3" },
+        { "time": "1:00 PM", "text": "Lunch in Harvard Square." },
+        { "time": "1:20 PM", "text": "Drive to Tufts (Medford, ~20 min); GPS to the Boston Ave garage entrance, 419 Boston Ave." },
+        { "time": "2:00 PM", "text": "Tufts campus tour — check in Eaton Hall, 5 The Green. Arrive ~20 min early. Briefing + map in D4.", "ref": "A4" },
+        { "time": "~4:00 PM", "text": "MIT Coop bookstore (77 Massachusetts Ave) + MIT Museum shop — quick stop on the way back to the hotel." },
         { "time": "6:15 PM", "text": "Head to Fenway (~20 min)." },
         { "time": "7:10 PM", "text": "Red Sox vs. Orioles @ Fenway. Overnight Cambridge.", "ref": "B1" }
       ]
@@ -686,8 +689,136 @@
         ]
       }
     },
-    { "schoolId": "A3", "school": "Harvard", "hasProfile": false },
-    { "schoolId": "A4", "school": "Tufts", "hasProfile": false },
+    {
+      "schoolId": "A3",
+      "school": "Harvard",
+      "hasProfile": true,
+      "history": "Founded in 1636 — the oldest university in the United States — Harvard sits at the center of American intellectual life. John Harvard's donation of books and money gave the college its name in 1639. The Yard you'll walk today is the original campus: the oldest buildings (Massachusetts Hall, 1720) still house freshmen. Harvard grew into a full research university in the 19th century under Charles Eliot, who also invented the elective system that freed students from a fixed curriculum. The surrounding ecosystem — MIT across the river, MGH and Brigham & Women's affiliated hospitals, the Kennedy School, HBS — makes Cambridge the densest concentration of research and ideas in the world.",
+      "programUniqueness": "Harvard's concentration system is the closest thing in American higher education to designing your own degree within a structure. Theo's convergence of neuroscience, philosophy, and political theory maps cleanly onto a Philosophy concentration with a Mind, Brain & Behavior secondary — or onto the relatively new interdisciplinary track in Cognitive Neuroscience & Evolutionary Psychology. The Government department (home to Danielle Allen, Cornel West's frequent interlocutor, and a strong political-theory bench) is one of the most respected in the world. The General Education curriculum replaced distribution requirements with a set of eight thematic areas — Ethical Reasoning, Science & Technology in Society, Aesthetics & Culture — meaning every course Theo takes outside his concentration will genuinely broaden him rather than just check boxes. Financial note: Harvard meets 100% of demonstrated need for all admitted students, with no loans in the aid package for families under $85K/yr and dramatically reduced contributions above that. For the right candidate, Harvard is often cheaper than a mid-tier school.",
+      "walkingTour": {
+        "duration": "~45 min (self-guided after the info session)",
+        "startNote": "Start at Agassiz House, Radcliffe Yard — the info session ends here. Follow stops 1→8.",
+        "parking": "Street parking not advised; use area garages (no campus lot for visitors)",
+        "mapCenter": [42.3752, -71.1163],
+        "mapZoom": 16,
+        "mapLink": "https://www.openstreetmap.org/?mlat=42.3752&mlon=-71.1163#map=16/42.3752/-71.1163",
+        "stops": [
+          {
+            "num": 1,
+            "name": "Agassiz House, Radcliffe Yard",
+            "lat": 42.3793, "lng": -71.1208,
+            "notes": "Info session start. Radcliffe Yard is the historic women's campus, now a center for advanced study. The Georgian brick buildings are quieter and more intimate than the main Yard."
+          },
+          {
+            "num": 2,
+            "name": "Harvard Yard — Johnston Gate",
+            "lat": 42.3769, "lng": -71.1171,
+            "notes": "Main ceremonial entrance. The Yard is Harvard's original campus — 22 acres of lawns, elms, and the oldest buildings in American higher education."
+          },
+          {
+            "num": 3,
+            "name": "Massachusetts Hall (1720)",
+            "lat": 42.3748, "lng": -71.1172,
+            "notes": "The oldest surviving Harvard building — still houses freshmen on the upper floors. The President's office is on the ground floor. 300+ years of continuous use."
+          },
+          {
+            "num": 4,
+            "name": "Widener Library",
+            "lat": 42.3733, "lng": -71.1165,
+            "notes": "The largest university library in the world — 3.5 million volumes, 57 miles of shelving. Non-affiliates can't enter, but the neoclassical façade and steps are a Harvard landmark."
+          },
+          {
+            "num": 5,
+            "name": "Memorial Church",
+            "lat": 42.3743, "lng": -71.1156,
+            "notes": "1932 Georgian Revival — the spiritual and ceremonial center of campus. Commencement, morning prayers, and Harvard's war memorial. The mosaic interior is worth a look through the doors."
+          },
+          {
+            "num": 6,
+            "name": "Emerson Hall (Philosophy)",
+            "lat": 42.3739, "lng": -71.1150,
+            "notes": "Home of the Philosophy department — one of the top 3 in the English-speaking world. Faculty include Susanna Siegel (philosophy of perception) and T.M. Scanlon (moral philosophy). Theo's intellectual home."
+          },
+          {
+            "num": 7,
+            "name": "William James Hall (Psychology / Cognitive Science)",
+            "lat": 42.3752, "lng": -71.1134,
+            "notes": "15-story modernist tower — home to Psychology, Sociology, and the interdisciplinary programs in Mind, Brain & Behavior. Steven Pinker's office is here."
+          },
+          {
+            "num": 8,
+            "name": "Harvard Square (T stop)",
+            "lat": 42.3736, "lng": -71.1196,
+            "notes": "Exit the Yard via the Brattle St gate to reach Harvard Square — the T stop, bookshops (Harvard Book Store on Mass Ave), cafes, and lunch options. The Square is the campus's living room."
+          }
+        ]
+      }
+    },
+    {
+      "schoolId": "A4",
+      "school": "Tufts",
+      "hasProfile": true,
+      "history": "Tufts was founded in 1852 by the Universalist Church on a hilltop in Medford — the founders chose the highest hill so their new liberal-arts college would be visible for miles. Charles Tufts donated the land; P.T. Barnum (yes, the circus impresario) was an early trustee and donated Jumbo the elephant's hide after the mascot's death — Jumbo's ashes are still kept in a peanut-butter jar in the Athletic Director's office. The 150-acre campus sits on Walnut Hill straddling Medford and Somerville, with the Boston skyline visible from the academic quad. Tufts grew from a small liberal-arts college into a research university over the 20th century, adding the Fletcher School of Law and Diplomacy (the oldest graduate school of international affairs in the US), the Cummings School of Veterinary Medicine, and the School of Engineering.",
+      "programUniqueness": "Tufts's School of Arts & Sciences operates on a distribution model rather than a core, giving students genuine flexibility to pair a major with electives across divisions. For Theo, the Cognitive & Brain Sciences program (a dedicated major, not just a track) sits alongside Philosophy and Political Science in the same school — all three can combine in a double major or major + minor without creative workarounds. The Fletcher School's proximity creates a pre-graduate pipeline for international-law and policy students that is unique among undergraduate liberal-arts universities. Class sizes are small by research-university standards (average 18 students in upper-division seminars), and the faculty-to-student ratio of 9:1 means access to professors is real, not aspirational. Financial note: Tufts meets demonstrated need but is not need-blind for domestic applicants at the margin — it is effectively need-aware for the last ~10% of admits. No merit scholarships.",
+      "walkingTour": {
+        "duration": "~45 min (before and after the official tour)",
+        "startNote": "Park in Dowling Hall Garage (419 Boston Ave). Start at Eaton Hall for check-in, then follow stops after the tour.",
+        "parking": "FREE for registered visitors — Dowling Hall Garage, 419 Boston Ave. Register vehicle online day-of.",
+        "mapCenter": [42.4077, -71.1192],
+        "mapZoom": 16,
+        "mapLink": "https://www.openstreetmap.org/?mlat=42.4077&mlon=-71.1192#map=16/42.4077/-71.1192",
+        "stops": [
+          {
+            "num": 1,
+            "name": "Eaton Hall (Admissions)",
+            "lat": 42.4069, "lng": -71.1190,
+            "notes": "Check-in point — Eaton Hall, 5 The Green. Take the elevator to the 7th floor in the Dowling garage, cross to Eaton. Arrive ≥20 min early."
+          },
+          {
+            "num": 2,
+            "name": "Tisch Library",
+            "lat": 42.4082, "lng": -71.1186,
+            "notes": "The main academic library and campus hub. Modern interior, 24-hr study floors, and a great view of the Boston skyline from the upper levels."
+          },
+          {
+            "num": 3,
+            "name": "Academic Quad (The Green)",
+            "lat": 42.4075, "lng": -71.1177,
+            "notes": "The heart of campus — Ballou Hall (the original 1854 building) anchors the quad. The views from here toward Boston on a clear day are the best on campus."
+          },
+          {
+            "num": 4,
+            "name": "Ballou Hall",
+            "lat": 42.4079, "lng": -71.1175,
+            "notes": "The oldest building on campus (1854) — the president's office and administrative center. The Romanesque stone exterior is the architectural signature of the hilltop campus."
+          },
+          {
+            "num": 5,
+            "name": "Philosophy / Cognitive Science (Miner Hall)",
+            "lat": 42.4089, "lng": -71.1180,
+            "notes": "Home of Philosophy and several Cognitive & Brain Sciences courses. The CBS program integrates neuroscience, psychology, and philosophy of mind — Theo's direct interest."
+          },
+          {
+            "num": 6,
+            "name": "Political Science (Packard Hall)",
+            "lat": 42.4092, "lng": -71.1171,
+            "notes": "Political Science and International Relations faculty offices. The Fletcher School's proximity means joint seminars and visiting diplomats are a regular feature."
+          },
+          {
+            "num": 7,
+            "name": "The Hotung International Center",
+            "lat": 42.4072, "lng": -71.1163,
+            "notes": "Global studies and international programs hub — reflects Tufts's unusually strong pre-diplomacy pipeline via Fletcher. Students regularly cross-register uphill to Fletcher seminars."
+          },
+          {
+            "num": 8,
+            "name": "Dowling Hall Garage (depart)",
+            "lat": 42.4063, "lng": -71.1195,
+            "notes": "Return to Dowling Garage via the 7th-floor bridge. Drive to Tufts exit on Boston Ave → I-93 south toward Cambridge for the MIT bookstore stop."
+          }
+        ]
+      }
+    },
     { "schoolId": "A5", "school": "MIT", "hasProfile": false },
     { "schoolId": "A5b", "school": "Boston University", "hasProfile": false },
     { "schoolId": "A6", "school": "Boston College", "hasProfile": false },

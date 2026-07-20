@@ -278,6 +278,7 @@
     <button class="tab" onclick="showTab('colleges')">Colleges</button>
     <button class="tab" onclick="showTab('events')">Events & Transport</button>
     <button class="tab" onclick="showTab('lodging')">Lodging</button>
+    <button class="tab" onclick="showTab('weather')">Weather</button>
     <button class="tab" onclick="showTab('action')">Action Items</button>
   </nav>
 </header>
@@ -288,6 +289,7 @@
   <section id="colleges"></section>
   <section id="events"></section>
   <section id="lodging"></section>
+  <section id="weather"></section>
   <section id="action"></section>
 </main>
 
@@ -572,7 +574,7 @@ function renderEvents(items) {
   `).join('');
 }
 
-function renderLodging(items, weather) {
+function renderLodging(items) {
   const hotels = items.map(l => `
     <div class="lodge-card ${l.type === 'friend' ? 'lodge-type-friend' : ''}">
       <div class="lodge-ref">${esc(l.ref)}</div>
@@ -584,24 +586,41 @@ function renderLodging(items, weather) {
     </div>
   `).join('');
 
-  const weatherRows = weather.map(w => `
+  return `<div class="lodging-list">${hotels}</div>`;
+}
+
+function renderWeather(weather) {
+  const condIcon = c => {
+    if (/thunder|storm/i.test(c)) return '⛈';
+    if (/rain|shower/i.test(c)) return '🌧';
+    if (/humid/i.test(c) && /hot/i.test(c)) return '🥵';
+    if (/humid|warm/i.test(c)) return '😅';
+    if (/sunny|clear/i.test(c)) return '☀️';
+    return '🌤';
+  };
+
+  const rows = weather.map(w => `
     <tr>
-      <td>${esc(w.dates)}</td>
-      <td>${esc(w.city)}</td>
-      <td>${esc(w.temp)}</td>
-      <td>${esc(w.conditions)}</td>
+      <td style="white-space:nowrap">${esc(w.dates)}</td>
+      <td><strong>${esc(w.city)}</strong></td>
+      <td style="white-space:nowrap">${esc(w.temp)}</td>
+      <td>${condIcon(w.conditions)} ${esc(w.conditions)}</td>
     </tr>
   `).join('');
 
   return `
-    <div class="lodging-list">${hotels}</div>
-    <div style="margin-top:20px;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:4px;">Weather — Typical Late-July</div>
-    <div style="font-size:.72rem;color:var(--muted);margin-bottom:6px;">Check a live forecast closer to travel.</div>
+    <div style="margin-bottom:10px;font-size:.82rem;color:var(--muted);">Typical late-July forecast for each leg of the trip. Check a live service closer to travel.</div>
     <div class="weather-wrap">
       <table class="weather-table">
-        <thead><tr><th>Dates</th><th>City</th><th>Temp</th><th>Conditions</th></tr></thead>
-        <tbody>${weatherRows}</tbody>
+        <thead><tr><th>Dates</th><th>Location</th><th>Temp (H/L)</th><th>Conditions</th></tr></thead>
+        <tbody>${rows}</tbody>
       </table>
+    </div>
+    <div style="margin-top:16px;padding:12px 14px;background:color-mix(in srgb,var(--red) 10%,transparent);border-left:3px solid var(--red);border-radius:0 8px 8px 0;font-size:.8rem;color:var(--red);">
+      ⚠️ <strong>Tue Jul 21 (Harvard + Tufts):</strong> Rain likely in the afternoon — umbrella in the bag.
+    </div>
+    <div style="margin-top:10px;padding:12px 14px;background:color-mix(in srgb,var(--accent) 10%,transparent);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;font-size:.8rem;color:var(--text);">
+      💧 <strong>Packing tip:</strong> Layers + a light rain jacket for Boston (Jul 20–22) and Philly (Jul 25–27). Both legs include PM thunderstorm chances.
     </div>
   `;
 }
@@ -652,7 +671,8 @@ async function init() {
   document.getElementById('timeline').innerHTML = renderTimeline(data.timeline);
   document.getElementById('colleges').innerHTML = `<div class="school-grid">${renderColleges(data.campusVisits, data.collegeBriefings)}</div>`;
   document.getElementById('events').innerHTML = `<div class="event-list">${renderEvents(data.eventsAndTransport)}</div>`;
-  document.getElementById('lodging').innerHTML = renderLodging(data.lodging, data.weather);
+  document.getElementById('lodging').innerHTML = renderLodging(data.lodging);
+  document.getElementById('weather').innerHTML = renderWeather(data.weather);
   document.getElementById('action').innerHTML = renderAction(data.actionItems);
 
   document.getElementById('footer').innerHTML =
