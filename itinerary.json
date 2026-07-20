@@ -1,7 +1,7 @@
 {
   "meta": {
-    "version": "6.0",
-    "created": "Jul 19, 2026 · 2:05 PM PT",
+    "version": "6.1",
+    "created": "Jul 19, 2026 · afternoon PT",
     "title": "College Tour 2026",
     "travelers": "Dietrich, Theo & Simona — joined by Silke (Fri–Mon)",
     "disclaimer": "Times are planning targets; align with booked slots and confirm live schedules & rates."
@@ -51,8 +51,12 @@
       "leg": 1,
       "alert": null,
       "entries": [
-        { "time": "8:30 AM", "text": "Breakfast, check out. Free morning in Ithaca (the Commons, gorges, self-guided Cornell walk)." },
-        { "time": "12:00 PM", "text": "Lunch near campus; park at Forest Home Garage (reserved ePermit — short walk to the Tang Welcome Center). Arrive campus 30 min before the tour." },
+        { "time": "7:30 AM", "text": "Wake." },
+        { "time": "8:00–9:30 AM", "text": "Workout — hotel gym or a run through Cascadilla Gorge." },
+        { "time": "~9:45 AM", "text": "Check out; bags in the car." },
+        { "time": "~10:30 AM", "text": "Brunch downtown Ithaca / the Commons — Simeon's on the Commons or Waffle Frolic." },
+        { "time": "12:00 PM", "text": "Drive to campus; park at Forest Home Garage (reserved ePermit — short walk to the Tang Welcome Center)." },
+        { "time": "12:30 PM", "text": "Arrive campus; explore before the tour." },
         { "time": "1:00 PM", "text": "Cornell General Campus Tour, 1:00–2:15 PM (conf. CU5856UY).", "ref": "A2" },
         { "time": "~2:45 PM", "text": "Depart Ithaca for Boston (~5 hr 30)." },
         { "time": "~8:30 PM", "text": "Arrive Cambridge; check into Residence Inn Boston Cambridge (Kendall). Overnight (2 nts).", "ref": "C3" }
@@ -616,7 +620,72 @@
         ]
       }
     },
-    { "schoolId": "A2", "school": "Cornell", "hasProfile": false },
+    {
+      "schoolId": "A2",
+      "school": "Cornell",
+      "hasProfile": true,
+      "history": "Cornell University was founded in 1865 by Ezra Cornell and Andrew Dickson White on a hill above Ithaca, New York, with the audacious founding principle: 'I would found an institution where any person can find instruction in any study.' Cornell was among the first major universities to admit women and students of all races from its opening day, and it holds the rare distinction of being both an Ivy League university and a federal land-grant institution — New York State's. Its central campus is anchored by the Arts Quad, McGraw Tower, and the dramatic gorges of Fall Creek and Cascadilla that frame the campus on both sides.",
+      "programUniqueness": "Within the College of Arts & Sciences, Theo's most natural home, the College Scholar Program stands out: a highly selective, fully independent major that lets a student design their own interdisciplinary course of study — ideal for someone bridging neuroscience, philosophy, and political theory. The disciplinary homes are pinned to specific buildings you'll visit on the tour: Government lives in White Hall; Philosophy in Goldwin Smith; Psychology and neuroscience in Uris Hall; Pre-Law in Myron Taylor Hall. Cornell's breadth is genuine — combining cognitive science, political philosophy, and law in one degree is the norm, not a workaround. The honest note on aid: Cornell awards need-based financial aid only — no merit scholarships. For families not qualifying for significant need-based aid, Cornell is a full-price commitment. The decision rests on fit, research opportunity, and the Ivy credential, not financial leverage.",
+      "mapImage": "cornell_map.png",
+      "walkingTour": {
+        "duration": "~75 min (guided tour covers most of this)",
+        "startNote": "Tour departs from the Tang Welcome Center at Noyes Lodge — stops below follow the standard tour route",
+        "parking": "Forest Home Garage (reserved ParkMobile ePermit, valid all day Jul 20)",
+        "mapCenter": [42.4487, -76.4833],
+        "mapZoom": 16,
+        "mapLink": "https://www.openstreetmap.org/?mlat=42.4487&mlon=-76.4833#map=16/42.4487/-76.4833",
+        "stops": [
+          {
+            "num": 1,
+            "name": "Ho Plaza & Willard Straight Hall",
+            "lat": 42.4477, "lng": -76.4846,
+            "notes": "The social heart of campus — Willard Straight Hall is the student union, modeled on an English country house. Ho Plaza hosts speakers, protests, and daily life."
+          },
+          {
+            "num": 2,
+            "name": "Uris Library & McGraw Tower",
+            "lat": 42.4476, "lng": -76.4821,
+            "notes": "McGraw Tower's 161-ft carillon marks the east end of the Arts Quad. Uris Library (1892) sits beneath it — a reading room worth stepping into."
+          },
+          {
+            "num": 3,
+            "name": "Arts Quad",
+            "lat": 42.4487, "lng": -76.4826,
+            "notes": "The historic academic heart of Cornell — Morrill, McGraw, and White Halls line the quad. Statues of Ezra Cornell and Andrew Dickson White face each other across the lawn."
+          },
+          {
+            "num": 4,
+            "name": "White Hall (Government)",
+            "lat": 42.4491, "lng": -76.4835,
+            "notes": "Home of the Government department — Theo's political science base. Cornell's poli-sci faculty spans comparative politics, international relations, and political theory."
+          },
+          {
+            "num": 5,
+            "name": "Goldwin Smith Hall (Philosophy)",
+            "lat": 42.4496, "lng": -76.4835,
+            "notes": "Philosophy's home — and also Classics, History, and English. The building's loggia and Reading Room are among the most beautiful spaces on campus."
+          },
+          {
+            "num": 6,
+            "name": "Uris Hall (Psychology / Neuroscience)",
+            "lat": 42.4502, "lng": -76.4826,
+            "notes": "Home of Psychology and the neuroscience program. Research labs here connect directly to the kind of cognitive-science work Theo did at UCSD."
+          },
+          {
+            "num": 7,
+            "name": "Olin & Kroch Libraries",
+            "lat": 42.4476, "lng": -76.4817,
+            "notes": "Olin is the main research library; Kroch houses the rare-book and Asia collections. The underground connecting corridor between them is worth a look."
+          },
+          {
+            "num": 8,
+            "name": "Myron Taylor Hall (Law)",
+            "lat": 42.4469, "lng": -76.4853,
+            "notes": "Cornell Law School — an imposing Gothic building at the west end of campus. Even as an undergrad, proximity to the law school shapes the pre-law academic culture."
+          }
+        ]
+      }
+    },
     { "schoolId": "A3", "school": "Harvard", "hasProfile": false },
     { "schoolId": "A4", "school": "Tufts", "hasProfile": false },
     { "schoolId": "A5", "school": "MIT", "hasProfile": false },
