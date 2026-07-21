@@ -565,6 +565,7 @@
       "schoolId": "UofR",
       "school": "University of Rochester",
       "hasProfile": true,
+      "mapImage": "uofr_map.png",
       "history": "Founded in 1850 and relocated to its neoclassical River Campus in 1930, Rochester was shaped by one transformative donor — George Eastman of Kodak — whose gifts built the Eastman School of Music, the medical school, and much of the campus you'll walk today. His statue presides over the Eastman Quadrangle. Two Rochester figures anchor the university's moral throughline: Susan B. Anthony, whose advocacy helped open the university to women in 1900, and Frederick Douglass, who published the North Star in Rochester — both are memorialized on campus. Motto: Meliora — 'ever better.'",
       "programUniqueness": "The Rochester Curriculum has no general-education core: beyond a major, students build two self-chosen 'clusters' (a trio of related courses) in each of the two divisions outside their major. This means Theo could pair a Brain & Cognitive Sciences or neuroscience major (a national flagship, with direct ties to his UCSD work) with deliberate clusters in philosophy and political science — rather than checking distribution boxes. All four of his interests live in one degree. The 'Rochester School' (William Riker's rational-choice tradition) anchors the poli-sci side; the Institute of Optics was the nation's first. Undergraduate research is the norm. Two signature programs extend the runway: Take Five (a tuition-free extra semester/year outside the major) and the Kauffman Entrepreneurial Year (KEY). Rochester also awards open merit scholarships — relevant given the family's aid picture.",
       "walkingTour": {
@@ -696,6 +697,7 @@
       "schoolId": "A3",
       "school": "Harvard",
       "hasProfile": true,
+      "mapImage": "harvard_map.png",
       "history": "Founded in 1636, Harvard is the oldest university in the United States — older than the nation itself. Its heart is Harvard Yard, the elm-shaded quad you'll walk: the John Harvard statue outside University Hall (the 'statue of three lies'), the monumental Widener Library facing Memorial Church across Tercentenary Theatre, and the red brick and ivy that set the template for the American campus. Harvard Square spills out just beyond Johnston Gate.",
       "programUniqueness": "For Theo, Harvard College's strength is its range. Concentrations reach all four of his interests: Philosophy lives in Emerson Hall (right on the Yard), Government (political science) is a national powerhouse, the interfaculty Mind/Brain/Behavior initiative and Psychology in William James Hall anchor the neuroscience side, and Harvard Law School's Langdell quad sits a short walk northwest. Students braid a path across the College plus its libraries and museums. The honest caveat, as with the other Ivies: Harvard offers need-based aid only — no merit scholarships — so it belongs on the list for fit and prestige rather than as a financial play.",
       "walkingTour": {
@@ -761,6 +763,7 @@
       "schoolId": "A4",
       "school": "Tufts",
       "hasProfile": true,
+      "mapImage": "tufts_map.png",
       "history": "Chartered in 1852 by Universalists on a breezy hill straddling Medford and Somerville, Tufts has always been small, independent, and a little quirky — its mascot is Jumbo, P.T. Barnum's legendary circus elephant, whose namesake Barnum Hall anchors the campus. From the President's Lawn the Boston skyline unfolds; Ballou Hall (1852) and the Romanesque Goddard Chapel crown the hilltop Academic Quad you'll tour.",
       "programUniqueness": "Tufts punches above its size for Theo's interests. It's nationally known for International Relations and Political Science (Packard Hall), Philosophy sits in Miner Hall, and a strong undergraduate Neuroscience program plus Psychology in Paige Hall cover the brain side — the through-line from his UCSD work. There's no law school, but the poli-sci / IR pipeline and pre-law advising feed law careers directly. Like the Ivies, though, Tufts awards need-based aid only — no merit scholarships — so weigh it as a fit choice against the merit schools.",
       "walkingTour": {
@@ -826,6 +829,7 @@
       "schoolId": "A5",
       "school": "MIT",
       "hasProfile": true,
+      "mapImage": "mit_map.png",
       "history": "Founded in 1861 and rooted on the Charles since 1916, MIT built its identity around 'Mens et Manus' — mind and hand. The campus reads as one connected machine: the Great Dome over Killian Court, the half-mile Infinite Corridor slicing through the Maclaurin Buildings, and Frank Gehry's tumbling Stata Center. It's intense, collaborative, and unmistakably built for people who like to make things.",
       "programUniqueness": "MIT is STEM-first, but it hits more of Theo's interests than people expect. Brain & Cognitive Sciences (Building 46, with the McGovern and Picower neuroscience institutes) is among the best in the world — a direct extension of his UCSD work. Its Philosophy group (within Linguistics & Philosophy, housed in Stata) is a top analytic-philosophy department, and Political Science (Course 17) is strong and quantitative. There's no law school, but the poli-sci path feeds law. As with the Ivies, MIT is need-based only — no merit aid — so treat it as a reach-for-fit, not a merit play.",
       "walkingTour": {
@@ -891,6 +895,7 @@
       "schoolId": "A5b",
       "school": "Boston University",
       "hasProfile": true,
+      "mapImage": "bu_map.png",
       "history": "Founded in 1839, BU is a big, urban, energetic university strung for a mile and a half along Commonwealth Avenue, with the Green Line trolley running right down the median. Martin Luther King Jr. earned his PhD here; Marsh Chapel and its plaza are the symbolic heart, and the new stacked-glass Center for Computing & Data Sciences (the 'Jenga tower') is the modern landmark. It feels like part of the city, not walled off from it.",
       "programUniqueness": "For Theo, BU is a strong all-around fit — and, unlike most of this week's schools, it offers real merit aid (Trustee and Presidential Scholarships), which matters here. Neuroscience, Philosophy, and Political Science all live in the College of Arts & Sciences, its pre-law advising is deep, and BU even has its own School of Law on campus. Big-school scale, but with an honors college (Kilachand) and merit money on the table make it worth a serious look.",
       "walkingTour": {
@@ -956,6 +961,7 @@
       "schoolId": "A6",
       "school": "Boston College",
       "hasProfile": true,
+      "mapImage": "bc_map.png",
       "history": "Founded in 1863 by the Jesuits and moved to its Chestnut Hill hilltop in 1913, Boston College is a Catholic liberal-arts university famous for its 'Collegiate Gothic' architecture — Gasson Hall's tower is the icon, and Bapst Library's Gargan Hall is one of the most beautiful reading rooms in the country. The campus is green, leafy, and traditional, six miles west of downtown at the end of the Green Line B.",
       "programUniqueness": "The Jesuit intellectual tradition makes BC unusually strong in Philosophy — a real draw for Theo — alongside a well-regarded Political Science department and a growing Neuroscience program; the core curriculum leans into big questions of ethics and meaning, and pre-law placement is strong. On money, be clear-eyed: BC is essentially need-based, with only its very selective Presidential Scholars Program offering merit — so weigh it as a fit and values choice more than a merit play.",
       "walkingTour": {

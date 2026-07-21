@@ -4,8 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>College Tour 2026</title>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
   :root {
     --navy: #1a2e4a;
@@ -197,20 +195,13 @@
   .campus-map-wrap {
     border-radius: 8px; overflow: hidden;
     border: 1px solid var(--border); margin-bottom: 6px;
-    height: 280px; position: relative;
   }
-  .campus-map-wrap .leaflet-map { width: 100%; height: 280px; display: block; }
+  .campus-map-wrap img {
+    width: 100%; display: block;
+    max-height: 340px; object-fit: cover; object-position: center;
+  }
   .map-caption { font-size: 0.7rem; color: var(--muted); margin-bottom: 10px; }
   .map-caption a { color: var(--accent); text-decoration: none; }
-  /* Numbered Leaflet markers */
-  .map-stop-marker {
-    width: 26px; height: 26px; border-radius: 50%;
-    background: #c0392b; border: 2px solid #fff;
-    box-shadow: 0 1px 4px rgba(0,0,0,.5);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 11px; font-weight: 800; color: #fff;
-    font-family: -apple-system, sans-serif;
-  }
 
   .tour-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
   .tour-table th {
@@ -416,47 +407,6 @@ function renderToday(data) {
   return html;
 }
 
-const _maps = {};
-
-function initLeafletMap(schoolId, tour) {
-  if (_maps[schoolId]) {
-    _maps[schoolId].invalidateSize();
-    return;
-  }
-
-  const el = document.getElementById('leaflet-' + schoolId);
-  if (!el) return;
-
-  const map = L.map(el, { zoomControl: true, scrollWheelZoom: false })
-    .setView(tour.mapCenter, tour.mapZoom);
-  _maps[schoolId] = map;
-
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-    maxZoom: 19
-  }).addTo(map);
-
-  // Route polyline
-  const coords = tour.stops.map(s => [s.lat, s.lng]);
-  L.polyline(coords, { color: '#c0392b', weight: 3, opacity: 0.85, dashArray: '6,4' }).addTo(map);
-
-  // Numbered markers
-  tour.stops.forEach(s => {
-    const icon = L.divIcon({
-      className: '',
-      html: `<div class="map-stop-marker">${s.num}</div>`,
-      iconSize: [26, 26],
-      iconAnchor: [13, 13],
-      popupAnchor: [0, -14]
-    });
-    L.marker([s.lat, s.lng], { icon })
-      .addTo(map)
-      .bindPopup(`<strong>${s.num}. ${s.name}</strong><br><span style="font-size:.8em">${s.notes}</span>`);
-  });
-
-  // Force correct size once tiles are ready
-  map.whenReady(() => setTimeout(() => map.invalidateSize(), 100));
-}
 
 function renderProfile(briefing) {
   if (!briefing || !briefing.hasProfile) {
@@ -470,6 +420,16 @@ function renderProfile(briefing) {
       <td><span class="stop-name">${esc(s.name)}</span>${esc(s.notes)}</td>
     </tr>
   `).join('');
+
+  const mapBlock = briefing.mapImage ? `
+    <div class="campus-map-wrap">
+      <img src="${esc(briefing.mapImage)}" alt="${esc(briefing.school)} campus map" loading="lazy">
+    </div>
+    <div class="map-caption">
+      ${esc(t.parking)} ·
+      <a href="${t.mapLink}" target="_blank" rel="noopener">Open in OpenStreetMap ↗</a>
+    </div>
+  ` : '';
 
   return `
     <div class="college-profile" id="profile-${briefing.schoolId}">
@@ -485,13 +445,7 @@ function renderProfile(briefing) {
 
       <div class="profile-section">
         <div class="profile-section-title">Campus Walking Tour — ${esc(t.duration)} · ${esc(t.startNote)}</div>
-        <div class="campus-map-wrap">
-          <div id="leaflet-${briefing.schoolId}" class="leaflet-map"></div>
-        </div>
-        <div class="map-caption">
-          ${esc(t.parking)} ·
-          <a href="${t.mapLink}" target="_blank" rel="noopener">Open in OpenStreetMap ↗</a>
-        </div>
+        ${mapBlock}
         <div class="tour-table-wrap">
           <table class="tour-table">
             <thead><tr><th>#</th><th>Stop &amp; What to See</th></tr></thead>
@@ -503,18 +457,11 @@ function renderProfile(briefing) {
   `;
 }
 
-function toggleProfile(btn, id, tour) {
+function toggleProfile(btn, id) {
   const profile = document.getElementById('profile-' + id);
   if (!profile) return;
-  const opening = !profile.classList.contains('open');
   btn.classList.toggle('open');
   profile.classList.toggle('open');
-  if (opening && tour) {
-    // Wait for display:block + any CSS transition to fully apply before Leaflet measures the container
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      initLeafletMap(id, tour);
-    }));
-  }
 }
 
 function renderColleges(visits, briefings) {
@@ -545,7 +492,7 @@ function renderColleges(visits, briefings) {
           ${v.contact ? `<div class="detail-row"><div class="detail-label">Contact</div><div class="detail-val">${esc(v.contact)}</div></div>` : ''}
           ${v.notes ? `<div class="detail-row"><div class="detail-label">Notes</div><div class="detail-val">${esc(v.notes)}</div></div>` : ''}
 
-          <div class="profile-toggle" onclick="toggleProfile(this, '${v.id}', _tourData['${v.id}'])">
+          <div class="profile-toggle" onclick="toggleProfile(this, '${v.id}')">
             📋 Campus Profile${hasProfile ? '' : ' (coming soon)'}
             <span class="ptchev">▼</span>
           </div>
@@ -660,12 +607,6 @@ async function init() {
 
   document.getElementById('header-meta').textContent =
     `v${data.meta.version} · ${data.meta.created} · ${data.meta.travelers}`;
-
-  // Build global tour data lookup for map init
-  window._tourData = {};
-  (data.collegeBriefings || []).forEach(b => {
-    if (b.hasProfile && b.walkingTour) window._tourData[b.schoolId] = b.walkingTour;
-  });
 
   document.getElementById('today').innerHTML = renderToday(data);
   document.getElementById('timeline').innerHTML = renderTimeline(data.timeline);
