@@ -1,7 +1,7 @@
 {
   "meta": {
-    "version": "6.2",
-    "created": "Jul 20, 2026 · 11:15 AM ET",
+    "version": "6.4",
+    "created": "Jul 21, 2026 · 5:20 PM ET",
     "title": "College Tour 2026",
     "travelers": "Dietrich, Theo & Simona — joined by Silke (Fri–Mon)",
     "disclaimer": "Times are planning targets; align with booked slots and confirm live schedules & rates."
@@ -33,10 +33,10 @@
       "entries": [
         { "time": "AM", "text": "Breakfast / check out at Reston (Dulles)." },
         { "time": "Midday", "text": "UA4335 IAD → Buffalo (BUF)." },
-        { "time": "3:15 PM", "text": "Ithaca Limousine pickup at BUF (rebooked) → drive to Rochester (~1 hr 15)." },
+        { "time": "3:15 PM", "text": "Ithaca Limousine pickup at BUF (they rebooked us) → drive to Rochester (~1 hr 15)." },
         { "time": "~4:30 PM", "text": "Arrive ROC airport; pick up the Hertz Camry (conf. L6042669403). Allow ~15–20 min at the counter." },
-        { "time": "~4:50 PM", "text": "Drive to the U of R River Campus (~10 min). Park Library / Susan B. Anthony lot (free weekends)." },
-        { "time": "~5:00 PM", "text": "University of Rochester — self-guided campus walk (~75 min). See campus briefing section.", "ref": "UofR" },
+        { "time": "~4:50 PM", "text": "Drive to the U of R River Campus (~10 min — airport is adjacent). Park Library / Susan B. Anthony lot (free weekends)." },
+        { "time": "~5:00 PM", "text": "University of Rochester — self-guided campus walk (~75 min). Briefing + map in section D.", "ref": "D" },
         { "time": "~6:20 PM", "text": "Short drive to The Distillery (Mt. Hope, ~5 min)." },
         { "time": "~6:30 PM", "text": "Early dinner with Elise at The Distillery. World Cup Final (kickoff ~3 PM ET) caught on the road en route.", "ref": "B5" },
         { "time": "~8:00 PM", "text": "Depart for Ithaca (~1 hr 30)." },
@@ -68,15 +68,15 @@
       "label": "Tue Jul 21",
       "title": "Harvard, Tufts, MIT bookstore + Fenway",
       "leg": 1,
-      "alert": "Rain likely in the afternoon — umbrella in the bag.",
+      "alert": "Rain — Tue: showers likely with possible PM thunderstorms (Tufts' 2 PM slot is the wettest window). Pack the rain shells; hands-free beats umbrellas on a moving tour. The MIT-bookstore stop doubles as a dry-afternoon backup.",
       "entries": [
         { "time": "10:30 AM", "text": "Walk/T to Harvard (~10 min); check in at Agassiz House, Radcliffe Yard. Mobile check-in once within 1.2 mi.", "ref": "A3" },
         { "time": "11:00 AM", "text": "Harvard information session (~45 min) — no tour." },
-        { "time": "11:45 AM", "text": "Self-guided Harvard Yard walk. Briefing + map in section D3.", "ref": "D3" },
+        { "time": "11:45 AM", "text": "Self-guided Harvard Yard walk (~60–75 min) — briefing + map in section D3.", "ref": "D3" },
         { "time": "1:00 PM", "text": "Lunch in Harvard Square." },
         { "time": "1:20 PM", "text": "Drive to Tufts (Medford, ~20 min); GPS to the Boston Ave garage entrance, 419 Boston Ave." },
         { "time": "2:00 PM", "text": "Tufts campus tour — check in Eaton Hall, 5 The Green. Arrive ~20 min early. Briefing + map in D4.", "ref": "A4" },
-        { "time": "~4:00 PM", "text": "MIT Coop bookstore (77 Massachusetts Ave) + MIT Museum shop — quick stop on the way back to the hotel." },
+        { "time": "~4:00 PM", "text": "MIT bookstores at Kendall (steps from the hotel): MIT Press Bookstore, 314 Main St (science / philosophy — Theo's shelf) + MIT COOP, 80 Broadway. Both close 6 PM." },
         { "time": "6:15 PM", "text": "Head to Fenway (~20 min)." },
         { "time": "7:10 PM", "text": "Red Sox vs. Orioles @ Fenway. Overnight Cambridge.", "ref": "B1" }
       ]
@@ -86,20 +86,22 @@
       "label": "Wed Jul 22",
       "title": "MIT, BU (walk-by), Boston College → Providence + The Odyssey",
       "leg": 1,
-      "alert": null,
+      "alert": "Parking, locked in (no spot-hunting): MIT — walk from the hotel, car stays put. BU — Agganis Arena Garage, 925 Comm Ave (Warren Towers closed). BC — Commonwealth Ave Garage via GPS \"2004 Campanella Way,\" floors 3–6, then rooftop → Devlin Hall. Heads-up: the ~12:37 AM movie finish sits right before Brown check-in at 9:30 AM Thu — a short night before the trip's tightest day. BU is the flex stop if you're running behind after MIT.",
       "entries": [
-        { "time": "8:30 AM", "text": "Breakfast, check out (bags in the car — MIT can't store luggage)." },
-        { "time": "9:45 AM", "text": "Walk to MIT Welcome Center, 292 Main St (~5 min); arrive 15 min early." },
-        { "time": "10:00 AM", "text": "MIT info session + tour (~90 min).", "ref": "A5" },
-        { "time": "11:45 AM", "text": "Drive to BU (~15 min); park near Marsh Plaza / Comm Ave." },
-        { "time": "12:00 PM", "text": "BU self-guided walk-by + lunch on Comm Ave (~75 min).", "ref": "A5b" },
-        { "time": "1:20 PM", "text": "Drive BU → Boston College (Chestnut Hill, ~20 min)." },
-        { "time": "2:30 PM", "text": "Boston College Eagle Eye visit — Devlin Hall (arrive 20–30 min early; bring parking ticket).", "ref": "A6" },
-        { "time": "4:00 PM", "text": "Depart for Providence (~1 hr)." },
-        { "time": "~5:15 PM", "text": "Check into Aloft Providence Downtown; dinner on Thayer St.", "ref": "C4" },
+        { "time": "8:30 AM", "text": "Breakfast; check out and load the car (you leave Cambridge tonight — bags stay in the car all day)." },
+        { "time": "9:30 AM", "text": "Leave the car in the hotel garage and walk to the MIT Welcome Center, 292 Main St (~6 min). No need to move the car for MIT." },
+        { "time": "10:00 AM", "text": "MIT info session + tour (~90 min). Briefing + walking map in D5.", "ref": "A5" },
+        { "time": "11:35 AM", "text": "Back to the hotel garage; depart for BU (~15 min over the BU Bridge)." },
+        { "time": "11:55 AM", "text": "Park: Agganis Arena Garage, 925 Comm Ave (public, ~$2/hr, easy in/out). NOTE: the central Warren Towers garage is closed all summer." },
+        { "time": "12:05 PM", "text": "BU self-guided walk-by (~40 min) + quick lunch at the GSU food court. Briefing + map in D6.", "ref": "A5b" },
+        { "time": "1:05 PM", "text": "Depart BU → Boston College (Chestnut Hill, ~20 min west on Comm Ave)." },
+        { "time": "1:35 PM", "text": "Park: BC Commonwealth Ave Garage — GPS \"2004 Campanella Way.\" Take a ticket; park floors 3–6; elevator to the 7th-floor rooftop → ~2-min walk across O'Neill Plaza to Devlin Hall." },
+        { "time": "2:00 PM", "text": "At Devlin Hall, checked in ~30 min early (bring the parking ticket — admission may validate it).", "ref": "A6" },
+        { "time": "2:30 PM", "text": "Boston College info session + tour (~90 min). Briefing + map in D7.", "ref": "A6" },
+        { "time": "4:15 PM", "text": "Depart for Providence (~50 min via I-95 S)." },
+        { "time": "~5:15 PM", "text": "Check into Aloft Providence Downtown; dinner on Thayer St or downtown.", "ref": "C4" },
         { "time": "9:45 PM", "text": "The Odyssey — IMAX 70mm, Apple Cinemas Providence Place (~10 min from the Aloft). Ends ~12:37 AM.", "ref": "B0" }
-      ],
-      "alert": "~12:37 AM finish sits right before Brown check-in at 9:30 AM Thu — short night before the trip's tightest day."
+      ]
     },
     {
       "date": "2026-07-23",
@@ -116,7 +118,8 @@
         { "time": "~1:40 PM", "text": "Straight to Yale — park near campus, walk to SSS Hall, 1 Prospect St (Grove St side).", "ref": "A8" },
         { "time": "2:00 PM", "text": "Yale campus tour (~70 min)." },
         { "time": "3:15 PM", "text": "Walk to Jonathan Edwards College, 68 High St (~10 min) — Yale's oldest residential college.", "ref": "A8b" },
-        { "time": "4:00 PM", "text": "Check into Courtyard New Haven at Yale; dinner. Overnight New Haven.", "ref": "C5" }
+        { "time": "4:00 PM", "text": "Check into Courtyard New Haven at Yale (30 Whalley Ave).", "ref": "C5" },
+        { "time": "5:30 PM", "text": "Dinner at BAR — 254 Crown St (~15-min walk): New Haven apizza, packed with Yale students, across from historic Louis' Lunch. Walk in early to beat the crowd. Overnight New Haven." }
       ]
     },
     {
@@ -326,12 +329,12 @@
       "id": "A6",
       "school": "Boston College",
       "date": "Wed Jul 22, 2:30 PM",
-      "type": "Eagle Eye Visit (Theo + 1). Middle Campus only.",
+      "type": "Eagle Eye Visit (Theo + 1). Middle Campus only (no residence halls / athletics shown). No recording.",
       "conf": null,
-      "checkin": "Devlin Hall, 140 Commonwealth Ave. Arrive 20–30 min early. Bring parking ticket.",
-      "parking": "Drive to 2004 Campanella Way → Commonwealth Ave Garage, floors 3–6 → 7th floor → Devlin. If full → Beacon Street Garage.",
-      "contact": "617-552-3100",
-      "notes": "No recording."
+      "checkin": "Devlin Hall, 140 Commonwealth Ave. Arrive 20–30 min early; bring your parking ticket.",
+      "parking": "Drive to 2004 Campanella Way → Commonwealth Ave Garage, floors 3–6; elevator/stairs to the 7th floor, follow signs to Devlin. If full → Beacon Street Garage. Contact 617-552-3100.",
+      "contact": null,
+      "notes": null
     },
     {
       "id": "A7",
@@ -627,8 +630,8 @@
       "schoolId": "A2",
       "school": "Cornell",
       "hasProfile": true,
-      "history": "Cornell University was founded in 1865 by Ezra Cornell and Andrew Dickson White on a hill above Ithaca, New York, with the audacious founding principle: 'I would found an institution where any person can find instruction in any study.' Cornell was among the first major universities to admit women and students of all races from its opening day, and it holds the rare distinction of being both an Ivy League university and a federal land-grant institution — New York State's. Its central campus is anchored by the Arts Quad, McGraw Tower, and the dramatic gorges of Fall Creek and Cascadilla that frame the campus on both sides.",
-      "programUniqueness": "Within the College of Arts & Sciences, Theo's most natural home, the College Scholar Program stands out: a highly selective, fully independent major that lets a student design their own interdisciplinary course of study — ideal for someone bridging neuroscience, philosophy, and political theory. The disciplinary homes are pinned to specific buildings you'll visit on the tour: Government lives in White Hall; Philosophy in Goldwin Smith; Psychology and neuroscience in Uris Hall; Pre-Law in Myron Taylor Hall. Cornell's breadth is genuine — combining cognitive science, political philosophy, and law in one degree is the norm, not a workaround. The honest note on aid: Cornell awards need-based financial aid only — no merit scholarships. For families not qualifying for significant need-based aid, Cornell is a full-price commitment. The decision rests on fit, research opportunity, and the Ivy credential, not financial leverage.",
+      "history": "Chartered in 1865 by Ezra Cornell and Andrew Dickson White, Cornell was radical for its era — nonsectarian and, early on, coeducational — and built on Ezra's credo: 'I would found an institution where any person can find instruction in any study.' That 'any person, any study' ethos still defines the place. It is the youngest Ivy and a hybrid — a private university that also houses New York's land-grant colleges — set on a dramatic hillside above Cayuga Lake and laced with gorges. The Arts Quad is the founding heart, where the Ezra Cornell and A.D. White statues face each other and the 173-foot McGraw Tower chimes daily over Uris Library.",
+      "programUniqueness": "For Theo, the draw is breadth with depth. Applicants choose one undergraduate college up front — for his interests, the College of Arts & Sciences — which keeps requirements flexible and lets students combine fields (the College Scholar Program even lets a few design their own major). All four of his interests run deep here: Government (political science) in White Hall is nationally ranked, Philosophy sits in Goldwin Smith Hall, Psychology and Neurobiology & Behavior cover the neuroscience side (his UCSD through-line), and Cornell Law School's Gothic quad at Myron Taylor Hall is a visible draw for the law interest. One honest caveat given your aid picture: like the other Ivies, Cornell awards need-based aid only — no merit scholarships — so it belongs on the list for fit, research, and prestige rather than as a financial play.",
       "mapImage": "cornell_map.png",
       "walkingTour": {
         "duration": "~75 min (guided tour covers most of this)",
@@ -642,49 +645,49 @@
             "num": 1,
             "name": "Ho Plaza & Willard Straight Hall",
             "lat": 42.4477, "lng": -76.4846,
-            "notes": "The social heart of campus — Willard Straight Hall is the student union, modeled on an English country house. Ho Plaza hosts speakers, protests, and daily life."
+            "notes": "The social crossroads and student union; where the guided tours end. Read the campus pulse."
           },
           {
             "num": 2,
             "name": "Uris Library & McGraw Tower",
             "lat": 42.4476, "lng": -76.4821,
-            "notes": "McGraw Tower's 161-ft carillon marks the east end of the Arts Quad. Uris Library (1892) sits beneath it — a reading room worth stepping into."
+            "notes": "The 173-ft clocktower (daily chimes concerts) over Uris Library's A.D. White Reading Room. The icon."
           },
           {
             "num": 3,
             "name": "Arts Quad",
             "lat": 42.4487, "lng": -76.4826,
-            "notes": "The historic academic heart of Cornell — Morrill, McGraw, and White Halls line the quad. Statues of Ezra Cornell and Andrew Dickson White face each other across the lawn."
+            "notes": "The founding core — Ezra Cornell & A.D. White statues face off. 'Any person, any study.'"
           },
           {
             "num": 4,
-            "name": "White Hall (Government)",
+            "name": "White Hall",
             "lat": 42.4491, "lng": -76.4835,
-            "notes": "Home of the Government department — Theo's political science base. Cornell's poli-sci faculty spans comparative politics, international relations, and political theory."
+            "notes": "Department of Government (political science) — nationally ranked. Theo's poli-sci base."
           },
           {
             "num": 5,
-            "name": "Goldwin Smith Hall (Philosophy)",
+            "name": "Goldwin Smith Hall",
             "lat": 42.4496, "lng": -76.4835,
-            "notes": "Philosophy's home — and also Classics, History, and English. The building's loggia and Reading Room are among the most beautiful spaces on campus."
+            "notes": "Humanities: Philosophy, Classics, English (Klarman Hall atrium attached). Theo's philosophy base."
           },
           {
             "num": 6,
-            "name": "Uris Hall (Psychology / Neuroscience)",
+            "name": "Uris Hall",
             "lat": 42.4502, "lng": -76.4826,
-            "notes": "Home of Psychology and the neuroscience program. Research labs here connect directly to the kind of cognitive-science work Theo did at UCSD."
+            "notes": "Psychology, incl. behavioral / cognitive neuroscience — Theo's UCSD neuro tie."
           },
           {
             "num": 7,
             "name": "Olin & Kroch Libraries",
             "lat": 42.4476, "lng": -76.4817,
-            "notes": "Olin is the main research library; Kroch houses the rare-book and Asia collections. The underground connecting corridor between them is worth a look."
+            "notes": "The main research libraries — the study engine. Loop back toward Ho Plaza."
           },
           {
             "num": 8,
-            "name": "Myron Taylor Hall (Law)",
+            "name": "Myron Taylor Hall",
             "lat": 42.4469, "lng": -76.4853,
-            "notes": "Cornell Law School — an imposing Gothic building at the west end of campus. Even as an undergrad, proximity to the law school shapes the pre-law academic culture."
+            "notes": "Cornell Law School's Gothic quad — the law-interest anchor, at the south edge of central campus."
           }
         ]
       }
@@ -693,11 +696,11 @@
       "schoolId": "A3",
       "school": "Harvard",
       "hasProfile": true,
-      "history": "Founded in 1636 — the oldest university in the United States — Harvard sits at the center of American intellectual life. John Harvard's donation of books and money gave the college its name in 1639. The Yard you'll walk today is the original campus: the oldest buildings (Massachusetts Hall, 1720) still house freshmen. Harvard grew into a full research university in the 19th century under Charles Eliot, who also invented the elective system that freed students from a fixed curriculum. The surrounding ecosystem — MIT across the river, MGH and Brigham & Women's affiliated hospitals, the Kennedy School, HBS — makes Cambridge the densest concentration of research and ideas in the world.",
-      "programUniqueness": "Harvard's concentration system is the closest thing in American higher education to designing your own degree within a structure. Theo's convergence of neuroscience, philosophy, and political theory maps cleanly onto a Philosophy concentration with a Mind, Brain & Behavior secondary — or onto the relatively new interdisciplinary track in Cognitive Neuroscience & Evolutionary Psychology. The Government department (home to Danielle Allen, Cornel West's frequent interlocutor, and a strong political-theory bench) is one of the most respected in the world. The General Education curriculum replaced distribution requirements with a set of eight thematic areas — Ethical Reasoning, Science & Technology in Society, Aesthetics & Culture — meaning every course Theo takes outside his concentration will genuinely broaden him rather than just check boxes. Financial note: Harvard meets 100% of demonstrated need for all admitted students, with no loans in the aid package for families under $85K/yr and dramatically reduced contributions above that. For the right candidate, Harvard is often cheaper than a mid-tier school.",
+      "history": "Founded in 1636, Harvard is the oldest university in the United States — older than the nation itself. Its heart is Harvard Yard, the elm-shaded quad you'll walk: the John Harvard statue outside University Hall (the 'statue of three lies'), the monumental Widener Library facing Memorial Church across Tercentenary Theatre, and the red brick and ivy that set the template for the American campus. Harvard Square spills out just beyond Johnston Gate.",
+      "programUniqueness": "For Theo, Harvard College's strength is its range. Concentrations reach all four of his interests: Philosophy lives in Emerson Hall (right on the Yard), Government (political science) is a national powerhouse, the interfaculty Mind/Brain/Behavior initiative and Psychology in William James Hall anchor the neuroscience side, and Harvard Law School's Langdell quad sits a short walk northwest. Students braid a path across the College plus its libraries and museums. The honest caveat, as with the other Ivies: Harvard offers need-based aid only — no merit scholarships — so it belongs on the list for fit and prestige rather than as a financial play.",
       "walkingTour": {
-        "duration": "~45 min (self-guided after the info session)",
-        "startNote": "Start at Agassiz House, Radcliffe Yard — the info session ends here. Follow stops 1→8.",
+        "duration": "~60–75 min (self-guided after the info session)",
+        "startNote": "Enter at Johnston Gate after the 11 AM info session at Radcliffe. Follow stops 1→8.",
         "parking": "Street parking not advised; use area garages (no campus lot for visitors)",
         "mapCenter": [42.3752, -71.1163],
         "mapZoom": 16,
@@ -705,51 +708,51 @@
         "stops": [
           {
             "num": 1,
-            "name": "Agassiz House, Radcliffe Yard",
-            "lat": 42.3793, "lng": -71.1208,
-            "notes": "Info session start. Radcliffe Yard is the historic women's campus, now a center for advanced study. The Georgian brick buildings are quieter and more intimate than the main Yard."
+            "name": "Johnston Gate",
+            "lat": 42.3769, "lng": -71.1171,
+            "notes": "The ceremonial main gate into Harvard Yard — step through into the Old Yard."
           },
           {
             "num": 2,
-            "name": "Harvard Yard — Johnston Gate",
-            "lat": 42.3769, "lng": -71.1171,
-            "notes": "Main ceremonial entrance. The Yard is Harvard's original campus — 22 acres of lawns, elms, and the oldest buildings in American higher education."
+            "name": "University Hall & John Harvard Statue",
+            "lat": 42.3748, "lng": -71.1169,
+            "notes": "The 'statue of three lies'; rub the shoe. Granite University Hall behind it."
           },
           {
             "num": 3,
-            "name": "Massachusetts Hall (1720)",
-            "lat": 42.3748, "lng": -71.1172,
-            "notes": "The oldest surviving Harvard building — still houses freshmen on the upper floors. The President's office is on the ground floor. 300+ years of continuous use."
+            "name": "Memorial Church",
+            "lat": 42.3743, "lng": -71.1156,
+            "notes": "Faces Widener across Tercentenary Theatre — the Yard's ceremonial core."
           },
           {
             "num": 4,
             "name": "Widener Library",
             "lat": 42.3733, "lng": -71.1165,
-            "notes": "The largest university library in the world — 3.5 million volumes, 57 miles of shelving. Non-affiliates can't enter, but the neoclassical façade and steps are a Harvard landmark."
+            "notes": "The monumental centerpiece — one of the world's largest university libraries."
           },
           {
             "num": 5,
-            "name": "Memorial Church",
-            "lat": 42.3743, "lng": -71.1156,
-            "notes": "1932 Georgian Revival — the spiritual and ceremonial center of campus. Commencement, morning prayers, and Harvard's war memorial. The mosaic interior is worth a look through the doors."
+            "name": "Emerson Hall",
+            "lat": 42.3739, "lng": -71.1150,
+            "notes": "Home of the Philosophy department — Theo's philosophy base, right on the Yard."
           },
           {
             "num": 6,
-            "name": "Emerson Hall (Philosophy)",
-            "lat": 42.3739, "lng": -71.1150,
-            "notes": "Home of the Philosophy department — one of the top 3 in the English-speaking world. Faculty include Susanna Siegel (philosophy of perception) and T.M. Scanlon (moral philosophy). Theo's intellectual home."
+            "name": "Sever Hall",
+            "lat": 42.3737, "lng": -71.1143,
+            "notes": "H.H. Richardson's Romanesque classroom landmark; try the whispering arch."
           },
           {
             "num": 7,
-            "name": "William James Hall (Psychology / Cognitive Science)",
-            "lat": 42.3752, "lng": -71.1134,
-            "notes": "15-story modernist tower — home to Psychology, Sociology, and the interdisciplinary programs in Mind, Brain & Behavior. Steven Pinker's office is here."
+            "name": "Memorial Hall",
+            "lat": 42.3762, "lng": -71.1137,
+            "notes": "Soaring High-Victorian Gothic — Sanders Theatre + Annenberg first-year dining hall."
           },
           {
             "num": 8,
-            "name": "Harvard Square (T stop)",
-            "lat": 42.3736, "lng": -71.1196,
-            "notes": "Exit the Yard via the Brattle St gate to reach Harvard Square — the T stop, bookshops (Harvard Book Store on Mass Ave), cafes, and lunch options. The Square is the campus's living room."
+            "name": "Science Center Plaza",
+            "lat": 42.3773, "lng": -71.1148,
+            "notes": "Tanner Fountain + science gateway; William James Hall (Psych/neuro) and the Law School lie just beyond."
           }
         ]
       }
@@ -758,11 +761,11 @@
       "schoolId": "A4",
       "school": "Tufts",
       "hasProfile": true,
-      "history": "Tufts was founded in 1852 by the Universalist Church on a hilltop in Medford — the founders chose the highest hill so their new liberal-arts college would be visible for miles. Charles Tufts donated the land; P.T. Barnum (yes, the circus impresario) was an early trustee and donated Jumbo the elephant's hide after the mascot's death — Jumbo's ashes are still kept in a peanut-butter jar in the Athletic Director's office. The 150-acre campus sits on Walnut Hill straddling Medford and Somerville, with the Boston skyline visible from the academic quad. Tufts grew from a small liberal-arts college into a research university over the 20th century, adding the Fletcher School of Law and Diplomacy (the oldest graduate school of international affairs in the US), the Cummings School of Veterinary Medicine, and the School of Engineering.",
-      "programUniqueness": "Tufts's School of Arts & Sciences operates on a distribution model rather than a core, giving students genuine flexibility to pair a major with electives across divisions. For Theo, the Cognitive & Brain Sciences program (a dedicated major, not just a track) sits alongside Philosophy and Political Science in the same school — all three can combine in a double major or major + minor without creative workarounds. The Fletcher School's proximity creates a pre-graduate pipeline for international-law and policy students that is unique among undergraduate liberal-arts universities. Class sizes are small by research-university standards (average 18 students in upper-division seminars), and the faculty-to-student ratio of 9:1 means access to professors is real, not aspirational. Financial note: Tufts meets demonstrated need but is not need-blind for domestic applicants at the margin — it is effectively need-aware for the last ~10% of admits. No merit scholarships.",
+      "history": "Chartered in 1852 by Universalists on a breezy hill straddling Medford and Somerville, Tufts has always been small, independent, and a little quirky — its mascot is Jumbo, P.T. Barnum's legendary circus elephant, whose namesake Barnum Hall anchors the campus. From the President's Lawn the Boston skyline unfolds; Ballou Hall (1852) and the Romanesque Goddard Chapel crown the hilltop Academic Quad you'll tour.",
+      "programUniqueness": "Tufts punches above its size for Theo's interests. It's nationally known for International Relations and Political Science (Packard Hall), Philosophy sits in Miner Hall, and a strong undergraduate Neuroscience program plus Psychology in Paige Hall cover the brain side — the through-line from his UCSD work. There's no law school, but the poli-sci / IR pipeline and pre-law advising feed law careers directly. Like the Ivies, though, Tufts awards need-based aid only — no merit scholarships — so weigh it as a fit choice against the merit schools.",
       "walkingTour": {
-        "duration": "~45 min (before and after the official tour)",
-        "startNote": "Park in Dowling Hall Garage (419 Boston Ave). Start at Eaton Hall for check-in, then follow stops after the tour.",
+        "duration": "~45 min hilltop loop",
+        "startNote": "Park in Dowling Hall Garage (419 Boston Ave). Tour check-in at Eaton Hall; follow stops 1→8 around the Academic Quad.",
         "parking": "FREE for registered visitors — Dowling Hall Garage, 419 Boston Ave. Register vehicle online day-of.",
         "mapCenter": [42.4077, -71.1192],
         "mapZoom": 16,
@@ -770,58 +773,250 @@
         "stops": [
           {
             "num": 1,
-            "name": "Eaton Hall (Admissions)",
+            "name": "Eaton Hall",
             "lat": 42.4069, "lng": -71.1190,
-            "notes": "Check-in point — Eaton Hall, 5 The Green. Take the elevator to the 7th floor in the Dowling garage, cross to Eaton. Arrive ≥20 min early."
+            "notes": "Tour check-in (5 The Green); admissions. Arrive ~20 min early."
           },
           {
             "num": 2,
-            "name": "Tisch Library",
-            "lat": 42.4082, "lng": -71.1186,
-            "notes": "The main academic library and campus hub. Modern interior, 24-hr study floors, and a great view of the Boston skyline from the upper levels."
+            "name": "The Green (Academic Quad)",
+            "lat": 42.4075, "lng": -71.1177,
+            "notes": "The hilltop heart, framed by the founding buildings."
           },
           {
             "num": 3,
-            "name": "Academic Quad (The Green)",
-            "lat": 42.4075, "lng": -71.1177,
-            "notes": "The heart of campus — Ballou Hall (the original 1854 building) anchors the quad. The views from here toward Boston on a clear day are the best on campus."
+            "name": "Goddard Chapel",
+            "lat": 42.4077, "lng": -71.1183,
+            "notes": "1882 Romanesque chapel with a landmark tower."
           },
           {
             "num": 4,
             "name": "Ballou Hall",
             "lat": 42.4079, "lng": -71.1175,
-            "notes": "The oldest building on campus (1854) — the president's office and administrative center. The Romanesque stone exterior is the architectural signature of the hilltop campus."
+            "notes": "The 1852 original building — administration and the campus's founding core."
           },
           {
             "num": 5,
-            "name": "Philosophy / Cognitive Science (Miner Hall)",
-            "lat": 42.4089, "lng": -71.1180,
-            "notes": "Home of Philosophy and several Cognitive & Brain Sciences courses. The CBS program integrates neuroscience, psychology, and philosophy of mind — Theo's direct interest."
+            "name": "Barnum Hall & Jumbo",
+            "lat": 42.4085, "lng": -71.1192,
+            "notes": "Named for P.T. Barnum; the Jumbo statue — rub the trunk for luck."
           },
           {
             "num": 6,
-            "name": "Political Science (Packard Hall)",
+            "name": "Packard Hall",
             "lat": 42.4092, "lng": -71.1171,
-            "notes": "Political Science and International Relations faculty offices. The Fletcher School's proximity means joint seminars and visiting diplomats are a regular feature."
+            "notes": "Political Science + the renowned International Relations home — Theo's poli-sci base."
           },
           {
             "num": 7,
-            "name": "The Hotung International Center",
-            "lat": 42.4072, "lng": -71.1163,
-            "notes": "Global studies and international programs hub — reflects Tufts's unusually strong pre-diplomacy pipeline via Fletcher. Students regularly cross-register uphill to Fletcher seminars."
+            "name": "Tisch Library",
+            "lat": 42.4082, "lng": -71.1186,
+            "notes": "The main library; head up for the Boston skyline view."
           },
           {
             "num": 8,
-            "name": "Dowling Hall Garage (depart)",
-            "lat": 42.4063, "lng": -71.1195,
-            "notes": "Return to Dowling Garage via the 7th-floor bridge. Drive to Tufts exit on Boston Ave → I-93 south toward Cambridge for the MIT bookstore stop."
+            "name": "Miner & Paige Halls",
+            "lat": 42.4090, "lng": -71.1178,
+            "notes": "Philosophy (Miner) and Psychology / neuroscience (Paige) — Theo's brain-and-philosophy corner."
           }
         ]
       }
     },
-    { "schoolId": "A5", "school": "MIT", "hasProfile": false },
-    { "schoolId": "A5b", "school": "Boston University", "hasProfile": false },
-    { "schoolId": "A6", "school": "Boston College", "hasProfile": false },
+    {
+      "schoolId": "A5",
+      "school": "MIT",
+      "hasProfile": true,
+      "history": "Founded in 1861 and rooted on the Charles since 1916, MIT built its identity around 'Mens et Manus' — mind and hand. The campus reads as one connected machine: the Great Dome over Killian Court, the half-mile Infinite Corridor slicing through the Maclaurin Buildings, and Frank Gehry's tumbling Stata Center. It's intense, collaborative, and unmistakably built for people who like to make things.",
+      "programUniqueness": "MIT is STEM-first, but it hits more of Theo's interests than people expect. Brain & Cognitive Sciences (Building 46, with the McGovern and Picower neuroscience institutes) is among the best in the world — a direct extension of his UCSD work. Its Philosophy group (within Linguistics & Philosophy, housed in Stata) is a top analytic-philosophy department, and Political Science (Course 17) is strong and quantitative. There's no law school, but the poli-sci path feeds law. As with the Ivies, MIT is need-based only — no merit aid — so treat it as a reach-for-fit, not a merit play.",
+      "walkingTour": {
+        "duration": "~90 min (guided tour covers this)",
+        "startNote": "Tour meets at the MIT Welcome Center, 292 Main St (Kendall). Loop 1→8 runs west into the main campus.",
+        "parking": "Walk from your hotel (~6 min) — no need to move the car",
+        "mapCenter": [42.3601, -71.0942],
+        "mapZoom": 16,
+        "mapLink": "https://www.openstreetmap.org/?mlat=42.3601&mlon=-71.0942#map=16/42.3601/-71.0942",
+        "stops": [
+          {
+            "num": 1,
+            "name": "MIT Welcome Center",
+            "lat": 42.3623, "lng": -71.0851,
+            "notes": "Tour check-in, 292 Main St (Kendall) — a ~6-min walk from your hotel."
+          },
+          {
+            "num": 2,
+            "name": "Stata Center (Bldg 32)",
+            "lat": 42.3617, "lng": -71.0916,
+            "notes": "Gehry's landmark — home of CS and Linguistics & Philosophy (Theo's philosophy)."
+          },
+          {
+            "num": 3,
+            "name": "Building 46",
+            "lat": 42.3607, "lng": -71.0922,
+            "notes": "Brain & Cognitive Sciences + McGovern & Picower neuroscience institutes — his UCSD through-line."
+          },
+          {
+            "num": 4,
+            "name": "Great Dome & Barker Library",
+            "lat": 42.3596, "lng": -71.0929,
+            "notes": "The iconic dome over Barker Library — MIT's signature image."
+          },
+          {
+            "num": 5,
+            "name": "Killian Court",
+            "lat": 42.3591, "lng": -71.0932,
+            "notes": "The great lawn framing the dome, opening to the Charles — commencement is held here."
+          },
+          {
+            "num": 6,
+            "name": "Lobby 7 / 77 Mass Ave",
+            "lat": 42.3590, "lng": -71.0939,
+            "notes": "The grand entrance and start of the half-mile Infinite Corridor."
+          },
+          {
+            "num": 7,
+            "name": "MIT Chapel & Kresge",
+            "lat": 42.3583, "lng": -71.0943,
+            "notes": "Eero Saarinen's cylindrical chapel and shell-roofed auditorium."
+          },
+          {
+            "num": 8,
+            "name": "Stratton Student Center",
+            "lat": 42.3582, "lng": -71.0951,
+            "notes": "The student hub (W20) — dining, the Coop, and campus life."
+          }
+        ]
+      }
+    },
+    {
+      "schoolId": "A5b",
+      "school": "Boston University",
+      "hasProfile": true,
+      "history": "Founded in 1839, BU is a big, urban, energetic university strung for a mile and a half along Commonwealth Avenue, with the Green Line trolley running right down the median. Martin Luther King Jr. earned his PhD here; Marsh Chapel and its plaza are the symbolic heart, and the new stacked-glass Center for Computing & Data Sciences (the 'Jenga tower') is the modern landmark. It feels like part of the city, not walled off from it.",
+      "programUniqueness": "For Theo, BU is a strong all-around fit — and, unlike most of this week's schools, it offers real merit aid (Trustee and Presidential Scholarships), which matters here. Neuroscience, Philosophy, and Political Science all live in the College of Arts & Sciences, its pre-law advising is deep, and BU even has its own School of Law on campus. Big-school scale, but with an honors college (Kilachand) and merit money on the table make it worth a serious look.",
+      "walkingTour": {
+        "duration": "~40 min self-guided (between MIT and BC)",
+        "startNote": "Park at Agganis Arena Garage (925 Comm Ave). Walk the Comm Ave spine 1→8 east and loop back — stops 6–8 are 'if you have time.'",
+        "parking": "Agganis Arena Garage, 925 Comm Ave (public, ~$2/hr)",
+        "mapCenter": [42.3505, -71.1053],
+        "mapZoom": 15,
+        "mapLink": "https://www.openstreetmap.org/?mlat=42.3505&mlon=-71.1053#map=15/42.3505/-71.1053",
+        "stops": [
+          {
+            "num": 1,
+            "name": "George Sherman Union",
+            "lat": 42.3502, "lng": -71.1003,
+            "notes": "The student union — grab a quick lunch at the food court here."
+          },
+          {
+            "num": 2,
+            "name": "Mugar Memorial Library",
+            "lat": 42.3503, "lng": -71.1008,
+            "notes": "The main undergraduate library on Comm Ave."
+          },
+          {
+            "num": 3,
+            "name": "BU Beach",
+            "lat": 42.3526, "lng": -71.1027,
+            "notes": "The riverside green — BU's informal gathering lawn."
+          },
+          {
+            "num": 4,
+            "name": "Marsh Plaza & Chapel",
+            "lat": 42.3499, "lng": -71.1040,
+            "notes": "The symbolic heart; MLK Jr. memorial. BU earned him his 1955 PhD."
+          },
+          {
+            "num": 5,
+            "name": "College of Arts & Sciences",
+            "lat": 42.3493, "lng": -71.1056,
+            "notes": "Neuroscience, Philosophy, and Political Science all live here — Theo's core."
+          },
+          {
+            "num": 6,
+            "name": "Warren Towers",
+            "lat": 42.3489, "lng": -71.1063,
+            "notes": "The landmark first-year residence on Comm Ave (garage closed for repairs)."
+          },
+          {
+            "num": 7,
+            "name": "Computing & Data Sciences",
+            "lat": 42.3484, "lng": -71.1085,
+            "notes": "The stacked-glass 'Jenga tower' — BU's boldest new building."
+          },
+          {
+            "num": 8,
+            "name": "Questrom School of Business",
+            "lat": 42.3483, "lng": -71.1139,
+            "notes": "East-end anchor; the walk back points you toward BC."
+          }
+        ]
+      }
+    },
+    {
+      "schoolId": "A6",
+      "school": "Boston College",
+      "hasProfile": true,
+      "history": "Founded in 1863 by the Jesuits and moved to its Chestnut Hill hilltop in 1913, Boston College is a Catholic liberal-arts university famous for its 'Collegiate Gothic' architecture — Gasson Hall's tower is the icon, and Bapst Library's Gargan Hall is one of the most beautiful reading rooms in the country. The campus is green, leafy, and traditional, six miles west of downtown at the end of the Green Line B.",
+      "programUniqueness": "The Jesuit intellectual tradition makes BC unusually strong in Philosophy — a real draw for Theo — alongside a well-regarded Political Science department and a growing Neuroscience program; the core curriculum leans into big questions of ethics and meaning, and pre-law placement is strong. On money, be clear-eyed: BC is essentially need-based, with only its very selective Presidential Scholars Program offering merit — so weigh it as a fit and values choice more than a merit play.",
+      "walkingTour": {
+        "duration": "~90 min (info session + tour)",
+        "startNote": "Tour starts at Devlin Hall (2:30 PM). Park at Commonwealth Ave Garage (GPS '2004 Campanella Way'), rooftop → O'Neill Plaza → Devlin. Loop 1→8 around Middle Campus.",
+        "parking": "Commonwealth Ave Garage — GPS '2004 Campanella Way,' floors 3–6, elevator to 7th-floor rooftop. If full → Beacon Street Garage.",
+        "mapCenter": [42.3357, -71.1689],
+        "mapZoom": 16,
+        "mapLink": "https://www.openstreetmap.org/?mlat=42.3357&mlon=-71.1689#map=16/42.3357/-71.1689",
+        "stops": [
+          {
+            "num": 1,
+            "name": "Devlin Hall",
+            "lat": 42.3364, "lng": -71.1680,
+            "notes": "Undergraduate Admission + tour check-in — ~2 min from the garage rooftop."
+          },
+          {
+            "num": 2,
+            "name": "Gasson Hall",
+            "lat": 42.3368, "lng": -71.1690,
+            "notes": "The Gothic tower and quad — BC's iconic heart."
+          },
+          {
+            "num": 3,
+            "name": "Bapst Library & Gargan Hall",
+            "lat": 42.3375, "lng": -71.1698,
+            "notes": "A breathtaking Gothic reading room — don't skip the interior."
+          },
+          {
+            "num": 4,
+            "name": "St. Mary's Hall",
+            "lat": 42.3380, "lng": -71.1694,
+            "notes": "The Jesuit community residence anchoring the quad."
+          },
+          {
+            "num": 5,
+            "name": "O'Neill Library",
+            "lat": 42.3376, "lng": -71.1680,
+            "notes": "The main research library, above O'Neill Plaza."
+          },
+          {
+            "num": 6,
+            "name": "Stokes Hall",
+            "lat": 42.3363, "lng": -71.1676,
+            "notes": "Humanities home — Philosophy, Political Science, History (Theo's core)."
+          },
+          {
+            "num": 7,
+            "name": "Higgins Hall",
+            "lat": 42.3359, "lng": -71.1679,
+            "notes": "The sciences building — Biology and the Neuroscience program."
+          },
+          {
+            "num": 8,
+            "name": "Fulton Hall & the Quad",
+            "lat": 42.3351, "lng": -71.1680,
+            "notes": "The business school and the classic Middle Campus lawn view."
+          }
+        ]
+      }
+    },
     { "schoolId": "A7", "school": "Brown", "hasProfile": false },
     { "schoolId": "A8", "school": "Yale", "hasProfile": false },
     { "schoolId": "A9", "school": "Stony Brook", "hasProfile": false },
