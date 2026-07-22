@@ -1,7 +1,7 @@
 {
   "meta": {
-    "version": "6.4",
-    "created": "Jul 21, 2026 · 5:20 PM ET",
+    "version": "6.7",
+    "created": "Jul 22, 2026 · 12:35 PM ET",
     "title": "College Tour 2026",
     "travelers": "Dietrich, Theo & Simona — joined by Silke (Fri–Mon)",
     "disclaimer": "Times are planning targets; align with booked slots and confirm live schedules & rates."
@@ -86,7 +86,7 @@
       "label": "Wed Jul 22",
       "title": "MIT, BU (walk-by), Boston College → Providence + The Odyssey",
       "leg": 1,
-      "alert": "Parking, locked in (no spot-hunting): MIT — walk from the hotel, car stays put. BU — Agganis Arena Garage, 925 Comm Ave (Warren Towers closed). BC — Commonwealth Ave Garage via GPS \"2004 Campanella Way,\" floors 3–6, then rooftop → Devlin Hall. Heads-up: the ~12:37 AM movie finish sits right before Brown check-in at 9:30 AM Thu — a short night before the trip's tightest day. BU is the flex stop if you're running behind after MIT.",
+      "alert": "Parking, locked in (no spot-hunting): MIT — walk from the hotel, car stays put. BU — Agganis Arena Garage, 925 Comm Ave (Warren Towers closed). BC — Commonwealth Ave Garage via GPS \"2004 Campanella Way,\" floors 3–6, then rooftop → Devlin Hall. Heads-up: the ~12:37 AM movie finish sits right before Brown check-in at 9:15 AM Thu — a short night before the trip's tightest day. BU is the flex stop if you're running behind after MIT.",
       "entries": [
         { "time": "8:30 AM", "text": "Breakfast; check out and load the car (you leave Cambridge tonight — bags stay in the car all day)." },
         { "time": "9:30 AM", "text": "Leave the car in the hotel garage and walk to the MIT Welcome Center, 292 Main St (~6 min). No need to move the car for MIT." },
@@ -98,9 +98,12 @@
         { "time": "1:35 PM", "text": "Park: BC Commonwealth Ave Garage — GPS \"2004 Campanella Way.\" Take a ticket; park floors 3–6; elevator to the 7th-floor rooftop → ~2-min walk across O'Neill Plaza to Devlin Hall." },
         { "time": "2:00 PM", "text": "At Devlin Hall, checked in ~30 min early (bring the parking ticket — admission may validate it).", "ref": "A6" },
         { "time": "2:30 PM", "text": "Boston College info session + tour (~90 min). Briefing + map in D7.", "ref": "A6" },
-        { "time": "4:15 PM", "text": "Depart for Providence (~50 min via I-95 S)." },
-        { "time": "~5:15 PM", "text": "Check into Aloft Providence Downtown; dinner on Thayer St or downtown.", "ref": "C4" },
-        { "time": "9:45 PM", "text": "The Odyssey — IMAX 70mm, Apple Cinemas Providence Place (~10 min from the Aloft). Ends ~12:37 AM.", "ref": "B0" }
+        { "time": "~4:10 PM", "text": "Quick stop at The Street Chestnut Hill (~3-min walk from Devlin) — sneakers/shops en route to I-95 S." },
+        { "time": "~4:20 PM", "text": "Depart for Providence (~50 min via I-95 S)." },
+        { "time": "~5:10 PM", "text": "Check into Aloft Providence Downtown (191 Dorrance St, Providence, RI 02903); drop bags.", "ref": "C4" },
+        { "time": "~5:30 PM", "text": "Gym session at the Aloft fitness center." },
+        { "time": "8:00 PM", "text": "Dinner at The Capital Grille, 10 Memorial Blvd, Providence — complimentary valet; reserve ahead. ~3-min walk to Apple Cinemas." },
+        { "time": "9:45 PM", "text": "The Odyssey — IMAX 70mm, Apple Cinemas Providence Place. Ends ~12:37 AM.", "ref": "B0" }
       ]
     },
     {
@@ -108,14 +111,16 @@
       "label": "Thu Jul 23",
       "title": "Brown → Yale (+ Jonathan Edwards College)",
       "leg": 1,
-      "alert": null,
+      "alert": "Tight schedule after the late movie: alarm early, bags in car by 8:15. Power Street Garage (111 Power St) is the best Brown parking — flat $18/day, ~8-min walk to the Admission Welcome Center. For Yale: Grove Street Garage, 65 Grove St, is a 3-min walk to SSS Hall — feed the meter or use ParkMobile.",
       "entries": [
-        { "time": "9:30 AM", "text": "Walk to Brown; check in Manning Hall, 21 Prospect St (15 min early). QR code ready.", "ref": "A7" },
+        { "time": "8:15 AM", "text": "Breakfast / check out of Aloft; load all bags into the car." },
+        { "time": "8:45 AM", "text": "Park at Power Street Garage, 111 Power St, Providence (~$18/day flat rate). Walk ~8 min up to Brown." },
+        { "time": "9:15 AM", "text": "Walk ~8 min to Brown's Admission Welcome Center, 21 Prospect St; check in ~15 min early. Briefing + map in D8.", "ref": "A7" },
         { "time": "10:00 AM", "text": "Brown info session + student panel + tour (~90 min)." },
-        { "time": "11:30 AM", "text": "Check out of the Aloft; grab-and-go lunch." },
-        { "time": "11:50 AM", "text": "Depart Providence → New Haven (~1 hr 45). Leave promptly for the 2 PM tour." },
+        { "time": "~11:30 AM", "text": "Grab-and-go lunch near Brown (Thayer St). Car is still in the Power Street Garage." },
+        { "time": "11:45 AM", "text": "Depart Providence → New Haven (~1 hr 45). Leave promptly for the 2 PM tour." },
         { "time": "12–1 PM", "text": "Dietrich's work Zoom (12–1 PM ET / 9–10 AM PT) — hands-free, camera off, from the car while Theo co-pilots." },
-        { "time": "~1:40 PM", "text": "Straight to Yale — park near campus, walk to SSS Hall, 1 Prospect St (Grove St side).", "ref": "A8" },
+        { "time": "~1:40 PM", "text": "Park at Grove Street Garage, 65 Grove St, New Haven (~3-min walk to SSS Hall). Briefing + map in D9.", "ref": "A8" },
         { "time": "2:00 PM", "text": "Yale campus tour (~70 min)." },
         { "time": "3:15 PM", "text": "Walk to Jonathan Edwards College, 68 High St (~10 min) — Yale's oldest residential college.", "ref": "A8b" },
         { "time": "4:00 PM", "text": "Check into Courtyard New Haven at Yale (30 Whalley Ave).", "ref": "C5" },
@@ -236,7 +241,8 @@
   "actionItems": {
     "open": [
       { "text": "Return flights", "detail": "Confirm Simona & Theo home from DCA, Fri Jul 31 (after the 8:30 AM car drop)." },
-      { "text": "Pizzeria Beddia (Sun Jul 26)", "detail": "Reserve the party of 5 ahead." }
+      { "text": "Pizzeria Beddia (Sun Jul 26)", "detail": "Reserve the party of 5 ahead." },
+      { "text": "The Capital Grille (Wed Jul 22)", "detail": "Reserve dinner for 8:00 PM, party of 2. 10 Memorial Blvd, Providence Place — complimentary valet, ~3-min walk to Apple Cinemas." }
     ],
     "done": [
       "Flights (rebooked via BUF)",
@@ -339,13 +345,13 @@
     {
       "id": "A7",
       "school": "Brown",
-      "date": "Thu Jul 23, 10:00 AM",
+      "date": "Thu Jul 23, 9:15 AM",
       "type": "Info session + student panel + tour (~90 min). Party of 2 confirmed.",
       "conf": "QR code in email",
-      "checkin": "Manning Hall, Admission Welcome Center, 21 Prospect St. Arrive 15 min early.",
-      "parking": "Power St. Visitor lot (pay at lot stations) → ~10–15 min walk up Thayer St; or meters via Passport Parking app.",
+      "checkin": "Admission Welcome Center, 21 Prospect St. Arrive ~15 min early (9:15 AM). Walk ~8 min from Power Street Garage.",
+      "parking": "Power Street Garage, 111 Power St (~$18/day flat rate) — most convenient for Brown. Walk ~8 min up to Admission Welcome Center.",
       "contact": null,
-      "notes": "Tours run in most weather."
+      "notes": "Tours run in most weather. Briefing + map in D8."
     },
     {
       "id": "A8",
@@ -354,9 +360,9 @@
       "type": "Campus Tour (~70 min)",
       "conf": "QR check-in",
       "checkin": "SSS (Sheffield-Sterling-Strathcona) Hall, 1 Prospect St — Grove St side entrance. Arrive 5 min early.",
-      "parking": "Metered on-street (Parkmobile, $1.50/hr) or Audubon Court / Grove Street garages; allow ~15 min to park and walk.",
+      "parking": "Grove Street Garage, 65 Grove St — ~3-min walk to SSS Hall. ParkMobile or pay at the machine.",
       "contact": null,
-      "notes": "Tours depart rain or shine."
+      "notes": "Tours depart rain or shine. Briefing + map in D9."
     },
     {
       "id": "A8b",
@@ -1023,8 +1029,138 @@
         ]
       }
     },
-    { "schoolId": "A7", "school": "Brown", "hasProfile": false },
-    { "schoolId": "A8", "school": "Yale", "hasProfile": false },
+    {
+      "schoolId": "A7",
+      "school": "Brown",
+      "hasProfile": true,
+      "mapImage": "brown_map.png",
+      "history": "Founded in 1764 as the College of Rhode Island — the first American university to accept students regardless of their religious beliefs — Brown moved to College Hill in Providence and adopted its current name in 1804. Its College Green and Van Wickle Gates (opened only for Convocation and Commencement) are the ceremonial heart. Brown's transformative Open Curriculum, adopted in 1969, eliminated all distribution requirements: students design their own education, take courses S/NC if they choose, and face no mandatory courses outside their major. The Van Wickle Gates open inward at Convocation (welcoming new students) and outward at Commencement — a tradition that marks a student's full passage through the university.",
+      "programUniqueness": "The Open Curriculum is Theo's biggest draw: no distribution requirements means he can braid neuroscience, philosophy, political science, and pre-law without compromise — every semester is self-designed. The Carney Institute for Brain Science anchors a world-class neuroscience program with strong undergraduate research access. Brown's pre-law advising posts an 83% law school acceptance rate. The S/NC grading option lets Theo take intellectual risks in new fields without GPA penalty. Like the other Ivies, Brown offers need-based aid only — no merit scholarships — but the curricular freedom it offers is unmatched among Ivy League schools.",
+      "walkingTour": {
+        "duration": "~75 min (guided tour covers most of this)",
+        "startNote": "Tour meets at the Admission Welcome Center, 21 Prospect St. Walk ~8 min from Power Street Garage (111 Power St).",
+        "parking": "Power Street Garage, 111 Power St (~$18/day flat rate)",
+        "mapCenter": [41.8268, -71.4025],
+        "mapZoom": 16,
+        "mapLink": "https://www.openstreetmap.org/?mlat=41.8268&mlon=-71.4025#map=16/41.8268/-71.4025",
+        "stops": [
+          {
+            "num": 1,
+            "name": "Admission Welcome Center",
+            "lat": 41.8264, "lng": -71.4027,
+            "notes": "Tour check-in, 21 Prospect St. Arrive ~15 min early; QR code ready."
+          },
+          {
+            "num": 2,
+            "name": "John Hay Library",
+            "lat": 41.8270, "lng": -71.4021,
+            "notes": "The humanities research library — Poe collection, Lincoln papers, and the H.P. Lovecraft manuscripts. Beautiful reading rooms."
+          },
+          {
+            "num": 3,
+            "name": "Van Wickle Gates",
+            "lat": 41.8266, "lng": -71.4014,
+            "notes": "Brown's ceremonial entrance on Prospect St — open only for Convocation and Commencement. The symbolic threshold of a Brown education."
+          },
+          {
+            "num": 4,
+            "name": "University Hall",
+            "lat": 41.8263, "lng": -71.4020,
+            "notes": "The 1770 founding building — used as a barracks in the Revolutionary War. The administrative core of Brown."
+          },
+          {
+            "num": 5,
+            "name": "Sayles Hall",
+            "lat": 41.8258, "lng": -71.4022,
+            "notes": "Concerts, lectures, and campus events — the public-facing heart of campus life on the Green."
+          },
+          {
+            "num": 6,
+            "name": "Stephen Robert '62 Campus Center",
+            "lat": 41.8256, "lng": -71.4028,
+            "notes": "The student hub — dining, student orgs, and the daily pulse of the College Green."
+          },
+          {
+            "num": 7,
+            "name": "Metcalf Research Building",
+            "lat": 41.8248, "lng": -71.4036,
+            "notes": "Home of the Carney Institute for Brain Science — Theo's neuroscience anchor at Brown. Note the research lab signage."
+          },
+          {
+            "num": 8,
+            "name": "Sciences Library (SciLi)",
+            "lat": 41.8244, "lng": -71.4028,
+            "notes": "The brutalist Sciences Library tower — the study hub for STEM and neuroscience students. Views of College Hill from the upper floors."
+          }
+        ]
+      }
+    },
+    {
+      "schoolId": "A8",
+      "school": "Yale",
+      "hasProfile": true,
+      "mapImage": "yale_map.png",
+      "history": "Founded in 1701 in Saybrook, CT and moved to New Haven in 1718, Yale is the third-oldest university in the United States. Its Collegiate Gothic architecture — Harkness Tower, Sterling Memorial Library, the Beinecke Rare Book Library — defines the New Haven skyline and sets the visual template for dozens of campuses worldwide. Yale's 14 residential colleges give undergraduates a small, close-knit community within a major research university; each college has its own courtyard, dining hall, and master. The Beinecke Rare Book Library holds a Gutenberg Bible and original Audubon prints behind walls of translucent Vermont marble.",
+      "programUniqueness": "For Theo, Yale is the strongest single school for his combined interests. Political Science is a national powerhouse (the origin of 'grand strategy' as an academic field), the Wu Tsai Institute anchors world-class neuroscience with strong undergraduate access, Philosophy is deep in the analytic tradition, and Yale Law School is ranked #1 in the country — the most visible proof of a pre-law pipeline. Yale offers need-based financial aid only (no merit scholarships), but the pre-law prestige, poli-sci reputation, and residential-college experience are together unmatched.",
+      "walkingTour": {
+        "duration": "~70 min (guided tour)",
+        "startNote": "Tour departs from SSS Hall, 1 Prospect St (Grove St side). Park at Grove Street Garage, 65 Grove St (~3-min walk).",
+        "parking": "Grove Street Garage, 65 Grove St (~3-min walk to SSS Hall)",
+        "mapCenter": [41.3100, -72.9280],
+        "mapZoom": 16,
+        "mapLink": "https://www.openstreetmap.org/?mlat=41.3100&mlon=-72.9280#map=16/41.3100/-72.9280",
+        "stops": [
+          {
+            "num": 1,
+            "name": "SSS Hall (Tour Start)",
+            "lat": 41.3120, "lng": -72.9267,
+            "notes": "Sheffield-Sterling-Strathcona Hall, 1 Prospect St — Grove St side entrance. Tour check-in; QR code ready."
+          },
+          {
+            "num": 2,
+            "name": "Beinecke Rare Book Library",
+            "lat": 41.3113, "lng": -72.9271,
+            "notes": "The landmark 1963 library — walls of translucent Vermont marble filter light onto a Gutenberg Bible. The most architecturally singular building in New Haven."
+          },
+          {
+            "num": 3,
+            "name": "Sterling Law Building",
+            "lat": 41.3116, "lng": -72.9254,
+            "notes": "Yale Law School's Gothic quad — ranked #1 in the country. The law-interest anchor; the courtyard is open to visitors."
+          },
+          {
+            "num": 4,
+            "name": "Sterling Memorial Library",
+            "lat": 41.3109, "lng": -72.9259,
+            "notes": "Yale's cathedral-scale main library — Gothic nave with stained glass, built in 1930. One of the great research libraries in the world."
+          },
+          {
+            "num": 5,
+            "name": "Cross Campus",
+            "lat": 41.3103, "lng": -72.9257,
+            "notes": "The large open lawn at Yale's center — the site of Commencement and daily student life. Flanked by library, law, and residential colleges."
+          },
+          {
+            "num": 6,
+            "name": "Harkness Tower & Branford College",
+            "lat": 41.3097, "lng": -72.9270,
+            "notes": "The 216-ft Collegiate Gothic tower that defines the New Haven skyline. Branford College's courtyard is one of Yale's most beautiful residential spaces."
+          },
+          {
+            "num": 7,
+            "name": "Old Campus & Connecticut Hall",
+            "lat": 41.3084, "lng": -72.9264,
+            "notes": "The 1750 Connecticut Hall is Yale's oldest surviving building — Nathan Hale lived here. Old Campus is where first-years live."
+          },
+          {
+            "num": 8,
+            "name": "Jonathan Edwards College",
+            "lat": 41.3091, "lng": -72.9279,
+            "notes": "One of Yale's oldest residential colleges, 68 High St — Gothic courtyard, gated. Exterior and courtyard are the public view; interior needs a Yale affiliate."
+          }
+        ]
+      }
+    },
     { "schoolId": "A9", "school": "Stony Brook", "hasProfile": false },
     { "schoolId": "A10", "school": "Fordham", "hasProfile": false },
     { "schoolId": "A11", "school": "Penn", "hasProfile": false },
