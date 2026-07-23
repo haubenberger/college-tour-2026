@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>College Rankings · Theo 2026</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="ranking-data.js"></script>
+<style>
+/* ── Reset & Base ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:        #f5f6f8;
+  --surface:   #ffffff;
+  --surface2:  #f0f1f5;
+  --border:    #e2e4ea;
+  --text:      #1a1d2e;
+  --text2:     #5a6080;
+  --accent:    #3b5bdb;
+  --accent2:   #748ffc;
+  --green:     #2f9e44;
+  --amber:     #e67700;
+  --red:       #c92a2a;
+  --shadow:    0 1px 4px rgba(0,0,0,.08), 0 4px 16px rgba(0,0,0,.06);
+  --radius:    10px;
+  --font:      -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+[data-theme="dark"] {
+  --bg:        #0d0f1a;
+  --surface:   #161929;
+  --surface2:  #1e2236;
+  --border:    #2a2f4a;
+  --text:      #e8ebff;
+  --text2:     #7b82a8;
+  --accent:    #748ffc;
+  --accent2:   #91a7ff;
+  --shadow:    0 1px 4px rgba(0,0,0,.3), 0 4px 16px rgba(0,0,0,.4);
+}
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  transition: background .2s, color .2s;
+}
+a { color: var(--accent); text-decoration: none; }
+button { cursor: pointer; font-family: var(--font); }
+
+/* ── Top bar ──────────────────────────────────────────────── */
+.topbar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 56px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(0,0,0,.06);
+}
+.topbar-logo {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.topbar-logo span { color: var(--text2); font-weight: 400; font-size: .8rem; margin-left: 6px; }
+.topbar-tabs {
+  display: flex;
+  gap: 4px;
+  margin-left: 8px;
+}
+.tab-btn {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: var(--text2);
+  font-size: .875rem;
+  font-weight: 500;
+  transition: all .15s;
+}
+.tab-btn:hover { background: var(--surface2); color: var(--text); }
+.tab-btn.active { background: var(--accent); color: #fff; }
+.topbar-actions { margin-left: auto; display: flex; gap: 8px; align-items: center; }
+.icon-btn {
+  width: 34px; height: 34px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  color: var(--text2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .9rem;
+  transition: all .15s;
+}
+.icon-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+.back-link {
+  display: flex; align-items: center; gap: 4px;
+  font-size: .8rem; color: var(--text2);
+  padding: 4px 8px; border-radius: 6px;
+  transition: all .15s;
+}
+.back-link:hover { background: var(--surface2); color: var(--text); }
+
+/* ── Layout ───────────────────────────────────────────────── */
+.layout {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* ── Sidebar (weights) ────────────────────────────────────── */
+.sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  position: sticky;
+  top: 76px;
+}
+.sidebar-title {
+  font-size: .8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--text2);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.weight-item { margin-bottom: 14px; }
+.weight-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.weight-pct { color: var(--accent); font-weight: 700; }
+.weight-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--border);
+  outline: none;
+  cursor: pointer;
+}
+.weight-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--surface);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+.weight-slider::-moz-range-thumb {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--surface);
+  cursor: pointer;
+}
+.sidebar-footer {
+  margin-top: 16px;
+  display: flex;
+  gap: 8px;
+}
+.btn-sm {
+  flex: 1;
+  padding: 7px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  color: var(--text2);
+  font-size: .78rem;
+  font-weight: 600;
+  transition: all .15s;
+}
+.btn-sm:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn-sm.danger:hover { background: var(--red); border-color: var(--red); }
+
+/* ── Main content ─────────────────────────────────────────── */
+.main { flex: 1; min-width: 0; }
+
+/* Toolbar */
+.toolbar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.search-input {
+  flex: 1;
+  min-width: 180px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: .875rem;
+  outline: none;
+  transition: border-color .15s;
+}
+.search-input:focus { border-color: var(--accent); }
+.result-count { font-size: .8rem; color: var(--text2); white-space: nowrap; }
+.btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: .8rem;
+  font-weight: 600;
+  transition: all .15s;
+}
+.btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+/* Rankings table */
+.table-wrap { overflow-x: auto; border-radius: var(--radius); box-shadow: var(--shadow); }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  font-size: .82rem;
+}
+th {
+  padding: 10px 10px;
+  text-align: left;
+  background: var(--surface2);
+  color: var(--text2);
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+th:hover { color: var(--accent); }
+th.sorted { color: var(--accent); }
+th .sort-arrow { margin-left: 4px; opacity: .5; }
+th.sorted .sort-arrow { opacity: 1; }
+td {
+  padding: 11px 10px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: var(--surface2); }
+.rank-badge {
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: .78rem;
+}
+.rank-badge.gold   { background: #f59f00; }
+.rank-badge.silver { background: #868e96; }
+.rank-badge.bronze { background: #a0522d; }
+.school-name { font-weight: 600; font-size: .875rem; }
+.school-loc  { font-size: .72rem; color: var(--text2); }
+.cat-rank {
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  width: 28px; height: 22px;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: .78rem;
+  background: var(--surface2);
+  color: var(--text2);
+  cursor: default;
+}
+.cat-rank.r1 { background: #d3f9d8; color: #2b8a3e; }
+.cat-rank.r2 { background: #e8f4fd; color: #1971c2; }
+.cat-rank.r3 { background: #fff3e0; color: #e67700; }
+[data-theme="dark"] .cat-rank.r1 { background: #1a3d24; color: #69db7c; }
+[data-theme="dark"] .cat-rank.r2 { background: #1a2f4a; color: #74c0fc; }
+[data-theme="dark"] .cat-rank.r3 { background: #3d2e00; color: #ffd43b; }
+.rank-input {
+  width: 36px;
+  text-align: center;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: .78rem;
+  font-weight: 700;
+  padding: 1px 2px;
+}
+.score-cell { font-weight: 700; color: var(--accent); font-size: .875rem; }
+.action-btn {
+  padding: 4px 10px;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text2);
+  font-size: .72rem;
+  font-weight: 600;
+  transition: all .15s;
+}
+.action-btn:hover { border-color: var(--accent); color: var(--accent); }
+.compare-check { cursor: pointer; width: 16px; height: 16px; accent-color: var(--accent); }
+.dup-warning { color: var(--red); font-size: .7rem; margin-top: 4px; }
+
+/* ── Recommendations ──────────────────────────────────────── */
+#tab-recommend .reco-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px,1fr));
+  gap: 16px;
+}
+.reco-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+  transition: border-color .15s, transform .15s;
+}
+.reco-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.reco-name { font-weight: 700; font-size: .95rem; margin-bottom: 2px; }
+.reco-loc  { font-size: .75rem; color: var(--text2); margin-bottom: 10px; }
+.reco-match {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: var(--surface2);
+  border-radius: 20px;
+  padding: 3px 10px;
+  font-size: .75rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.reco-tagline { font-size: .8rem; color: var(--text2); line-height: 1.45; margin-bottom: 10px; }
+.reco-why { font-size: .78rem; color: var(--text); font-style: italic; }
+.reco-similar { font-size: .73rem; color: var(--text2); margin-top: 8px; }
+.reco-est { font-size: .75rem; background: var(--surface2); border-radius: 5px; padding: 4px 8px; margin-top: 8px; }
+
+/* ── Compare ──────────────────────────────────────────────── */
+#tab-compare .compare-select {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+}
+.compare-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.compare-chip {
+  display: flex; align-items: center; gap: 6px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: .8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .15s;
+}
+.compare-chip.selected { background: var(--accent); color: #fff; border-color: var(--accent); }
+.compare-chip .chip-x { font-size: .7rem; opacity: .7; }
+.compare-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+@media (max-width: 700px) { .compare-panel { grid-template-columns: 1fr; } }
+.compare-school-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+.cs-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.cs-rank { font-size: 1.3rem; font-weight: 800; color: var(--accent); }
+.cs-name { font-weight: 700; font-size: .95rem; }
+.cs-loc  { font-size: .75rem; color: var(--text2); }
+.cs-score { font-size: .8rem; color: var(--text2); }
+.cat-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: .8rem;
+}
+.cat-row:last-child { border-bottom: none; }
+.cat-row-label { color: var(--text2); }
+.cat-row-val { font-weight: 700; }
+.winner { color: var(--green); }
+.loser  { color: var(--red); }
+.radar-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+}
+.radar-wrap canvas { max-height: 340px; }
+
+/* ── Modal ────────────────────────────────────────────────── */
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.55);
+  z-index: 200;
+  display: flex; align-items: flex-start; justify-content: center;
+  padding: 40px 16px;
+  overflow-y: auto;
+}
+.modal {
+  background: var(--surface);
+  border-radius: 14px;
+  width: 100%;
+  max-width: 640px;
+  box-shadow: 0 24px 80px rgba(0,0,0,.3);
+  overflow: hidden;
+  animation: modal-in .15s ease;
+}
+@keyframes modal-in { from { opacity:0; transform:scale(.97) translateY(-10px); } }
+.modal-header {
+  background: var(--accent);
+  color: #fff;
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.modal-title  { font-size: 1.15rem; font-weight: 700; margin-bottom: 4px; }
+.modal-sub    { font-size: .8rem; opacity: .8; }
+.modal-close  {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,.2);
+  color: #fff; font-size: 1rem;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.modal-close:hover { background: rgba(255,255,255,.35); }
+.modal-body { padding: 20px 24px; }
+.modal-tabs  { display: flex; gap: 8px; margin-bottom: 20px; border-bottom: 1px solid var(--border); }
+.modal-tab {
+  padding: 8px 14px;
+  border: none; background: transparent;
+  color: var(--text2); font-size: .8rem; font-weight: 600;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: all .15s;
+}
+.modal-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+.modal-pane { display: none; }
+.modal-pane.active { display: block; }
+
+/* Modal — overview */
+.score-hero {
+  text-align: center;
+  padding: 16px 0 20px;
+}
+.score-hero .score-num { font-size: 2.5rem; font-weight: 800; color: var(--accent); }
+.score-hero .score-label { font-size: .78rem; color: var(--text2); margin-top: 2px; }
+.score-hero .rank-num {
+  font-size: 1.1rem; font-weight: 700;
+  background: var(--accent);
+  color: #fff;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  margin-bottom: 6px;
+}
+.cat-bars { }
+.cat-bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; font-size: .78rem; }
+.cat-bar-label { width: 120px; flex-shrink: 0; color: var(--text2); }
+.cat-bar-track { flex: 1; height: 7px; background: var(--surface2); border-radius: 4px; overflow: hidden; }
+.cat-bar-fill  { height: 100%; border-radius: 4px; background: var(--accent); transition: width .3s; }
+.cat-bar-val   { width: 24px; text-align: right; font-weight: 700; color: var(--text); }
+.cat-bar-pct   { width: 48px; text-align: right; color: var(--text2); }
+
+/* Modal — strengths/weaknesses */
+.sw-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.sw-block { border-radius: 8px; padding: 12px; }
+.sw-block.str { background: #d3f9d8; }
+.sw-block.wk  { background: #ffe3e3; }
+[data-theme="dark"] .sw-block.str { background: #1a3d24; }
+[data-theme="dark"] .sw-block.wk  { background: #3d1a1a; }
+.sw-title { font-weight: 700; font-size: .78rem; margin-bottom: 8px; text-transform: uppercase; letter-spacing: .05em; }
+.sw-title.str { color: var(--green); }
+.sw-title.wk  { color: var(--red); }
+.sw-item { font-size: .8rem; margin-bottom: 4px; }
+
+/* Modal — obj metrics */
+.metrics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.metric-card {
+  background: var(--surface2);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+.metric-val { font-size: 1.1rem; font-weight: 700; color: var(--accent); }
+.metric-label { font-size: .72rem; color: var(--text2); margin-top: 2px; }
+.metric-rank { font-size: .7rem; color: var(--text2); margin-top: 2px; }
+
+/* ── Tabs ─────────────────────────────────────────────────── */
+.tab-pane { display: none; }
+.tab-pane.active { display: block; }
+
+/* ── Duplicates warning ───────────────────────────────────── */
+.warning-banner {
+  background: #fff3e0;
+  border: 1px solid #ffd43b;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: .78rem;
+  color: #7c4a03;
+  margin-bottom: 12px;
+  display: none;
+}
+[data-theme="dark"] .warning-banner { background: #3d2e00; color: #ffd43b; border-color: #886a00; }
+
+/* ── Compare summary ──────────────────────────────────────── */
+.compare-summary {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+.compare-summary table th { cursor: default; }
+
+/* ── Empty state ──────────────────────────────────────────── */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text2);
+  font-size: .9rem;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .layout { flex-direction: column; padding: 12px; }
+  .sidebar { width: 100%; position: static; }
+  .topbar-tabs .tab-btn span { display: none; }
+}
+@media (max-width: 600px) {
+  .topbar { padding: 0 12px; gap: 8px; }
+  .topbar-logo span { display: none; }
+  .compare-panel { grid-template-columns: 1fr; }
+  .sw-grid { grid-template-columns: 1fr; }
+  .metrics-grid { grid-template-columns: 1fr; }
+}
+
+/* Smooth transitions */
+td, th { transition: background .1s; }
+</style>
+</head>
+<body>
+
+<!-- ── Top bar ──────────────────────────────────────────────── -->
+<header class="topbar">
+  <div class="topbar-logo">🏛 Rankings <span>College Tour 2026</span></div>
+  <nav class="topbar-tabs">
+    <button class="tab-btn active" data-tab="rankings">📊 <span>Rankings</span></button>
+    <button class="tab-btn" data-tab="compare">⚖️ <span>Compare</span></button>
+    <button class="tab-btn" data-tab="recommend">💡 <span>Recommend</span></button>
+  </nav>
+  <div class="topbar-actions">
+    <a href="index.html" class="back-link">← Itinerary</a>
+    <button class="icon-btn" id="btn-export" title="Export CSV">⬇</button>
+    <button class="icon-btn" id="btn-dark" title="Toggle dark mode">🌙</button>
+  </div>
+</header>
+
+<!-- ── Tab: Rankings ────────────────────────────────────────── -->
+<div id="tab-rankings" class="tab-pane active">
+<div class="layout">
+  <!-- Sidebar: weights -->
+  <aside class="sidebar">
+    <div class="sidebar-title">
+      Category Weights
+      <span id="weight-total" style="color:var(--accent);font-size:.85rem;font-weight:700">100%</span>
+    </div>
+    <div id="weight-sliders"></div>
+    <div class="sidebar-footer">
+      <button class="btn-sm" id="btn-normalize">Normalize</button>
+      <button class="btn-sm danger" id="btn-reset">Reset</button>
+    </div>
+  </aside>
+
+  <!-- Main: rankings table -->
+  <main class="main">
+    <div class="toolbar">
+      <input class="search-input" id="search" placeholder="Search schools…" type="search">
+      <span class="result-count" id="result-count"></span>
+      <button class="btn" id="btn-edit">✏️ Edit Rankings</button>
+    </div>
+    <div class="warning-banner" id="dup-banner"></div>
+    <div class="table-wrap">
+      <table id="rankings-table">
+        <thead id="table-head"></thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </div>
+  </main>
+</div>
+</div>
+
+<!-- ── Tab: Compare ─────────────────────────────────────────── -->
+<div id="tab-compare" class="tab-pane">
+<div class="layout" style="flex-direction:column;max-width:900px;">
+  <div class="compare-select">
+    <div class="sidebar-title" style="margin-bottom:8px">Select Schools to Compare <span style="font-weight:400;color:var(--text2)">(2–4)</span></div>
+    <div class="compare-chips" id="compare-chips"></div>
+  </div>
+  <div id="compare-content">
+    <div class="empty-state">Select 2 or more schools above to compare them.</div>
+  </div>
+</div>
+</div>
+
+<!-- ── Tab: Recommend ───────────────────────────────────────── -->
+<div id="tab-recommend" class="tab-pane">
+<div class="layout" style="flex-direction:column;max-width:960px;">
+  <div style="margin-bottom:16px;">
+    <div style="font-size:.95rem;font-weight:700;margin-bottom:4px;">Recommendations</div>
+    <div style="font-size:.8rem;color:var(--text2);">Schools not on your list that match your current weights and preferences. Updates live as you adjust weights.</div>
+  </div>
+  <div class="reco-grid" id="reco-grid"></div>
+</div>
+</div>
+
+<!-- ── College detail modal ─────────────────────────────────── -->
+<div class="modal-overlay" id="modal-overlay" style="display:none" role="dialog" aria-modal="true">
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <div>
+        <div class="modal-title" id="modal-title"></div>
+        <div class="modal-sub" id="modal-sub"></div>
+      </div>
+      <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-tabs">
+        <button class="modal-tab active" data-mtab="overview">Overview</button>
+        <button class="modal-tab" data-mtab="contributions">Contributions</button>
+        <button class="modal-tab" data-mtab="objmetrics">Obj. Metrics</button>
+        <button class="modal-tab" data-mtab="swot">Strengths</button>
+      </div>
+      <div id="modal-panes"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// SECTION 1 — CONSTANTS
+// ============================================================
+const COLORS = [
+  '#3b5bdb','#f03e3e','#2f9e44','#e67700','#7048e8',
+  '#0c8599','#a61e4d','#5c7cfa','#fd7e14',
+];
+const N = window.RD.colleges.length; // number of schools
+
+// ============================================================
+// SECTION 2 — STATE
+// ============================================================
+const ST = {
+  schools:      [],          // enriched school objects (rankings + computed fields)
+  weights:      {},          // { campusFeel: 20, ... } sums to 100
+  sort:         { col: 'overall', dir: 'asc' },
+  search:       '',
+  compareSet:   new Set(),
+  activeModal:  null,
+  editMode:     false,
+  _lockWeights: false,       // re-entrancy guard for slider normalization
+};
+
+// ============================================================
+// SECTION 3 — OBJECTIVE METRICS ENGINE
+// ============================================================
+const MetricsEngine = (function() {
+
+  /** Compute mean of an array */
+  function mean(arr) { return arr.reduce((s,v) => s+v, 0) / arr.length; }
+
+  /** Compute std dev of an array */
+  function std(arr) {
+    const m = mean(arr);
+    return Math.sqrt(arr.reduce((s,v) => s + (v-m)**2, 0) / arr.length) || 1;
+  }
+
+  /**
+   * For all schools, compute ROI, z-score every metric,
+   * sum into a composite score, then assign ranks 1–N.
+   * Mutates school.ranks.objectiveMetrics on each school.
+   */
+  function compute(schools) {
+    const mw = window.RD.metricsWeights;
+
+    // Compute ROI for each school
+    schools.forEach(s => {
+      s.metrics.roi = s.metrics.medianSalary / Math.max(s.metrics.avgDebt, 1);
+    });
+
+    // Field configs: { field, dir, weight }
+    const fields = Object.entries(mw).map(([field, weight]) => ({
+      field,
+      weight,
+      // +1 = higher is better, -1 = lower is better
+      dir: ['sfRatio','acceptRate','avgDebt'].includes(field) ? -1 : +1,
+    }));
+
+    // Compute composite score per school via weighted z-scores
+    const composites = schools.map(s => {
+      let score = 0;
+      let wTotal = 0;
+      fields.forEach(({ field, dir, weight }) => {
+        const val = s.metrics[field];
+        if (val == null || isNaN(val)) return;
+        wTotal += weight;
+        const vals = schools.map(x => x.metrics[field]).filter(v => v != null && !isNaN(v));
+        const z = (val - mean(vals)) / std(vals);
+        score += z * dir * weight;
+      });
+      return wTotal > 0 ? score / wTotal : 0;
+    });
+
+    // Rank: highest composite = rank 1
+    const sorted = composites
+      .map((c, i) => ({ i, c }))
+      .sort((a, b) => b.c - a.c);
+    sorted.forEach(({ i }, rank) => {
+      schools[i].ranks.objectiveMetrics = rank + 1;
+    });
+
+    // Store composite score for breakdown display
+    schools.forEach((s, i) => {
+      s._objScore = composites[i];
+    });
+  }
+
+  /** Return a breakdown of how this school's metrics compare. */
+  function breakdown(school, allSchools) {
+    const mw = window.RD.metricsWeights;
+    const metaLabels = {
+      retentionRate:       '1st-Year Retention',
+      gradRate:            '6-yr Graduation Rate',
+      medianSalary:        'Median 10yr Salary',
+      sfRatio:             'Student : Faculty Ratio',
+      acceptRate:          'Acceptance Rate',
+      avgDebt:             'Avg Student Debt',
+      endowmentPerStudent: 'Endowment / Student',
+      alumniGiving:        'Alumni Giving Rate',
+      campusSafety:        'Campus Safety Score',
+      freshmanHousing:     'Freshman Housing',
+      roi:                 'Return on Investment',
+    };
+    const dir = { sfRatio: -1, acceptRate: -1, avgDebt: -1 };
+
+    return Object.keys(mw).map(field => {
+      const val = field === 'roi'
+        ? school.metrics.medianSalary / Math.max(school.metrics.avgDebt, 1)
+        : school.metrics[field];
+      if (val == null) return null;
+
+      const vals = allSchools
+        .map(s => field === 'roi'
+          ? s.metrics.medianSalary / Math.max(s.metrics.avgDebt, 1)
+          : s.metrics[field])
+        .filter(v => v != null && !isNaN(v))
+        .sort((a, b) => (dir[field] || 1) * (b - a));  // desc for better-is-higher
+
+      const rankAmong = vals.indexOf(val) + 1;
+
+      let display;
+      if (field === 'medianSalary' || field === 'avgDebt' || field === 'endowmentPerStudent') {
+        display = '$' + val.toLocaleString();
+      } else if (field === 'roi') {
+        display = val.toFixed(1) + '×';
+      } else if (field === 'sfRatio') {
+        display = val + ':1';
+      } else {
+        display = val + '%';
+      }
+
+      return { field, label: metaLabels[field] || field, display, rankAmong, weight: mw[field] };
+    }).filter(Boolean);
+  }
+
+  return { compute, breakdown };
+})();
+
+// ============================================================
+// SECTION 4 — SCORING ENGINE
+// ============================================================
+const ScoringEngine = (function() {
+
+  /** Compute overall weighted score for one school. Lower = better. */
+  function overall(school, weights) {
+    return RD.categories.reduce((sum, cat) => {
+      const rank = school.ranks[cat.key] || N;
+      const w = (weights[cat.key] || 0) / 100;
+      return sum + rank * w;
+    }, 0);
+  }
+
+  /**
+   * Compute overall scores & assign overall ranks for all schools.
+   * Mutates school.overall and school.overallRank.
+   * Ties broken alphabetically.
+   */
+  function rankAll(schools, weights) {
+    schools.forEach(s => { s.overall = overall(s, weights); });
+    schools
+      .slice()
+      .sort((a, b) => a.overall - b.overall || a.name.localeCompare(b.name))
+      .forEach((s, i) => { s.overallRank = i + 1; });
+  }
+
+  return { overall, rankAll };
+})();
+
+// ============================================================
+// SECTION 5 — RECOMMENDATION ENGINE
+// ============================================================
+const RecoEngine = (function() {
+
+  /**
+   * For each school in the pool, compute a match score against
+   * current weights and return sorted recommendations.
+   *
+   * Match score = sum over categories: weight * school.profile[cat]
+   * (profile values 1–10, so higher-weighted strong categories score best)
+   */
+  function getRecommendations(weights, rankedSchools) {
+    // Top-3 weighted categories
+    const sorted = RD.categories
+      .slice()
+      .sort((a, b) => (weights[b.key] || 0) - (weights[a.key] || 0));
+    const topCats = sorted.slice(0, 3);
+
+    const topSchoolNames = rankedSchools
+      .slice(0, 3)
+      .map(s => s.name);
+
+    return window.RD.recommendations.map(r => {
+      // Weighted match score
+      const matchScore = RD.categories.reduce((sum, cat) => {
+        const w = (weights[cat.key] || 0) / 100;
+        const v = r.profile[cat.key] || 5;
+        return sum + w * v;
+      }, 0);
+
+      // Build rationale from top weighted categories where this school excels
+      const highlights = topCats
+        .filter(cat => (r.profile[cat.key] || 0) >= 8)
+        .map(cat => cat.label);
+      const why = highlights.length
+        ? `Strong in your top priorities: ${highlights.join(', ')}.`
+        : `Solid all-around match for your current weight profile.`;
+
+      // Similar schools from ranked list
+      const similar = (r.similarTo || [])
+        .map(id => rankedSchools.find(s => s.id === id))
+        .filter(Boolean)
+        .map(s => s.name);
+
+      // Estimated placement if added
+      const hypotheticalScore = RD.categories.reduce((sum, cat) => {
+        const w = (weights[cat.key] || 0) / 100;
+        // Convert 1–10 profile to a rough rank: 10 → rank 1, 1 → rank N+1
+        const estRank = Math.round(N + 1 - (r.profile[cat.key] || 5) * N / 10);
+        return sum + estRank * w;
+      }, 0);
+
+      const estPosition = rankedSchools.filter(s => s.overall < hypotheticalScore).length + 1;
+
+      return {
+        ...r,
+        matchScore,
+        matchPct: Math.round(matchScore * 10),  // scale to 0–100
+        why,
+        similar,
+        estPosition,
+      };
+    }).sort((a, b) => b.matchScore - a.matchScore);
+  }
+
+  return { getRecommendations };
+})();
+
+// ============================================================
+// SECTION 6 — WEIGHTS UI
+// ============================================================
+const WeightsUI = (function() {
+
+  function render() {
+    const container = document.getElementById('weight-sliders');
+    container.innerHTML = RD.categories.map(cat => `
+      <div class="weight-item">
+        <div class="weight-label">
+          <span>${cat.label}</span>
+          <span class="weight-pct" id="wpct-${cat.key}">${ST.weights[cat.key]}%</span>
+        </div>
+        <input class="weight-slider" type="range" min="0" max="100"
+          id="wslider-${cat.key}" data-cat="${cat.key}"
+          value="${ST.weights[cat.key]}">
+      </div>
+    `).join('');
+
+    bindSliders();
+  }
+
+  function bindSliders() {
+    RD.categories.forEach(cat => {
+      const slider = document.getElementById('wslider-' + cat.key);
+      slider.addEventListener('input', () => {
+        if (ST._lockWeights) return;
+        onSliderChange(cat.key, +slider.value);
+      });
+    });
+
+    document.getElementById('btn-normalize').addEventListener('click', () => {
+      normalize();
+      refresh();
+    });
+
+    document.getElementById('btn-reset').addEventListener('click', () => {
+      RD.categories.forEach(cat => { ST.weights[cat.key] = cat.defaultWeight; });
+      refresh();
+      recompute();
+    });
+  }
+
+  function onSliderChange(changedKey, newValue) {
+    const oldTotal = Object.values(ST.weights).reduce((s,v)=>s+v,0);
+    const oldOtherTotal = oldTotal - ST.weights[changedKey];
+    const newOtherTotal = 100 - newValue;
+
+    ST.weights[changedKey] = newValue;
+
+    if (newOtherTotal <= 0) {
+      // All weight on this one slider
+      RD.categories.forEach(cat => {
+        if (cat.key !== changedKey) ST.weights[cat.key] = 0;
+      });
+    } else if (oldOtherTotal > 0) {
+      // Scale other sliders proportionally
+      const scale = newOtherTotal / oldOtherTotal;
+      RD.categories.forEach(cat => {
+        if (cat.key !== changedKey) {
+          ST.weights[cat.key] = Math.round(ST.weights[cat.key] * scale * 10) / 10;
+        }
+      });
+      // Fix rounding drift
+      fixRounding(changedKey);
+    } else {
+      // Others were all zero; distribute evenly
+      const n = RD.categories.length - 1;
+      const share = Math.floor(newOtherTotal / n);
+      RD.categories.forEach(cat => {
+        if (cat.key !== changedKey) ST.weights[cat.key] = share;
+      });
+      fixRounding(changedKey);
+    }
+
+    refresh();
+    recompute();
+  }
+
+  /** Fix floating-point rounding so total = exactly 100 */
+  function fixRounding(preserveKey) {
+    const total = Object.values(ST.weights).reduce((s,v)=>s+v,0);
+    const drift = Math.round((100 - total) * 10) / 10;
+    if (drift === 0) return;
+    // Apply drift to largest non-preserved weight
+    const other = RD.categories
+      .filter(c => c.key !== preserveKey)
+      .sort((a,b) => ST.weights[b.key] - ST.weights[a.key]);
+    if (other.length) ST.weights[other[0].key] = Math.round((ST.weights[other[0].key] + drift) * 10) / 10;
+  }
+
+  function normalize() {
+    const total = Object.values(ST.weights).reduce((s,v)=>s+v,0);
+    if (total === 0) {
+      RD.categories.forEach(cat => { ST.weights[cat.key] = cat.defaultWeight; });
+      return;
+    }
+    RD.categories.forEach(cat => {
+      ST.weights[cat.key] = Math.round(ST.weights[cat.key] / total * 1000) / 10;
+    });
+    fixRounding(null);
+  }
+
+  /** Sync slider positions + percentage labels from ST.weights */
+  function refresh() {
+    ST._lockWeights = true;
+    RD.categories.forEach(cat => {
+      const slider = document.getElementById('wslider-' + cat.key);
+      const pct    = document.getElementById('wpct-' + cat.key);
+      if (slider) slider.value = ST.weights[cat.key];
+      if (pct)    pct.textContent = Math.round(ST.weights[cat.key]) + '%';
+    });
+    const total = Object.values(ST.weights).reduce((s,v)=>s+v,0);
+    const el = document.getElementById('weight-total');
+    if (el) {
+      el.textContent = Math.round(total) + '%';
+      el.style.color = Math.abs(total - 100) < 1 ? 'var(--accent)' : 'var(--red)';
+    }
+    ST._lockWeights = false;
+  }
+
+  function recompute() {
+    ScoringEngine.rankAll(ST.schools, ST.weights);
+    TableUI.render();
+    if (ST.compareSet.size > 0) CompareUI.render();
+    RecoUI.render();
+  }
+
+  return { render, refresh, recompute };
+})();
+
+// ============================================================
+// SECTION 7 — TABLE UI
+// ============================================================
+const TableUI = (function() {
+
+  function buildHead() {
+    const catCols = RD.categories.map(cat => {
+      const arrow = ST.sort.col === cat.key
+        ? (ST.sort.dir === 'asc' ? '↑' : '↓') : '↕';
+      return `<th class="${ST.sort.col===cat.key?'sorted':''}" data-col="${cat.key}">
+        ${abbrev(cat.label)} <span class="sort-arrow">${arrow}</span></th>`;
+    }).join('');
+
+    const overArrow = ST.sort.col==='overall'
+      ? (ST.sort.dir==='asc'?'↑':'↓') : '↕';
+
+    return `<tr>
+      <th style="width:36px">#</th>
+      <th>School</th>
+      <th class="${ST.sort.col==='overall'?'sorted':''}" data-col="overall">
+        Score <span class="sort-arrow">${overArrow}</span></th>
+      ${catCols}
+      <th style="width:60px">⚖️</th>
+      <th style="width:50px"></th>
+    </tr>`;
+  }
+
+  function abbrev(label) {
+    const m = { 'Objective Metrics':'Obj.Met.', 'After College':'After Col.', 'Campus Feel':'Campus', 'Social Life':'Social', 'Academics':'Acad.', 'Location':'Loc.', 'Prestige':'Pres.', 'Athletics':'Ath.', 'Cost':'Cost' };
+    return m[label] || label;
+  }
+
+  function badgeClass(rank) {
+    if (rank===1) return 'gold';
+    if (rank===2) return 'silver';
+    if (rank===3) return 'bronze';
+    return '';
+  }
+
+  function catRankClass(rank) {
+    if (rank===1) return 'r1';
+    if (rank===2) return 'r2';
+    if (rank===3) return 'r3';
+    return '';
+  }
+
+  function buildRow(school) {
+    const catCells = RD.categories.map(cat => {
+      const rank = school.ranks[cat.key];
+      if (ST.editMode && cat.key !== 'objectiveMetrics') {
+        return `<td><input class="rank-input" type="number" min="1" max="${N}"
+          aria-label="rank for ${school.name} in ${cat.label}"
+          data-school="${school.id}" data-cat="${cat.key}"
+          value="${rank}"></td>`;
+      }
+      return `<td><span class="cat-rank ${catRankClass(rank)}"
+        title="${cat.label}: #${rank}">${rank}</span></td>`;
+    }).join('');
+
+    const checked = ST.compareSet.has(school.id) ? 'checked' : '';
+    const bc = badgeClass(school.overallRank);
+
+    return `<tr>
+      <td><span class="rank-badge ${bc}">${school.overallRank}</span></td>
+      <td>
+        <div class="school-name">${school.name}</div>
+        <div class="school-loc">${school.location}</div>
+      </td>
+      <td class="score-cell">${school.overall.toFixed(2)}</td>
+      ${catCells}
+      <td><input type="checkbox" class="compare-check" data-school="${school.id}" ${checked}
+        title="Add to compare" aria-label="Compare ${school.name}"></td>
+      <td><button class="action-btn" data-detail="${school.id}">Detail</button></td>
+    </tr>`;
+  }
+
+  function filteredSorted() {
+    let list = ST.schools.filter(s =>
+      s.name.toLowerCase().includes(ST.search) ||
+      s.location.toLowerCase().includes(ST.search)
+    );
+
+    const col = ST.sort.col;
+    const dir = ST.sort.dir === 'asc' ? 1 : -1;
+
+    list.sort((a, b) => {
+      let av, bv;
+      if (col === 'overall') { av = a.overall; bv = b.overall; }
+      else {
+        av = a.ranks[col] || N;
+        bv = b.ranks[col] || N;
+      }
+      return dir * (av - bv) || a.name.localeCompare(b.name);
+    });
+
+    return list;
+  }
+
+  function checkDuplicates() {
+    const dups = [];
+    RD.categories.forEach(cat => {
+      if (cat.key === 'objectiveMetrics') return;
+      const seen = {};
+      ST.schools.forEach(s => {
+        const r = s.ranks[cat.key];
+        if (seen[r]) dups.push(`${cat.label}: both ${seen[r].name} and ${s.name} ranked #${r}`);
+        else seen[r] = s;
+      });
+    });
+    const banner = document.getElementById('dup-banner');
+    if (dups.length && ST.editMode) {
+      banner.textContent = '⚠ Duplicate ranks detected — ' + dups.slice(0,3).join('; ');
+      banner.style.display = 'block';
+    } else {
+      banner.style.display = 'none';
+    }
+  }
+
+  function render() {
+    document.getElementById('table-head').innerHTML = buildHead();
+    const list = filteredSorted();
+    document.getElementById('table-body').innerHTML =
+      list.length ? list.map(buildRow).join('') : `<tr><td colspan="20" class="empty-state">No schools match your search.</td></tr>`;
+    document.getElementById('result-count').textContent = `${list.length} school${list.length===1?'':'s'}`;
+    checkDuplicates();
+    bind();
+  }
+
+  function bind() {
+    // Sort headers
+    document.querySelectorAll('#rankings-table th[data-col]').forEach(th => {
+      th.addEventListener('click', () => {
+        const col = th.dataset.col;
+        if (ST.sort.col === col) ST.sort.dir = ST.sort.dir === 'asc' ? 'desc' : 'asc';
+        else { ST.sort.col = col; ST.sort.dir = 'asc'; }
+        render();
+      });
+    });
+
+    // Detail buttons
+    document.querySelectorAll('[data-detail]').forEach(btn => {
+      btn.addEventListener('click', () => ModalUI.open(btn.dataset.detail));
+    });
+
+    // Compare checkboxes
+    document.querySelectorAll('.compare-check').forEach(cb => {
+      cb.addEventListener('change', () => {
+        const id = cb.dataset.school;
+        if (cb.checked) {
+          if (ST.compareSet.size >= 4) { cb.checked = false; return; }
+          ST.compareSet.add(id);
+        } else {
+          ST.compareSet.delete(id);
+        }
+        CompareUI.syncChips();
+        if (ST.compareSet.size > 0) CompareUI.render();
+        else document.getElementById('compare-content').innerHTML =
+          '<div class="empty-state">Select 2 or more schools to compare.</div>';
+      });
+    });
+
+    // Editable rank inputs
+    document.querySelectorAll('.rank-input').forEach(input => {
+      input.addEventListener('blur', () => {
+        const id  = input.dataset.school;
+        const cat = input.dataset.cat;
+        const val = Math.max(1, Math.min(N, Math.round(+input.value || 1)));
+        const school = ST.schools.find(s => s.id === id);
+        if (school) {
+          school.ranks[cat] = val;
+          ScoringEngine.rankAll(ST.schools, ST.weights);
+          render();
+          RecoUI.render();
+        }
+      });
+    });
+  }
+
+  return { render };
+})();
+
+// ============================================================
+// SECTION 8 — MODAL UI
+// ============================================================
+const ModalUI = (function() {
+
+  function open(schoolId) {
+    const school = ST.schools.find(s => s.id === schoolId);
+    if (!school) return;
+    ST.activeModal = schoolId;
+
+    document.getElementById('modal-title').textContent = school.name;
+    document.getElementById('modal-sub').textContent =
+      school.location + ' · ' + school.type + ' · Founded ' + school.founded;
+
+    document.getElementById('modal-panes').innerHTML = buildPanes(school);
+    document.getElementById('modal-overlay').style.display = 'flex';
+
+    // Tab switching
+    document.querySelectorAll('.modal-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.modal-tab').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.modal-pane').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('mpane-' + btn.dataset.mtab).classList.add('active');
+      });
+    });
+    // Activate first tab
+    document.querySelectorAll('.modal-tab')[0].click();
+  }
+
+  function buildPanes(school) {
+    const numSchools = ST.schools.length;
+
+    /* ── Overview ── */
+    const catBars = RD.categories.map(cat => {
+      const rank = school.ranks[cat.key];
+      const w    = ST.weights[cat.key] || 0;
+      // Bar fill: rank 1 = 100%, rank N = (1/N * 100)%
+      const fill = Math.round((numSchools - rank + 1) / numSchools * 100);
+      return `<div class="cat-bar-row">
+        <div class="cat-bar-label">${cat.label}</div>
+        <div class="cat-bar-track"><div class="cat-bar-fill" style="width:${fill}%"></div></div>
+        <div class="cat-bar-val">#${rank}</div>
+        <div class="cat-bar-pct">${Math.round(w)}%</div>
+      </div>`;
+    }).join('');
+
+    const overview = `
+      <div class="score-hero">
+        <div class="rank-num">#${school.overallRank}</div>
+        <div class="score-num">${school.overall.toFixed(2)}</div>
+        <div class="score-label">Weighted Score (lower = better)</div>
+      </div>
+      <div class="cat-bars">${catBars}</div>`;
+
+    /* ── Contributions ── */
+    const contribs = RD.categories.map(cat => {
+      const rank = school.ranks[cat.key];
+      const w    = (ST.weights[cat.key] || 0) / 100;
+      const contrib = rank * w;
+      return `<div class="cat-bar-row">
+        <div class="cat-bar-label">${cat.label}</div>
+        <div class="cat-bar-track">
+          <div class="cat-bar-fill" style="width:${Math.min(contrib/school.overall*100,100).toFixed(0)}%;background:var(--accent2)"></div>
+        </div>
+        <div class="cat-bar-val">${contrib.toFixed(2)}</div>
+        <div class="cat-bar-pct">${Math.round(ST.weights[cat.key])}%</div>
+      </div>`;
+    }).join('');
+
+    const contributions = `
+      <p style="font-size:.78rem;color:var(--text2);margin-bottom:12px;">Each bar shows how much this category contributed to the overall score (rank × weight). Shorter bars mean this category helped the school.</p>
+      <div class="cat-bars">${contribs}</div>`;
+
+    /* ── Objective Metrics ── */
+    const breakdown = MetricsEngine.breakdown(school, ST.schools);
+    const metricCards = breakdown.map(m => `
+      <div class="metric-card">
+        <div class="metric-val">${m.display}</div>
+        <div class="metric-label">${m.label}</div>
+        <div class="metric-rank">#${m.rankAmong} among ${numSchools} schools · weight ${m.weight}</div>
+      </div>`).join('');
+
+    const objmetrics = `
+      <p style="font-size:.78rem;color:var(--text2);margin-bottom:12px;">
+        Objective Metrics rank: <strong>#${school.ranks.objectiveMetrics}</strong> of ${numSchools}.
+        Computed from ${breakdown.length} measurable factors using weighted z-scores.
+      </p>
+      <div class="metrics-grid">${metricCards}</div>`;
+
+    /* ── Strengths & Weaknesses ── */
+    const ranked = RD.categories.map(cat => ({
+      cat,
+      rank: school.ranks[cat.key],
+      w: ST.weights[cat.key] || 0,
+    })).sort((a,b) => a.rank - b.rank);
+
+    const strengths = ranked.slice(0, 4);
+    const weaknesses = ranked.slice(-4).reverse();
+
+    const swot = `
+      <div class="sw-grid">
+        <div class="sw-block str">
+          <div class="sw-title str">💪 Strengths</div>
+          ${strengths.map(x => `<div class="sw-item">#${x.rank} ${x.cat.label} <span style="color:var(--text2);font-size:.72rem;">(wt ${Math.round(x.w)}%)</span></div>`).join('')}
+        </div>
+        <div class="sw-block wk">
+          <div class="sw-title wk">⚠ Weaknesses</div>
+          ${weaknesses.map(x => `<div class="sw-item">#${x.rank} ${x.cat.label} <span style="color:var(--text2);font-size:.72rem;">(wt ${Math.round(x.w)}%)</span></div>`).join('')}
+        </div>
+      </div>`;
+
+    return `
+      <div class="modal-pane active" id="mpane-overview">${overview}</div>
+      <div class="modal-pane" id="mpane-contributions">${contributions}</div>
+      <div class="modal-pane" id="mpane-objmetrics">${objmetrics}</div>
+      <div class="modal-pane" id="mpane-swot">${swot}</div>`;
+  }
+
+  function close() {
+    document.getElementById('modal-overlay').style.display = 'none';
+    ST.activeModal = null;
+  }
+
+  return { open, close };
+})();
+
+// ============================================================
+// SECTION 9 — COMPARE UI
+// ============================================================
+const CompareUI = (function() {
+  let _chart = null;
+
+  function syncChips() {
+    const container = document.getElementById('compare-chips');
+    container.innerHTML = ST.schools.map(school => {
+      const sel = ST.compareSet.has(school.id);
+      return `<div class="compare-chip ${sel ? 'selected' : ''}" data-school="${school.id}">
+        <span>#${school.overallRank} ${school.name.split(' ')[0]}</span>
+        ${sel ? '<span class="chip-x">✕</span>' : ''}
+      </div>`;
+    }).join('');
+
+    container.querySelectorAll('.compare-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        const id = chip.dataset.school;
+        if (ST.compareSet.has(id)) {
+          ST.compareSet.delete(id);
+        } else {
+          if (ST.compareSet.size >= 4) return;
+          ST.compareSet.add(id);
+        }
+        // Keep ranking table checkboxes in sync
+        const cb = document.querySelector(`.compare-check[data-school="${id}"]`);
+        if (cb) cb.checked = ST.compareSet.has(id);
+        syncChips();
+        if (ST.compareSet.size > 0) render();
+        else document.getElementById('compare-content').innerHTML =
+          '<div class="empty-state">Select 2 or more schools to compare.</div>';
+      });
+    });
+  }
+
+  function render() {
+    if (ST.compareSet.size === 0) return;
+    const selected = ST.schools.filter(s => ST.compareSet.has(s.id));
+
+    const cards = selected.map((school, i) => {
+      const rows = RD.categories.map(cat => {
+        const rank = school.ranks[cat.key];
+        const best = Math.min(...selected.map(s => s.ranks[cat.key]));
+        const cls  = rank === best ? 'winner' : 'loser';
+        return `<div class="cat-row">
+          <span class="cat-row-label">${cat.label}</span>
+          <span class="cat-row-val ${cls}">#${rank}</span>
+        </div>`;
+      }).join('');
+
+      const color = COLORS[i % COLORS.length];
+      return `<div class="compare-school-card">
+        <div class="cs-header">
+          <div class="cs-rank" style="color:${color}">#${school.overallRank}</div>
+          <div>
+            <div class="cs-name">${school.name}</div>
+            <div class="cs-loc">${school.location}</div>
+            <div class="cs-score">Score: ${school.overall.toFixed(2)}</div>
+          </div>
+        </div>
+        ${rows}
+      </div>`;
+    }).join('');
+
+    document.getElementById('compare-content').innerHTML = `
+      <div class="radar-wrap">
+        <div style="font-size:.8rem;font-weight:700;color:var(--text2);margin-bottom:12px;text-transform:uppercase;letter-spacing:.05em;">Radar Chart — Higher = Better</div>
+        <canvas id="radar-chart" height="300"></canvas>
+      </div>
+      <div class="compare-panel">${cards}</div>
+    `;
+
+    buildRadar(selected);
+    syncChips();
+  }
+
+  function buildRadar(schools) {
+    if (_chart) { _chart.destroy(); _chart = null; }
+    const canvas = document.getElementById('radar-chart');
+    if (!canvas) return;
+
+    const isDark = document.documentElement.dataset.theme === 'dark';
+    const gridColor = isDark ? 'rgba(255,255,255,.1)' : 'rgba(0,0,0,.08)';
+    const tickColor = isDark ? '#7b82a8' : '#888';
+    const labels = RD.categories.map(c => c.label);
+    const numSchools = ST.schools.length;
+
+    const datasets = schools.map((school, i) => {
+      const data = RD.categories.map(cat => {
+        const rank = school.ranks[cat.key] || numSchools;
+        // Invert: rank 1 → numSchools, rank N → 1 (so higher = better on chart)
+        return numSchools - rank + 1;
+      });
+      const color = COLORS[i % COLORS.length];
+      return {
+        label: school.name.split(' ').slice(0,2).join(' '),
+        data,
+        borderColor: color,
+        backgroundColor: color + '25',
+        pointBackgroundColor: color,
+        borderWidth: 2,
+        pointRadius: 4,
+      };
+    });
+
+    _chart = new Chart(canvas, {
+      type: 'radar',
+      data: { labels, datasets },
+      options: {
+        responsive: true,
+        animation: { duration: 300 },
+        scales: {
+          r: {
+            min: 0,
+            max: numSchools,
+            ticks: { display: false, stepSize: 1 },
+            grid: { color: gridColor },
+            pointLabels: { color: tickColor, font: { size: 11 } },
+            angleLines: { color: gridColor },
+          },
+        },
+        plugins: {
+          legend: { labels: { color: tickColor, font: { size: 12 }, padding: 16 } },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => {
+                const school = schools[ctx.datasetIndex];
+                const cat = RD.categories[ctx.dataIndex];
+                const rank = school.ranks[cat.key];
+                return ` ${school.name}: #${rank} in ${cat.label}`;
+              },
+            },
+          },
+        },
+      },
+    });
+  }
+
+  return { render, syncChips };
+})();
+
+// ============================================================
+// SECTION 10 — RECOMMENDATIONS UI
+// ============================================================
+const RecoUI = (function() {
+
+  function render() {
+    const recos = RecoEngine.getRecommendations(ST.weights, ST.schools);
+    const grid  = document.getElementById('reco-grid');
+    if (!grid) return;
+
+    grid.innerHTML = recos.map(r => {
+      const similar = r.similar.length
+        ? `<div class="reco-similar">Similar to: ${r.similar.join(', ')}</div>` : '';
+      return `
+      <div class="reco-card">
+        <div class="reco-name">${r.name}</div>
+        <div class="reco-loc">${r.location} · ${r.type}</div>
+        <div class="reco-match">⭐ ${r.matchPct}% match</div>
+        <div class="reco-tagline">${r.tagline}</div>
+        <div class="reco-why">${r.why}</div>
+        ${similar}
+        <div class="reco-est">📍 Estimated position if added: <strong>#${r.estPosition}</strong></div>
+      </div>`;
+    }).join('');
+  }
+
+  return { render };
+})();
+
+// ============================================================
+// SECTION 11 — CSV EXPORT
+// ============================================================
+const CSVExport = (function() {
+
+  function download() {
+    const catKeys = RD.categories.map(c => c.key);
+    const catLabels = RD.categories.map(c => c.label);
+
+    const header = ['Rank','School','Location','Overall Score', ...catLabels].join(',');
+    const rows = ST.schools
+      .slice()
+      .sort((a,b) => a.overallRank - b.overallRank)
+      .map(s => [
+        s.overallRank,
+        `"${s.name}"`,
+        `"${s.location}"`,
+        s.overall.toFixed(2),
+        ...catKeys.map(k => s.ranks[k]),
+      ].join(','));
+
+    const weights = ['Weights','','', '', ...RD.categories.map(c => Math.round(ST.weights[c.key]) + '%')].join(',');
+    const csv = [header, ...rows, '', weights].join('\n');
+    const url = URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));
+    const a = document.createElement('a');
+    a.href = url; a.download = 'college-rankings-2026.csv';
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 100);
+  }
+
+  return { download };
+})();
+
+// ============================================================
+// SECTION 12 — DARK MODE
+// ============================================================
+const ThemeManager = (function() {
+
+  function init() {
+    const saved = localStorage.getItem('cr-dark');
+    if (saved === '1') apply(true);
+    document.getElementById('btn-dark').addEventListener('click', () => {
+      const dark = document.documentElement.dataset.theme !== 'dark';
+      apply(dark);
+    });
+  }
+
+  function apply(dark) {
+    document.documentElement.dataset.theme = dark ? 'dark' : '';
+    document.getElementById('btn-dark').textContent = dark ? '☀️' : '🌙';
+    localStorage.setItem('cr-dark', dark ? '1' : '0');
+  }
+
+  return { init };
+})();
+
+// ============================================================
+// SECTION 13 — TABS
+// ============================================================
+function initTabs() {
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+      if (btn.dataset.tab === 'recommend') RecoUI.render();
+      if (btn.dataset.tab === 'compare') { CompareUI.syncChips(); CompareUI.render(); }
+    });
+  });
+}
+
+// ============================================================
+// SECTION 14 — INIT
+// ============================================================
+document.addEventListener('DOMContentLoaded', function() {
+
+  // 1. Clone college data into state and attach ranks as mutable copy
+  ST.schools = window.RD.colleges.map(col => ({
+    ...col,
+    ranks: { ...col.rankings },   // mutable copy so edits don't mutate source
+    metrics: { ...col.metrics },
+    overall: 0,
+    overallRank: 0,
+    _objScore: 0,
+  }));
+
+  // 2. Set default weights
+  RD.categories.forEach(cat => { ST.weights[cat.key] = cat.defaultWeight; });
+
+  // 3. Compute objective metrics ranks
+  MetricsEngine.compute(ST.schools);
+
+  // 4. Compute overall scores & ranks
+  ScoringEngine.rankAll(ST.schools, ST.weights);
+
+  // 5. Render all UI
+  ThemeManager.init();
+  initTabs();
+  WeightsUI.render();
+  WeightsUI.refresh();
+  TableUI.render();
+  CompareUI.syncChips();
+  RecoUI.render();
+
+  // 6. Search
+  document.getElementById('search').addEventListener('input', e => {
+    ST.search = e.target.value.toLowerCase().trim();
+    TableUI.render();
+  });
+
+  // 7. Edit mode toggle
+  document.getElementById('btn-edit').addEventListener('click', function() {
+    ST.editMode = !ST.editMode;
+    this.classList.toggle('active', ST.editMode);
+    this.textContent = ST.editMode ? '✅ Done Editing' : '✏️ Edit Rankings';
+    if (!ST.editMode) {
+      // Re-run obj metrics in case user edited raw metrics (they can't yet, but defensive)
+      MetricsEngine.compute(ST.schools);
+      ScoringEngine.rankAll(ST.schools, ST.weights);
+    }
+    TableUI.render();
+  });
+
+  // 8. Export
+  document.getElementById('btn-export').addEventListener('click', CSVExport.download);
+
+  // 9. Modal close
+  document.getElementById('modal-close').addEventListener('click', ModalUI.close);
+  document.getElementById('modal-overlay').addEventListener('click', e => {
+    if (e.target === document.getElementById('modal-overlay')) ModalUI.close();
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && ST.activeModal) ModalUI.close();
+  });
+});
+</script>
+</body>
+</html>
