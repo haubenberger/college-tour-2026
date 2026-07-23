@@ -192,6 +192,20 @@
   }
   .profile-text { font-size: 0.82rem; line-height: 1.6; color: var(--text); }
 
+  .stats-row {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 8px; margin-bottom: 14px;
+  }
+  .stat-tile {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: 8px; padding: 8px 6px; text-align: center;
+  }
+  .stat-value { font-size: 0.9rem; font-weight: 700; color: var(--text); }
+  .stat-label { font-size: 0.62rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-top: 2px; }
+  .stat-tile.merit-yes .stat-value { color: #22a66b; }
+  .stat-tile.merit-no .stat-value { color: var(--muted); }
+  .stat-tile.merit-ltd .stat-value { color: #d97706; }
+
   .campus-map-wrap {
     border-radius: 8px; overflow: hidden;
     border: 1px solid var(--border); margin-bottom: 6px;
@@ -431,8 +445,20 @@ function renderProfile(briefing) {
     </div>
   ` : '';
 
+  const statsBlock = briefing.stats ? (() => {
+    const s = briefing.stats;
+    const meritClass = s.meritAid === 'Yes' ? 'merit-yes' : s.meritAid === 'No' ? 'merit-no' : 'merit-ltd';
+    return `<div class="stats-row">
+      <div class="stat-tile"><div class="stat-value">${esc(s.firstYears)}</div><div class="stat-label">First-years</div></div>
+      <div class="stat-tile"><div class="stat-value">${esc(s.undergrads)}</div><div class="stat-label">Undergrads</div></div>
+      <div class="stat-tile"><div class="stat-value">${esc(s.studentFaculty)}</div><div class="stat-label">Student–Faculty</div></div>
+      <div class="stat-tile ${meritClass}"><div class="stat-value">${esc(s.meritAid)}</div><div class="stat-label">Merit Aid</div></div>
+    </div>`;
+  })() : '';
+
   return `
     <div class="college-profile" id="profile-${briefing.schoolId}">
+      ${statsBlock}
       <div class="profile-section">
         <div class="profile-section-title">Historical Context</div>
         <div class="profile-text">${esc(briefing.history)}</div>

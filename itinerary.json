@@ -1,7 +1,7 @@
 {
   "meta": {
-    "version": "6.7",
-    "created": "Jul 22, 2026 · 12:35 PM ET",
+    "version": "6.8",
+    "created": "Jul 22, 2026 · 6:05 PM ET",
     "title": "College Tour 2026",
     "travelers": "Dietrich, Theo & Simona — joined by Silke (Fri–Mon)",
     "disclaimer": "Times are planning targets; align with booked slots and confirm live schedules & rates."
@@ -86,20 +86,19 @@
       "label": "Wed Jul 22",
       "title": "MIT, BU (walk-by), Boston College → Providence + The Odyssey",
       "leg": 1,
-      "alert": "Parking, locked in (no spot-hunting): MIT — walk from the hotel, car stays put. BU — Agganis Arena Garage, 925 Comm Ave (Warren Towers closed). BC — Commonwealth Ave Garage via GPS \"2004 Campanella Way,\" floors 3–6, then rooftop → Devlin Hall. Heads-up: the ~12:37 AM movie finish sits right before Brown check-in at 9:15 AM Thu — a short night before the trip's tightest day. BU is the flex stop if you're running behind after MIT.",
+      "alert": "Parking, locked in (no spot-hunting): MIT — walk from the hotel, car stays put. BU — Agganis Arena Garage, 925 Comm Ave (Warren Towers closed). BC — Commonwealth Ave Garage via GPS \"2004 Campanella Way,\" floors 3–6, then rooftop → Devlin Hall. Heads-up: the ~12:37 AM movie finish sits right before Brown check-in at 9:30 AM Thu — a short night before the trip's tightest day. BU is the flex stop if you're running behind after MIT.",
       "entries": [
         { "time": "8:30 AM", "text": "Breakfast; check out and load the car (you leave Cambridge tonight — bags stay in the car all day)." },
         { "time": "9:30 AM", "text": "Leave the car in the hotel garage and walk to the MIT Welcome Center, 292 Main St (~6 min). No need to move the car for MIT." },
         { "time": "10:00 AM", "text": "MIT info session + tour (~90 min). Briefing + walking map in D5.", "ref": "A5" },
         { "time": "11:35 AM", "text": "Back to the hotel garage; depart for BU (~15 min over the BU Bridge)." },
         { "time": "11:55 AM", "text": "Park: Agganis Arena Garage, 925 Comm Ave (public, ~$2/hr, easy in/out). NOTE: the central Warren Towers garage is closed all summer." },
-        { "time": "12:05 PM", "text": "BU self-guided walk-by (~40 min) + quick lunch at the GSU food court. Briefing + map in D6.", "ref": "A5b" },
-        { "time": "1:05 PM", "text": "Depart BU → Boston College (Chestnut Hill, ~20 min west on Comm Ave)." },
+        { "time": "12:05 PM", "text": "BU self-guided walk-by (quick) + grab lunch. Briefing + map in D6.", "ref": "A5b" },
+        { "time": "~12:35 PM", "text": "Sneakers en route to BC — The Shops at Chestnut Hill, 199 Boylston St (Rte 9): Bloomingdale's + more, ~5 min from BC." },
         { "time": "1:35 PM", "text": "Park: BC Commonwealth Ave Garage — GPS \"2004 Campanella Way.\" Take a ticket; park floors 3–6; elevator to the 7th-floor rooftop → ~2-min walk across O'Neill Plaza to Devlin Hall." },
         { "time": "2:00 PM", "text": "At Devlin Hall, checked in ~30 min early (bring the parking ticket — admission may validate it).", "ref": "A6" },
         { "time": "2:30 PM", "text": "Boston College info session + tour (~90 min). Briefing + map in D7.", "ref": "A6" },
-        { "time": "~4:10 PM", "text": "Quick stop at The Street Chestnut Hill (~3-min walk from Devlin) — sneakers/shops en route to I-95 S." },
-        { "time": "~4:20 PM", "text": "Depart for Providence (~50 min via I-95 S)." },
+        { "time": "4:15 PM", "text": "Depart BC → Providence (~50 min via I-95 S) — straight through, no detour." },
         { "time": "~5:10 PM", "text": "Check into Aloft Providence Downtown (191 Dorrance St, Providence, RI 02903); drop bags.", "ref": "C4" },
         { "time": "~5:30 PM", "text": "Gym session at the Aloft fitness center." },
         { "time": "8:00 PM", "text": "Dinner at The Capital Grille, 10 Memorial Blvd, Providence — complimentary valet; reserve ahead. ~3-min walk to Apple Cinemas." },
@@ -111,18 +110,19 @@
       "label": "Thu Jul 23",
       "title": "Brown → Yale (+ Jonathan Edwards College)",
       "leg": 1,
-      "alert": "Tight schedule after the late movie: alarm early, bags in car by 8:15. Power Street Garage (111 Power St) is the best Brown parking — flat $18/day, ~8-min walk to the Admission Welcome Center. For Yale: Grove Street Garage, 65 Grove St, is a 3-min walk to SSS Hall — feed the meter or use ParkMobile.",
+      "alert": "Parking, locked in: Brown — Power Street Garage, 111 Power St (~10-min uphill walk to the Welcome Center). Yale — Grove Street Garage, 65 Grove St (~3-min walk to SSS Hall). No spot-hunting on College Hill or in downtown New Haven. Tight leg: Brown's tour ends ~11:30 and the Providence→New Haven drive runs ~1 hr 50 — leaving by ~11:45 lands you ~1:35, right for the 2 PM Yale check-in. If Brown runs long, head straight to Yale and see the campus first; the tour start is the fixed point.",
       "entries": [
-        { "time": "8:15 AM", "text": "Breakfast / check out of Aloft; load all bags into the car." },
-        { "time": "8:45 AM", "text": "Park at Power Street Garage, 111 Power St, Providence (~$18/day flat rate). Walk ~8 min up to Brown." },
-        { "time": "9:15 AM", "text": "Walk ~8 min to Brown's Admission Welcome Center, 21 Prospect St; check in ~15 min early. Briefing + map in D8.", "ref": "A7" },
+        { "time": "8:45 AM", "text": "Breakfast; check out of the Aloft and load the car — you leave Providence straight after Brown." },
+        { "time": "9:10 AM", "text": "Depart the Aloft; drive up College Hill (~10 min, 1.3 mi)." },
+        { "time": "9:20 AM", "text": "Park at the Power Street Garage — GPS: 111 Power Street (~$18/day flat)." },
+        { "time": "9:30 AM", "text": "Walk ~10–12 min uphill to Brown's Admission Welcome Center, 21 Prospect St — check in ~15 min early. Briefing + map in D8.", "ref": "A7" },
         { "time": "10:00 AM", "text": "Brown info session + student panel + tour (~90 min)." },
-        { "time": "~11:30 AM", "text": "Grab-and-go lunch near Brown (Thayer St). Car is still in the Power Street Garage." },
-        { "time": "11:45 AM", "text": "Depart Providence → New Haven (~1 hr 45). Leave promptly for the 2 PM tour." },
+        { "time": "11:30 AM", "text": "Back to the garage; grab-and-go lunch; depart for New Haven." },
+        { "time": "11:45 AM", "text": "Depart Providence → New Haven (~1 hr 50 via I-95 S). Leave promptly — the tight leg for the 2 PM tour." },
         { "time": "12–1 PM", "text": "Dietrich's work Zoom (12–1 PM ET / 9–10 AM PT) — hands-free, camera off, from the car while Theo co-pilots." },
-        { "time": "~1:40 PM", "text": "Park at Grove Street Garage, 65 Grove St, New Haven (~3-min walk to SSS Hall). Briefing + map in D9.", "ref": "A8" },
-        { "time": "2:00 PM", "text": "Yale campus tour (~70 min)." },
-        { "time": "3:15 PM", "text": "Walk to Jonathan Edwards College, 68 High St (~10 min) — Yale's oldest residential college.", "ref": "A8b" },
+        { "time": "~1:40 PM", "text": "New Haven — park at the Grove Street Garage, 65 Grove St; walk ~3 min to SSS Hall, 1 Prospect St. Briefing + map in D9.", "ref": "A8" },
+        { "time": "2:00 PM", "text": "Yale campus tour (~70 min) — summer tours meet at SSS Hall." },
+        { "time": "3:15 PM", "text": "Jonathan Edwards College, 68 High St (~10-min walk) — Yale's oldest residential college.", "ref": "A8b" },
         { "time": "4:00 PM", "text": "Check into Courtyard New Haven at Yale (30 Whalley Ave).", "ref": "C5" },
         { "time": "5:30 PM", "text": "Dinner at BAR — 254 Crown St (~15-min walk): New Haven apizza, packed with Yale students, across from historic Louis' Lunch. Walk in early to beat the crowd. Overnight New Haven." }
       ]
@@ -572,6 +572,7 @@
       "school": "University of Rochester",
       "hasProfile": true,
       "mapImage": "uofr_map.png",
+      "stats": { "firstYears": "~1,400", "undergrads": "6,580", "studentFaculty": "10:1", "meritAid": "Yes" },
       "history": "Founded in 1850 and relocated to its neoclassical River Campus in 1930, Rochester was shaped by one transformative donor — George Eastman of Kodak — whose gifts built the Eastman School of Music, the medical school, and much of the campus you'll walk today. His statue presides over the Eastman Quadrangle. Two Rochester figures anchor the university's moral throughline: Susan B. Anthony, whose advocacy helped open the university to women in 1900, and Frederick Douglass, who published the North Star in Rochester — both are memorialized on campus. Motto: Meliora — 'ever better.'",
       "programUniqueness": "The Rochester Curriculum has no general-education core: beyond a major, students build two self-chosen 'clusters' (a trio of related courses) in each of the two divisions outside their major. This means Theo could pair a Brain & Cognitive Sciences or neuroscience major (a national flagship, with direct ties to his UCSD work) with deliberate clusters in philosophy and political science — rather than checking distribution boxes. All four of his interests live in one degree. The 'Rochester School' (William Riker's rational-choice tradition) anchors the poli-sci side; the Institute of Optics was the nation's first. Undergraduate research is the norm. Two signature programs extend the runway: Take Five (a tuition-free extra semester/year outside the major) and the Kauffman Entrepreneurial Year (KEY). Rochester also awards open merit scholarships — relevant given the family's aid picture.",
       "walkingTour": {
@@ -637,6 +638,7 @@
       "schoolId": "A2",
       "school": "Cornell",
       "hasProfile": true,
+      "stats": { "firstYears": "3,861", "undergrads": "16,128", "studentFaculty": "9:1", "meritAid": "No" },
       "history": "Chartered in 1865 by Ezra Cornell and Andrew Dickson White, Cornell was radical for its era — nonsectarian and, early on, coeducational — and built on Ezra's credo: 'I would found an institution where any person can find instruction in any study.' That 'any person, any study' ethos still defines the place. It is the youngest Ivy and a hybrid — a private university that also houses New York's land-grant colleges — set on a dramatic hillside above Cayuga Lake and laced with gorges. The Arts Quad is the founding heart, where the Ezra Cornell and A.D. White statues face each other and the 173-foot McGraw Tower chimes daily over Uris Library.",
       "programUniqueness": "For Theo, the draw is breadth with depth. Applicants choose one undergraduate college up front — for his interests, the College of Arts & Sciences — which keeps requirements flexible and lets students combine fields (the College Scholar Program even lets a few design their own major). All four of his interests run deep here: Government (political science) in White Hall is nationally ranked, Philosophy sits in Goldwin Smith Hall, Psychology and Neurobiology & Behavior cover the neuroscience side (his UCSD through-line), and Cornell Law School's Gothic quad at Myron Taylor Hall is a visible draw for the law interest. One honest caveat given your aid picture: like the other Ivies, Cornell awards need-based aid only — no merit scholarships — so it belongs on the list for fit, research, and prestige rather than as a financial play.",
       "mapImage": "cornell_map.png",
@@ -704,6 +706,7 @@
       "school": "Harvard",
       "hasProfile": true,
       "mapImage": "harvard_map.png",
+      "stats": { "firstYears": "1,675", "undergrads": "7,038", "studentFaculty": "7:1", "meritAid": "No" },
       "history": "Founded in 1636, Harvard is the oldest university in the United States — older than the nation itself. Its heart is Harvard Yard, the elm-shaded quad you'll walk: the John Harvard statue outside University Hall (the 'statue of three lies'), the monumental Widener Library facing Memorial Church across Tercentenary Theatre, and the red brick and ivy that set the template for the American campus. Harvard Square spills out just beyond Johnston Gate.",
       "programUniqueness": "For Theo, Harvard College's strength is its range. Concentrations reach all four of his interests: Philosophy lives in Emerson Hall (right on the Yard), Government (political science) is a national powerhouse, the interfaculty Mind/Brain/Behavior initiative and Psychology in William James Hall anchor the neuroscience side, and Harvard Law School's Langdell quad sits a short walk northwest. Students braid a path across the College plus its libraries and museums. The honest caveat, as with the other Ivies: Harvard offers need-based aid only — no merit scholarships — so it belongs on the list for fit and prestige rather than as a financial play.",
       "walkingTour": {
@@ -770,6 +773,7 @@
       "school": "Tufts",
       "hasProfile": true,
       "mapImage": "tufts_map.png",
+      "stats": { "firstYears": "~1,700", "undergrads": "7,126", "studentFaculty": "10:1", "meritAid": "No" },
       "history": "Chartered in 1852 by Universalists on a breezy hill straddling Medford and Somerville, Tufts has always been small, independent, and a little quirky — its mascot is Jumbo, P.T. Barnum's legendary circus elephant, whose namesake Barnum Hall anchors the campus. From the President's Lawn the Boston skyline unfolds; Ballou Hall (1852) and the Romanesque Goddard Chapel crown the hilltop Academic Quad you'll tour.",
       "programUniqueness": "Tufts punches above its size for Theo's interests. It's nationally known for International Relations and Political Science (Packard Hall), Philosophy sits in Miner Hall, and a strong undergraduate Neuroscience program plus Psychology in Paige Hall cover the brain side — the through-line from his UCSD work. There's no law school, but the poli-sci / IR pipeline and pre-law advising feed law careers directly. Like the Ivies, though, Tufts awards need-based aid only — no merit scholarships — so weigh it as a fit choice against the merit schools.",
       "walkingTour": {
@@ -836,6 +840,7 @@
       "school": "MIT",
       "hasProfile": true,
       "mapImage": "mit_map.png",
+      "stats": { "firstYears": "~1,100", "undergrads": "~4,500", "studentFaculty": "3:1", "meritAid": "No" },
       "history": "Founded in 1861 and rooted on the Charles since 1916, MIT built its identity around 'Mens et Manus' — mind and hand. The campus reads as one connected machine: the Great Dome over Killian Court, the half-mile Infinite Corridor slicing through the Maclaurin Buildings, and Frank Gehry's tumbling Stata Center. It's intense, collaborative, and unmistakably built for people who like to make things.",
       "programUniqueness": "MIT is STEM-first, but it hits more of Theo's interests than people expect. Brain & Cognitive Sciences (Building 46, with the McGovern and Picower neuroscience institutes) is among the best in the world — a direct extension of his UCSD work. Its Philosophy group (within Linguistics & Philosophy, housed in Stata) is a top analytic-philosophy department, and Political Science (Course 17) is strong and quantitative. There's no law school, but the poli-sci path feeds law. As with the Ivies, MIT is need-based only — no merit aid — so treat it as a reach-for-fit, not a merit play.",
       "walkingTour": {
@@ -902,6 +907,7 @@
       "school": "Boston University",
       "hasProfile": true,
       "mapImage": "bu_map.png",
+      "stats": { "firstYears": "3,461", "undergrads": "18,805", "studentFaculty": "10:1", "meritAid": "Yes" },
       "history": "Founded in 1839, BU is a big, urban, energetic university strung for a mile and a half along Commonwealth Avenue, with the Green Line trolley running right down the median. Martin Luther King Jr. earned his PhD here; Marsh Chapel and its plaza are the symbolic heart, and the new stacked-glass Center for Computing & Data Sciences (the 'Jenga tower') is the modern landmark. It feels like part of the city, not walled off from it.",
       "programUniqueness": "For Theo, BU is a strong all-around fit — and, unlike most of this week's schools, it offers real merit aid (Trustee and Presidential Scholarships), which matters here. Neuroscience, Philosophy, and Political Science all live in the College of Arts & Sciences, its pre-law advising is deep, and BU even has its own School of Law on campus. Big-school scale, but with an honors college (Kilachand) and merit money on the table make it worth a serious look.",
       "walkingTour": {
@@ -968,6 +974,7 @@
       "school": "Boston College",
       "hasProfile": true,
       "mapImage": "bc_map.png",
+      "stats": { "firstYears": "2,479", "undergrads": "9,654", "studentFaculty": "10:1", "meritAid": "Very ltd." },
       "history": "Founded in 1863 by the Jesuits and moved to its Chestnut Hill hilltop in 1913, Boston College is a Catholic liberal-arts university famous for its 'Collegiate Gothic' architecture — Gasson Hall's tower is the icon, and Bapst Library's Gargan Hall is one of the most beautiful reading rooms in the country. The campus is green, leafy, and traditional, six miles west of downtown at the end of the Green Line B.",
       "programUniqueness": "The Jesuit intellectual tradition makes BC unusually strong in Philosophy — a real draw for Theo — alongside a well-regarded Political Science department and a growing Neuroscience program; the core curriculum leans into big questions of ethics and meaning, and pre-law placement is strong. On money, be clear-eyed: BC is essentially need-based, with only its very selective Presidential Scholars Program offering merit — so weigh it as a fit and values choice more than a merit play.",
       "walkingTour": {
@@ -1034,8 +1041,9 @@
       "school": "Brown",
       "hasProfile": true,
       "mapImage": "brown_map.png",
-      "history": "Founded in 1764 as the College of Rhode Island — the first American university to accept students regardless of their religious beliefs — Brown moved to College Hill in Providence and adopted its current name in 1804. Its College Green and Van Wickle Gates (opened only for Convocation and Commencement) are the ceremonial heart. Brown's transformative Open Curriculum, adopted in 1969, eliminated all distribution requirements: students design their own education, take courses S/NC if they choose, and face no mandatory courses outside their major. The Van Wickle Gates open inward at Convocation (welcoming new students) and outward at Commencement — a tradition that marks a student's full passage through the university.",
-      "programUniqueness": "The Open Curriculum is Theo's biggest draw: no distribution requirements means he can braid neuroscience, philosophy, political science, and pre-law without compromise — every semester is self-designed. The Carney Institute for Brain Science anchors a world-class neuroscience program with strong undergraduate research access. Brown's pre-law advising posts an 83% law school acceptance rate. The S/NC grading option lets Theo take intellectual risks in new fields without GPA penalty. Like the other Ivies, Brown offers need-based aid only — no merit scholarships — but the curricular freedom it offers is unmatched among Ivy League schools.",
+      "stats": { "firstYears": "~1,725", "undergrads": "7,910", "studentFaculty": "6:1", "meritAid": "No" },
+      "history": "Founded in 1764, Brown is the seventh-oldest college in the country, set on College Hill above downtown Providence. Its signature is the Open Curriculum: there are no distribution requirements — students design their own path and take everything for a grade or Satisfactory/No Credit. The College Green, University Hall (1770, used as a barracks in the Revolution), and the Van Wickle Gates (opened inward at Convocation, outward at Commencement) anchor a relaxed, intellectually independent culture.",
+      "programUniqueness": "For Theo, the Open Curriculum is the headline: with four interests, he could genuinely braid neuroscience, philosophy, political science, and pre-law without fighting a core. Brown is strong across all of them — the Carney Institute for Brain Science and Cognitive Sciences anchor neuro, and the outcomes are striking (about 83% of applying seniors get into law school). The honest caveat is familiar: as an Ivy, Brown is need-based only — no merit scholarships — so it's a fit-and-prestige choice rather than a merit play.",
       "walkingTour": {
         "duration": "~75 min (guided tour covers most of this)",
         "startNote": "Tour meets at the Admission Welcome Center, 21 Prospect St. Walk ~8 min from Power Street Garage (111 Power St).",
@@ -1048,7 +1056,7 @@
             "num": 1,
             "name": "Admission Welcome Center",
             "lat": 41.8264, "lng": -71.4027,
-            "notes": "Tour check-in, 21 Prospect St. Arrive ~15 min early; QR code ready."
+            "notes": "Tour check-in, 21 Prospect St — ~10-min uphill walk from the Power Street Garage."
           },
           {
             "num": 2,
@@ -1078,19 +1086,19 @@
             "num": 6,
             "name": "Stephen Robert '62 Campus Center",
             "lat": 41.8256, "lng": -71.4028,
-            "notes": "The student hub — dining, student orgs, and the daily pulse of the College Green."
+            "notes": "Student life hub — the everyday pulse of the Open-Curriculum culture."
           },
           {
             "num": 7,
             "name": "Metcalf Research Building",
             "lat": 41.8248, "lng": -71.4036,
-            "notes": "Home of the Carney Institute for Brain Science — Theo's neuroscience anchor at Brown. Note the research lab signage."
+            "notes": "Cognitive & Psychological Sciences + Carney brain-science ties — Theo's neuro base."
           },
           {
             "num": 8,
             "name": "Sciences Library (SciLi)",
             "lat": 41.8244, "lng": -71.4028,
-            "notes": "The brutalist Sciences Library tower — the study hub for STEM and neuroscience students. Views of College Hill from the upper floors."
+            "notes": "The brutalist tower — the sciences study engine, with city views up top."
           }
         ]
       }
@@ -1100,8 +1108,9 @@
       "school": "Yale",
       "hasProfile": true,
       "mapImage": "yale_map.png",
-      "history": "Founded in 1701 in Saybrook, CT and moved to New Haven in 1718, Yale is the third-oldest university in the United States. Its Collegiate Gothic architecture — Harkness Tower, Sterling Memorial Library, the Beinecke Rare Book Library — defines the New Haven skyline and sets the visual template for dozens of campuses worldwide. Yale's 14 residential colleges give undergraduates a small, close-knit community within a major research university; each college has its own courtyard, dining hall, and master. The Beinecke Rare Book Library holds a Gutenberg Bible and original Audubon prints behind walls of translucent Vermont marble.",
-      "programUniqueness": "For Theo, Yale is the strongest single school for his combined interests. Political Science is a national powerhouse (the origin of 'grand strategy' as an academic field), the Wu Tsai Institute anchors world-class neuroscience with strong undergraduate access, Philosophy is deep in the analytic tradition, and Yale Law School is ranked #1 in the country — the most visible proof of a pre-law pipeline. Yale offers need-based financial aid only (no merit scholarships), but the pre-law prestige, poli-sci reputation, and residential-college experience are together unmatched.",
+      "stats": { "firstYears": "1,640", "undergrads": "6,814", "studentFaculty": "5:1", "meritAid": "No" },
+      "history": "Founded in 1701, Yale is the third-oldest university in the country and the great cathedral of Collegiate Gothic — Harkness Tower, the nave-like Sterling Memorial Library, and Beinecke's translucent marble walls that glow from within. Undergraduates belong to one of 14 residential colleges (a model Harvard later copied), which become their home, dining hall, and community for four years. Old Campus, with 1750s Connecticut Hall and the Nathan Hale statue, is where first-years live.",
+      "programUniqueness": "Yale may be the single best fit on this trip for Theo's mix. Political Science is a national powerhouse, Philosophy is top-ranked, the Wu Tsai Institute drives a strong Neuroscience track — and Yale Law School is the #1 law school in the country, an unmatched backdrop for a pre-law student even as an undergrad. The one catch is money: as an Ivy, Yale is need-based only, with no merit scholarships, so it belongs on the list for fit and reach rather than as a financial play.",
       "walkingTour": {
         "duration": "~70 min (guided tour)",
         "startNote": "Tour departs from SSS Hall, 1 Prospect St (Grove St side). Park at Grove Street Garage, 65 Grove St (~3-min walk).",
@@ -1156,7 +1165,7 @@
             "num": 8,
             "name": "Jonathan Edwards College",
             "lat": 41.3091, "lng": -72.9279,
-            "notes": "One of Yale's oldest residential colleges, 68 High St — Gothic courtyard, gated. Exterior and courtyard are the public view; interior needs a Yale affiliate."
+            "notes": "Yale's oldest residential college — the Gothic courtyard to end on. 68 High St, ~10-min walk from SSS Hall."
           }
         ]
       }
