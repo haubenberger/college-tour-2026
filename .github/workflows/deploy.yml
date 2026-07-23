@@ -11,23 +11,21 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install lftp
-        run: sudo apt-get install -y lftp
+      - name: Install lftp and sshpass
+        run: sudo apt-get install -y lftp sshpass
 
-      - name: Deploy via lftp (passive, TLS-optional, 4 retries)
+      - name: Deploy via SFTP (port 22 — bypasses Azure FTP/21 block)
         env:
-          FTP_HOST: 81.19.145.65
+          FTP_HOST: ftp45.world4you.com
           FTP_USER: ${{ secrets.FTP_USERNAME }}
           FTP_PASS: ${{ secrets.FTP_PASSWORD }}
         run: |
           lftp -e "
-            set ftp:ssl-allow yes;
-            set ftp:ssl-force no;
-            set ftp:passive-mode yes;
+            set sftp:auto-confirm yes;
             set net:timeout 30;
             set net:max-retries 4;
             set net:reconnect-interval-base 10;
-            open -u \"$FTP_USER\",\"$FTP_PASS\" \"$FTP_HOST\";
+            open sftp://$FTP_USER:$FTP_PASS@$FTP_HOST;
             mirror --reverse --delete --verbose \
               --exclude-glob .git \
               --exclude-glob .github \
