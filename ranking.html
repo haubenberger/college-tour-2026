@@ -42,11 +42,21 @@ button{cursor:pointer;font-family:inherit}
 .ctabs{display:flex;gap:4px;padding:10px 20px 0;background:var(--surface);border-bottom:1px solid var(--border);flex-shrink:0}
 .ctab{padding:8px 16px;border:none;background:none;font-size:14px;font-weight:500;color:var(--sub);border-radius:8px 8px 0 0;border-bottom:2px solid transparent}
 .ctab.active{color:var(--accent);border-bottom-color:var(--accent)}
-.main{display:flex;flex:1;overflow:hidden}
+.main{display:flex;flex:1;overflow:hidden;position:relative}
 
 /* SIDEBAR */
-.sidebar{width:260px;flex-shrink:0;background:var(--surface);border-right:1px solid var(--border);overflow-y:auto;padding:16px}
-.sidebar h2{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--sub);margin-bottom:12px}
+.sidebar{
+  width:260px;flex-shrink:0;background:var(--surface);
+  border-right:1px solid var(--border);overflow:hidden;
+  display:flex;flex-direction:column;
+  transition:width .22s ease;
+}
+.sidebar.collapsed{width:0;border-right:none}
+.sidebar-inner{padding:16px;width:260px;flex:1;overflow-y:auto;display:flex;flex-direction:column}
+.sidebar-hd{display:flex;align-items:center;gap:6px;margin-bottom:12px}
+.sidebar-hd h2{flex:1;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--sub)}
+.btn-collapse{background:none;border:1px solid var(--border);border-radius:6px;width:24px;height:24px;font-size:11px;color:var(--sub);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.btn-collapse:hover{background:var(--border)}
 .budget-bar{height:8px;background:var(--border);border-radius:4px;overflow:hidden;margin-bottom:4px}
 .budget-fill{height:100%;background:var(--accent);transition:width .2s,background .2s;border-radius:4px}
 .budget-fill.over{background:var(--danger)}
@@ -59,14 +69,27 @@ button{cursor:pointer;font-family:inherit}
 .weight-ctrl button:hover:not(:disabled){background:var(--accent);color:#fff;border-color:var(--accent)}
 .weight-ctrl button:disabled{opacity:.35;cursor:default}
 .weight-val{width:32px;text-align:center;font-size:13px;font-weight:600}
-.sidebar-footer{margin-top:12px;padding-top:12px;border-top:1px solid var(--border)}
+.sidebar-footer{margin-top:auto;padding-top:12px;border-top:1px solid var(--border)}
 .btn-reset{width:100%;padding:8px;border:1px solid var(--border);border-radius:8px;background:none;font-size:13px;color:var(--sub)}
 .btn-reset:hover{background:var(--border)}
 
+/* EXPAND TAB (visible when sidebar collapsed) */
+.sidebar-expand{
+  position:absolute;left:0;top:50%;transform:translateY(-50%);
+  background:var(--surface);border:1px solid var(--border);border-left:none;
+  border-radius:0 8px 8px 0;padding:12px 6px;
+  display:none;z-index:10;cursor:pointer;
+  writing-mode:vertical-rl;font-size:11px;font-weight:600;
+  color:var(--sub);gap:6px;align-items:center;
+  box-shadow:2px 0 8px rgba(0,0,0,.08);
+}
+.sidebar-expand:hover{background:var(--bg);color:var(--accent)}
+.sidebar.collapsed ~ .sidebar-expand{display:flex}
+
 /* CONTENT */
 .content{flex:1;overflow-y:auto;padding:20px}
-.section-header{display:flex;align-items:center;gap:10px;margin-bottom:12px}
-.section-header h2{font-size:20px;font-weight:700;flex:1}
+.content-top{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.content-top h2{font-size:20px;font-weight:700;flex:1}
 .btn-primary{padding:9px 18px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:500}
 .btn-primary:hover{background:var(--accent-h)}
 .score-warn{font-size:13px;color:var(--danger);padding:10px 14px;background:rgba(255,59,48,.08);border-radius:8px;margin-bottom:12px}
@@ -75,10 +98,26 @@ button{cursor:pointer;font-family:inherit}
 .cat-chips-wrap{margin-bottom:16px}
 .cat-chips-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--sub);margin-bottom:8px}
 .cat-chips{display:flex;flex-wrap:wrap;gap:6px}
-.cat-chip{padding:6px 12px;border:1.5px solid var(--border);border-radius:20px;font-size:12px;font-weight:600;background:var(--surface);color:var(--text);cursor:pointer;transition:border-color .15s,background .15s}
-.cat-chip:hover{border-color:var(--accent);color:var(--accent)}
+.cat-chip{
+  padding:5px 11px;border:1.5px solid var(--border);
+  border-radius:20px;font-size:12px;font-weight:600;
+  background:var(--surface);color:var(--text);cursor:pointer;
+  transition:border-color .15s,background .15s;
+  display:flex;align-items:center;gap:5px;
+}
+.cat-chip:hover:not([disabled]){border-color:var(--accent);color:var(--accent)}
 .cat-chip.ranked{border-color:var(--green);color:var(--green);background:rgba(52,199,89,.07)}
+.cat-chip.partial{border-color:var(--accent-gold);color:#9a7a1a}
+[data-theme=dark] .cat-chip.partial{color:var(--accent-gold-light)}
 .cat-chip.auto{border-color:var(--sub);color:var(--sub);cursor:default;font-style:italic}
+.chip-prog{font-size:10px;opacity:.8}
+
+/* PROGRESS ROW */
+.prog-row{display:flex;align-items:center;gap:10px;margin-bottom:16px;padding:10px 14px;background:var(--surface);border-radius:10px;border:1px solid var(--border)}
+.prog-bar-wrap{flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden}
+.prog-bar-fill{height:100%;background:var(--green);border-radius:3px;transition:width .3s}
+.prog-label{font-size:12px;color:var(--sub);white-space:nowrap}
+.prog-label strong{color:var(--text)}
 
 /* SCHOOL CARDS */
 .school-list{display:flex;flex-direction:column;gap:10px}
@@ -92,9 +131,7 @@ button{cursor:pointer;font-family:inherit}
 .school-score{text-align:right;flex-shrink:0}
 .score-num{font-size:20px;font-weight:700;color:var(--accent)}
 .score-lbl{font-size:11px;color:var(--sub);display:block}
-.unranked-tag{font-size:11px;color:var(--danger);font-weight:600}
-.card-actions{display:flex;gap:6px;flex-shrink:0}
-.btn-rm{padding:6px 10px;background:none;border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--sub)}
+.btn-rm{padding:6px 10px;background:none;border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--sub);flex-shrink:0}
 .btn-rm:hover{background:var(--danger);color:#fff;border-color:var(--danger)}
 
 /* MODALS */
@@ -114,13 +151,22 @@ button{cursor:pointer;font-family:inherit}
 /* CATEGORY RANKING MODAL */
 .cat-modal-hint{font-size:12px;color:var(--sub);margin-bottom:14px}
 .crr-list{display:flex;flex-direction:column;gap:6px}
-.crr{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--bg);border-radius:10px;border:1px solid var(--border)}
+.crr{
+  display:flex;align-items:center;gap:10px;padding:10px 12px;
+  background:var(--bg);border-radius:10px;border:1.5px solid var(--border);
+  cursor:grab;user-select:none;
+  transition:box-shadow .15s,border-color .15s;
+}
+.crr:active{cursor:grabbing}
+.crr.dragging{opacity:.4;border-style:dashed}
+.crr.drag-over{border-color:var(--accent);box-shadow:0 0 0 2px rgba(0,113,227,.2)}
 .crr-pos{width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.crr-drag{font-size:16px;color:var(--border);flex-shrink:0;line-height:1}
 .crr-info{flex:1;min-width:0}
 .crr-name{font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .crr-sub{font-size:11px;color:var(--sub)}
 .crr-btns{display:flex;flex-direction:column;gap:3px;flex-shrink:0}
-.crr-btns button{width:28px;height:22px;border:1px solid var(--border);border-radius:5px;background:var(--surface);font-size:11px;color:var(--text);display:flex;align-items:center;justify-content:center;line-height:1}
+.crr-btns button{width:28px;height:22px;border:1px solid var(--border);border-radius:5px;background:var(--surface);font-size:11px;color:var(--text);display:flex;align-items:center;justify-content:center;line-height:1;cursor:pointer}
 .crr-btns button:hover:not(:disabled){background:var(--accent);color:#fff;border-color:var(--accent)}
 .crr-btns button:disabled{opacity:.25;cursor:default}
 
@@ -155,7 +201,13 @@ button{cursor:pointer;font-family:inherit}
 .btn-add-reco{margin-top:10px;width:100%;padding:7px;border:1px solid var(--accent);border-radius:8px;background:none;color:var(--accent);font-size:13px;font-weight:500}
 .btn-add-reco:hover{background:var(--accent);color:#fff}
 
-@media(max-width:680px){.main{flex-direction:column}.sidebar{width:100%;border-right:none;border-bottom:1px solid var(--border)}}
+@media(max-width:680px){
+  .main{flex-direction:column}
+  .sidebar{width:100%!important;border-right:none;border-bottom:1px solid var(--border)}
+  .sidebar.collapsed{width:0!important;border-bottom:none}
+  .sidebar-expand{writing-mode:horizontal-tb;top:auto;left:50%;bottom:0;transform:translateX(-50%);border-radius:8px 8px 0 0;border-left:1px solid var(--border);border-bottom:none;padding:6px 14px}
+  .sidebar.collapsed ~ .sidebar-expand{display:flex}
+}
 </style>
 </head>
 <body>
@@ -185,28 +237,36 @@ button{cursor:pointer;font-family:inherit}
     <button class="ctab" data-tab="reco">Recommendations</button>
   </div>
   <div class="main">
-    <div class="sidebar">
-      <h2>Category Weights</h2>
-      <div class="budget-bar"><div class="budget-fill" id="budgetFill"></div></div>
-      <div class="budget-label" id="budgetLabel">0 / 100 pts used</div>
-      <div id="weightsPanel"></div>
-      <div class="sidebar-footer">
-        <button class="btn-reset" id="btnResetWeights">Reset to defaults</button>
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-inner">
+        <div class="sidebar-hd">
+          <h2>Category Weights</h2>
+          <button class="btn-collapse" id="btnCollapse" title="Hide weights">◀</button>
+        </div>
+        <div class="budget-bar"><div class="budget-fill" id="budgetFill"></div></div>
+        <div class="budget-label" id="budgetLabel">0 / 100 pts used</div>
+        <div id="weightsPanel"></div>
+        <div class="sidebar-footer">
+          <button class="btn-reset" id="btnResetWeights">Reset to defaults</button>
+        </div>
       </div>
     </div>
+    <button class="sidebar-expand" id="btnExpand">▶ Weights</button>
     <div class="content">
       <div id="tab-rankings">
-        <div class="section-header">
+        <div class="content-top">
           <h2>My Rankings</h2>
           <button class="btn-primary" id="btnAddSchool">+ Add School</button>
         </div>
         <div id="scoreWarn" class="score-warn" style="display:none"></div>
-
+        <div id="progRow" class="prog-row" style="display:none">
+          <div class="prog-bar-wrap"><div class="prog-bar-fill" id="progFill"></div></div>
+          <div class="prog-label" id="progLabel"></div>
+        </div>
         <div class="cat-chips-wrap">
-          <div class="cat-chips-label">Rank schools by category — click to rank</div>
+          <div class="cat-chips-label">Rank schools by category — click to open</div>
           <div class="cat-chips" id="catChips"></div>
         </div>
-
         <div class="school-list" id="schoolList"></div>
       </div>
       <div id="tab-compare" style="display:none">
@@ -230,7 +290,7 @@ button{cursor:pointer;font-family:inherit}
       <button class="modal-close" id="catModalClose">✕</button>
     </div>
     <div class="modal-body">
-      <div class="cat-modal-hint">↑ ↓ to reorder — position 1 = your favourite</div>
+      <div class="cat-modal-hint">Drag rows or use ▲▼ — #1 = your favourite</div>
       <div class="crr-list" id="catModalBody"></div>
     </div>
     <div class="modal-foot">
@@ -331,6 +391,19 @@ function overallRank() {
   return map;
 }
 
+/* ── SIDEBAR TOGGLE ── */
+const sidebarEl = document.getElementById('sidebar');
+const btnCollapse = document.getElementById('btnCollapse');
+const btnExpand   = document.getElementById('btnExpand');
+
+function setSidebar(collapsed) {
+  sidebarEl.classList.toggle('collapsed', collapsed);
+  localStorage.setItem('sidebar_collapsed', collapsed ? '1' : '0');
+}
+
+btnCollapse.addEventListener('click', () => setSidebar(true));
+btnExpand.addEventListener('click',   () => setSidebar(false));
+
 /* ── WEIGHTS ── */
 function renderWeights() {
   const used = wSum();
@@ -373,26 +446,49 @@ function renderCatChips() {
   chips.innerHTML = '';
   ALL_CATS.forEach(c => {
     const isAuto = c.key === 'objectiveMetrics';
-    const allRanked = !isAuto && S.schools.length > 0 && S.schools.every(s => s.rankings[c.key] != null);
+    const rankedCount = isAuto ? 0 : S.schools.filter(s => s.rankings[c.key] != null).length;
+    const total = S.schools.length;
+    const allRanked = !isAuto && total > 0 && rankedCount === total;
+    const partial   = !isAuto && rankedCount > 0 && rankedCount < total;
     const chip = document.createElement('button');
-    chip.className = 'cat-chip' + (isAuto ? ' auto' : allRanked ? ' ranked' : '');
-    chip.textContent = c.label + (isAuto ? ' (auto)' : allRanked ? ' ✓' : '');
+    chip.className = 'cat-chip' + (isAuto ? ' auto' : allRanked ? ' ranked' : partial ? ' partial' : '');
     chip.disabled = isAuto;
-    chip.title = isAuto ? 'Computed automatically from metrics' : 'Click to rank schools in this category';
+    chip.title = isAuto ? 'Computed automatically' : 'Click to rank schools in this category';
+    const progTxt = isAuto ? '' : (total > 0 ? ` <span class="chip-prog">${rankedCount}/${total}</span>` : '');
+    chip.innerHTML = c.label + (allRanked ? ' ✓' : '') + progTxt;
     if (!isAuto) chip.addEventListener('click', () => openCatModal(c.key));
     chips.appendChild(chip);
   });
 }
 
-/* ── SCHOOL LIST ── */
+/* ── SCHOOL LIST + PROGRESS ── */
 function renderSchoolList() {
   renderCatChips();
+
+  // overall progress bar
+  const n = S.schools.length;
+  const totalCells = USER_CATS.length * n;
+  const filledCells = USER_CATS.reduce((t,c) => t + S.schools.filter(s => s.rankings[c.key] != null).length, 0);
+  const progRow = document.getElementById('progRow');
+  if (n > 0 && totalCells > 0) {
+    progRow.style.display = '';
+    const pct = Math.round(filledCells / totalCells * 100);
+    document.getElementById('progFill').style.width = pct+'%';
+    const catsLeft = USER_CATS.filter(c => S.schools.some(s => s.rankings[c.key] == null)).length;
+    document.getElementById('progLabel').innerHTML =
+      catsLeft === 0
+        ? '<strong>All categories ranked! ✨</strong>'
+        : `<strong>${pct}%</strong> — ${catsLeft} categor${catsLeft!==1?'ies':'y'} left`;
+  } else {
+    progRow.style.display = 'none';
+  }
+
   const ws = wSum();
   const warn = document.getElementById('scoreWarn');
   if (ws !== 100) {
     warn.style.display = '';
     warn.textContent = ws < 100
-      ? `Weights sum to ${ws}/100 — assign ${100-ws} more point${100-ws!==1?'s':''} to see scores.`
+      ? `Weights sum to ${ws}/100 — assign ${100-ws} more point${100-ws!==1?'s':''} to enable scoring.`
       : `Weights sum to ${ws}/100 — over budget by ${ws-100}. Scores hidden.`;
   } else { warn.style.display = 'none'; }
 
@@ -407,11 +503,9 @@ function renderSchoolList() {
   sorted.forEach(s => {
     const score = scoreSchool(s), rank = ranks[s.id];
     const rankedCats = USER_CATS.filter(c => s.rankings[c.key] != null).length;
-    const totalCats = USER_CATS.length;
-    const fullyRanked = rankedCats === totalCats;
+    const fullyRanked = rankedCats === USER_CATS.length;
     const card = document.createElement('div');
     card.className = 'school-card' + (fullyRanked ? '' : ' unranked');
-    const catProgress = fullyRanked ? '' : `<span style="font-size:11px;color:var(--sub)">${rankedCats}/${totalCats} categories</span>`;
     card.innerHTML = `
       ${rank!=null ? `<div class="rank-badge">#${rank}</div>` : `<div class="rank-badge none">—</div>`}
       <div class="school-info">
@@ -421,11 +515,9 @@ function renderSchoolList() {
       <div class="school-score">
         ${rank!=null
           ? `<span class="score-num">${score}</span><span class="score-lbl">score</span>`
-          : catProgress}
+          : `<span style="font-size:11px;color:var(--sub)">${rankedCats}/${USER_CATS.length} cats</span>`}
       </div>
-      <div class="card-actions">
-        <button class="btn-rm" data-rm="${s.id}" title="Remove school">✕</button>
-      </div>`;
+      <button class="btn-rm" data-rm="${s.id}" title="Remove">✕</button>`;
     list.appendChild(card);
   });
 }
@@ -440,19 +532,17 @@ document.getElementById('schoolList').addEventListener('click', e => {
 
 /* ── CATEGORY RANKING MODAL ── */
 let catModalKey = null;
-let catOrder = []; // school IDs in ranked order (index 0 = rank 1)
+let catOrder = [];
+let dragSrcIdx = null;
 
 function openCatModal(key) {
   catModalKey = key;
   const cat = ALL_CATS.find(c => c.key === key);
   document.getElementById('catModalTitle').textContent = 'Rank by: ' + cat.label;
-
-  // Build order: already-ranked schools sorted by current rank, then unranked appended
   const ranked = S.schools.filter(s => s.rankings[key] != null)
     .sort((a,b) => a.rankings[key] - b.rankings[key]);
   const unranked = S.schools.filter(s => s.rankings[key] == null);
   catOrder = [...ranked, ...unranked].map(s => s.id);
-
   renderCatModalBody();
   document.getElementById('catModal').style.display = 'flex';
 }
@@ -465,8 +555,11 @@ function renderCatModalBody() {
     if (!s) return;
     const row = document.createElement('div');
     row.className = 'crr';
+    row.draggable = true;
+    row.dataset.i = i;
     row.innerHTML = `
       <div class="crr-pos">${i+1}</div>
+      <span class="crr-drag">⋮⋮</span>
       <div class="crr-info">
         <div class="crr-name">${s.name}</div>
         <div class="crr-sub">${s.location}</div>
@@ -475,6 +568,32 @@ function renderCatModalBody() {
         <button class="crr-up" data-i="${i}" ${i===0?'disabled':''}>▲</button>
         <button class="crr-dn" data-i="${i}" ${i===catOrder.length-1?'disabled':''}>▼</button>
       </div>`;
+
+    /* drag events */
+    row.addEventListener('dragstart', e => {
+      dragSrcIdx = i;
+      row.classList.add('dragging');
+      e.dataTransfer.effectAllowed = 'move';
+    });
+    row.addEventListener('dragend', () => {
+      row.classList.remove('dragging');
+      document.querySelectorAll('.crr').forEach(r => r.classList.remove('drag-over'));
+      dragSrcIdx = null;
+    });
+    row.addEventListener('dragover', e => {
+      e.preventDefault();
+      e.dataTransfer.dropEffect = 'move';
+      document.querySelectorAll('.crr').forEach(r => r.classList.remove('drag-over'));
+      if (dragSrcIdx !== i) row.classList.add('drag-over');
+    });
+    row.addEventListener('drop', e => {
+      e.preventDefault();
+      if (dragSrcIdx === null || dragSrcIdx === i) return;
+      const [item] = catOrder.splice(dragSrcIdx, 1);
+      catOrder.splice(i, 0, item);
+      renderCatModalBody();
+    });
+
     body.appendChild(row);
   });
 }
@@ -652,7 +771,7 @@ document.getElementById('btnExport').addEventListener('click', () => {
   const a=document.createElement('a'); a.href='data:text/csv;charset=utf-8,'+encodeURIComponent(csv); a.download='college-rankings.csv'; a.click();
 });
 
-/* ── CLOSE ON BACKDROP CLICK ── */
+/* ── CLOSE ON BACKDROP ── */
 ['catModal','addModal'].forEach(id => {
   document.getElementById(id).addEventListener('click', e => {
     if(e.target===document.getElementById(id)) document.getElementById(id).style.display='none';
@@ -663,6 +782,8 @@ document.getElementById('btnExport').addEventListener('click', () => {
 const savedTheme=localStorage.getItem('theme');
 if (savedTheme) applyTheme(savedTheme==='dark');
 else applyTheme(window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+if (localStorage.getItem('sidebar_collapsed') === '1') setSidebar(true);
 
 loadState();
 computeObjectiveRanks();
