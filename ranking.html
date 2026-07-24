@@ -24,7 +24,7 @@
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);display:flex;flex-direction:column;height:100vh}
 button{cursor:pointer;font-family:inherit}
 
-/* SITE HEADER / NAV */
+/* SITE HEADER */
 .site-header{background:var(--navy);color:#fff;padding:20px 16px 0;position:sticky;top:0;z-index:200;flex-shrink:0}
 .site-header-top{display:flex;align-items:center;gap:10px}
 .site-header-top h1{font-size:1.25rem;font-weight:700;letter-spacing:-.02em;flex:1}
@@ -43,6 +43,8 @@ button{cursor:pointer;font-family:inherit}
 .ctab{padding:8px 16px;border:none;background:none;font-size:14px;font-weight:500;color:var(--sub);border-radius:8px 8px 0 0;border-bottom:2px solid transparent}
 .ctab.active{color:var(--accent);border-bottom-color:var(--accent)}
 .main{display:flex;flex:1;overflow:hidden}
+
+/* SIDEBAR */
 .sidebar{width:260px;flex-shrink:0;background:var(--surface);border-right:1px solid var(--border);overflow-y:auto;padding:16px}
 .sidebar h2{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--sub);margin-bottom:12px}
 .budget-bar{height:8px;background:var(--border);border-radius:4px;overflow:hidden;margin-bottom:4px}
@@ -52,7 +54,6 @@ button{cursor:pointer;font-family:inherit}
 .budget-label.over{color:var(--danger);font-weight:600}
 .weight-row{display:flex;align-items:center;gap:6px;margin-bottom:8px}
 .weight-label{flex:1;font-size:13px}
-.weight-label.auto{color:var(--sub);font-style:italic}
 .weight-ctrl{display:flex;align-items:center;gap:4px}
 .weight-ctrl button{width:24px;height:24px;border:1px solid var(--border);border-radius:6px;background:var(--surface);font-size:14px;color:var(--text);display:flex;align-items:center;justify-content:center}
 .weight-ctrl button:hover:not(:disabled){background:var(--accent);color:#fff;border-color:var(--accent)}
@@ -61,12 +62,25 @@ button{cursor:pointer;font-family:inherit}
 .sidebar-footer{margin-top:12px;padding-top:12px;border-top:1px solid var(--border)}
 .btn-reset{width:100%;padding:8px;border:1px solid var(--border);border-radius:8px;background:none;font-size:13px;color:var(--sub)}
 .btn-reset:hover{background:var(--border)}
+
+/* CONTENT */
 .content{flex:1;overflow-y:auto;padding:20px}
-.section-header{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:12px}
 .section-header h2{font-size:20px;font-weight:700;flex:1}
 .btn-primary{padding:9px 18px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:500}
 .btn-primary:hover{background:var(--accent-h)}
-.score-warn{font-size:13px;color:var(--danger);padding:10px 14px;background:rgba(255,59,48,.08);border-radius:8px;margin-bottom:16px}
+.score-warn{font-size:13px;color:var(--danger);padding:10px 14px;background:rgba(255,59,48,.08);border-radius:8px;margin-bottom:12px}
+
+/* CATEGORY CHIPS */
+.cat-chips-wrap{margin-bottom:16px}
+.cat-chips-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--sub);margin-bottom:8px}
+.cat-chips{display:flex;flex-wrap:wrap;gap:6px}
+.cat-chip{padding:6px 12px;border:1.5px solid var(--border);border-radius:20px;font-size:12px;font-weight:600;background:var(--surface);color:var(--text);cursor:pointer;transition:border-color .15s,background .15s}
+.cat-chip:hover{border-color:var(--accent);color:var(--accent)}
+.cat-chip.ranked{border-color:var(--green);color:var(--green);background:rgba(52,199,89,.07)}
+.cat-chip.auto{border-color:var(--sub);color:var(--sub);cursor:default;font-style:italic}
+
+/* SCHOOL CARDS */
 .school-list{display:flex;flex-direction:column;gap:10px}
 .school-card{display:flex;align-items:center;gap:14px;padding:14px 16px;background:var(--surface);border-radius:14px;box-shadow:var(--card-shadow);border:1px solid var(--border)}
 .school-card.unranked{border-style:dashed;opacity:.75}
@@ -80,10 +94,10 @@ button{cursor:pointer;font-family:inherit}
 .score-lbl{font-size:11px;color:var(--sub);display:block}
 .unranked-tag{font-size:11px;color:var(--danger);font-weight:600}
 .card-actions{display:flex;gap:6px;flex-shrink:0}
-.btn-rate{padding:6px 12px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:500}
-.btn-rate:hover{background:var(--accent-h)}
-.btn-rm{padding:6px 8px;background:none;border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--sub)}
+.btn-rm{padding:6px 10px;background:none;border:1px solid var(--border);border-radius:8px;font-size:13px;color:var(--sub)}
 .btn-rm:hover{background:var(--danger);color:#fff;border-color:var(--danger)}
+
+/* MODALS */
 .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;z-index:300;padding:20px}
 .modal{background:var(--surface);border-radius:18px;width:100%;max-width:480px;max-height:90vh;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,.3)}
 .modal-head{display:flex;align-items:center;padding:18px 20px 14px;border-bottom:1px solid var(--border)}
@@ -96,20 +110,21 @@ button{cursor:pointer;font-family:inherit}
 .btn-cancel:hover{background:var(--border)}
 .btn-save{padding:9px 18px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:500}
 .btn-save:hover{background:var(--accent-h)}
-.cat-row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border)}
-.cat-row:last-child{border-bottom:none}
-.cat-label{flex:1;font-size:14px;font-weight:500}
-.rank-stepper{display:flex;align-items:center;gap:8px}
-.rank-stepper button{width:28px;height:28px;border:1px solid var(--border);border-radius:7px;background:var(--surface);font-size:16px;display:flex;align-items:center;justify-content:center;color:var(--text)}
-.rank-stepper button:hover:not(:disabled){background:var(--accent);color:#fff;border-color:var(--accent)}
-.rank-stepper button:disabled{opacity:.3;cursor:default}
-.rank-val{width:48px;text-align:center;font-size:14px;font-weight:600}
-.rank-clear{font-size:11px;color:var(--sub);cursor:pointer;text-decoration:underline;white-space:nowrap}
-.rank-clear:hover{color:var(--danger)}
-.computed-box{margin-top:14px;padding:12px 14px;background:var(--bg);border-radius:10px;border:1px solid var(--border)}
-.computed-box .cb-title{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--sub);margin-bottom:4px}
-.computed-box .cb-val{font-size:22px;font-weight:700;color:var(--accent)}
-.computed-box .cb-sub{font-size:11px;color:var(--sub)}
+
+/* CATEGORY RANKING MODAL */
+.cat-modal-hint{font-size:12px;color:var(--sub);margin-bottom:14px}
+.crr-list{display:flex;flex-direction:column;gap:6px}
+.crr{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--bg);border-radius:10px;border:1px solid var(--border)}
+.crr-pos{width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.crr-info{flex:1;min-width:0}
+.crr-name{font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.crr-sub{font-size:11px;color:var(--sub)}
+.crr-btns{display:flex;flex-direction:column;gap:3px;flex-shrink:0}
+.crr-btns button{width:28px;height:22px;border:1px solid var(--border);border-radius:5px;background:var(--surface);font-size:11px;color:var(--text);display:flex;align-items:center;justify-content:center;line-height:1}
+.crr-btns button:hover:not(:disabled){background:var(--accent);color:#fff;border-color:var(--accent)}
+.crr-btns button:disabled{opacity:.25;cursor:default}
+
+/* ADD SCHOOL MODAL */
 .search-input{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:10px;font-size:14px;background:var(--bg);color:var(--text);margin-bottom:12px}
 .search-input:focus{outline:none;border-color:var(--accent)}
 .search-results{max-height:320px;overflow-y:auto}
@@ -121,6 +136,8 @@ button{cursor:pointer;font-family:inherit}
 .si-sub{font-size:12px;color:var(--sub)}
 .si-badge{font-size:11px;padding:2px 7px;border-radius:20px;background:var(--green);color:#fff;flex-shrink:0}
 .si-badge.added{background:var(--border);color:var(--sub)}
+
+/* COMPARE / RECO */
 .compare-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-bottom:18px}
 .cmp-chip{padding:8px 12px;border:2px solid var(--border);border-radius:10px;font-size:13px;cursor:pointer;text-align:center;background:var(--surface)}
 .cmp-chip.selected{border-color:var(--accent);background:rgba(0,113,227,.08)}
@@ -137,6 +154,7 @@ button{cursor:pointer;font-family:inherit}
 .reco-tagline{font-size:12px;color:var(--sub);border-top:1px solid var(--border);padding-top:8px;margin-top:4px}
 .btn-add-reco{margin-top:10px;width:100%;padding:7px;border:1px solid var(--accent);border-radius:8px;background:none;color:var(--accent);font-size:13px;font-weight:500}
 .btn-add-reco:hover{background:var(--accent);color:#fff}
+
 @media(max-width:680px){.main{flex-direction:column}.sidebar{width:100%;border-right:none;border-bottom:1px solid var(--border)}}
 </style>
 </head>
@@ -183,6 +201,12 @@ button{cursor:pointer;font-family:inherit}
           <button class="btn-primary" id="btnAddSchool">+ Add School</button>
         </div>
         <div id="scoreWarn" class="score-warn" style="display:none"></div>
+
+        <div class="cat-chips-wrap">
+          <div class="cat-chips-label">Rank schools by category — click to rank</div>
+          <div class="cat-chips" id="catChips"></div>
+        </div>
+
         <div class="school-list" id="schoolList"></div>
       </div>
       <div id="tab-compare" style="display:none">
@@ -198,20 +222,25 @@ button{cursor:pointer;font-family:inherit}
   </div>
 </div>
 
-<div class="modal-backdrop" id="rateModal" style="display:none">
+<!-- Category Ranking Modal -->
+<div class="modal-backdrop" id="catModal" style="display:none">
   <div class="modal">
     <div class="modal-head">
-      <h3 id="rateModalTitle">Rate School</h3>
-      <button class="modal-close" id="rateModalClose">✕</button>
+      <h3 id="catModalTitle">Rank schools</h3>
+      <button class="modal-close" id="catModalClose">✕</button>
     </div>
-    <div class="modal-body" id="rateModalBody"></div>
+    <div class="modal-body">
+      <div class="cat-modal-hint">↑ ↓ to reorder — position 1 = your favourite</div>
+      <div class="crr-list" id="catModalBody"></div>
+    </div>
     <div class="modal-foot">
-      <button class="btn-cancel" id="rateModalCancel">Cancel</button>
-      <button class="btn-save" id="rateModalSave">Save</button>
+      <button class="btn-cancel" id="catModalCancel">Cancel</button>
+      <button class="btn-save" id="catModalSave">Save</button>
     </div>
   </div>
 </div>
 
+<!-- Add School Modal -->
 <div class="modal-backdrop" id="addModal" style="display:none">
   <div class="modal">
     <div class="modal-head">
@@ -302,6 +331,7 @@ function overallRank() {
   return map;
 }
 
+/* ── WEIGHTS ── */
 function renderWeights() {
   const used = wSum();
   document.getElementById('budgetFill').style.width = Math.min(used,100)+'%';
@@ -312,17 +342,12 @@ function renderWeights() {
   const panel = document.getElementById('weightsPanel');
   panel.innerHTML = '';
   ALL_CATS.forEach(c => {
-    const isAuto = c.key === 'objectiveMetrics';
     const val = S.weights[c.key]||0;
     const row = document.createElement('div');
     row.className = 'weight-row';
-    if (isAuto) {
-      row.innerHTML = `<span class="weight-label auto">${c.label}</span><div class="weight-ctrl"><span class="weight-val">${val}</span></div>`;
-    } else {
-      row.innerHTML = `<span class="weight-label">${c.label}</span><div class="weight-ctrl"><button class="w-minus" data-key="${c.key}">−</button><span class="weight-val">${val}</span><button class="w-plus" data-key="${c.key}">+</button></div>`;
-      row.querySelector('.w-minus').disabled = val <= 0;
-      row.querySelector('.w-plus').disabled = used >= 100;
-    }
+    row.innerHTML = `<span class="weight-label">${c.label}</span><div class="weight-ctrl"><button class="w-minus" data-key="${c.key}">−</button><span class="weight-val">${val}</span><button class="w-plus" data-key="${c.key}">+</button></div>`;
+    row.querySelector('.w-minus').disabled = val <= 0;
+    row.querySelector('.w-plus').disabled = used >= 100;
     panel.appendChild(row);
   });
 }
@@ -342,7 +367,26 @@ document.getElementById('btnResetWeights').addEventListener('click', () => {
   S.weights = defaultWeights(); save(); renderWeights(); renderSchoolList();
 });
 
+/* ── CATEGORY CHIPS ── */
+function renderCatChips() {
+  const chips = document.getElementById('catChips');
+  chips.innerHTML = '';
+  ALL_CATS.forEach(c => {
+    const isAuto = c.key === 'objectiveMetrics';
+    const allRanked = !isAuto && S.schools.length > 0 && S.schools.every(s => s.rankings[c.key] != null);
+    const chip = document.createElement('button');
+    chip.className = 'cat-chip' + (isAuto ? ' auto' : allRanked ? ' ranked' : '');
+    chip.textContent = c.label + (isAuto ? ' (auto)' : allRanked ? ' ✓' : '');
+    chip.disabled = isAuto;
+    chip.title = isAuto ? 'Computed automatically from metrics' : 'Click to rank schools in this category';
+    if (!isAuto) chip.addEventListener('click', () => openCatModal(c.key));
+    chips.appendChild(chip);
+  });
+}
+
+/* ── SCHOOL LIST ── */
 function renderSchoolList() {
+  renderCatChips();
   const ws = wSum();
   const warn = document.getElementById('scoreWarn');
   if (ws !== 100) {
@@ -362,100 +406,106 @@ function renderSchoolList() {
   list.innerHTML = '';
   sorted.forEach(s => {
     const score = scoreSchool(s), rank = ranks[s.id];
-    const allRanked = USER_CATS.every(c => s.rankings[c.key] != null);
+    const rankedCats = USER_CATS.filter(c => s.rankings[c.key] != null).length;
+    const totalCats = USER_CATS.length;
+    const fullyRanked = rankedCats === totalCats;
     const card = document.createElement('div');
-    card.className = 'school-card' + (allRanked ? '' : ' unranked');
-    const missing = USER_CATS.filter(c => s.rankings[c.key]==null).length;
+    card.className = 'school-card' + (fullyRanked ? '' : ' unranked');
+    const catProgress = fullyRanked ? '' : `<span style="font-size:11px;color:var(--sub)">${rankedCats}/${totalCats} categories</span>`;
     card.innerHTML = `
       ${rank!=null ? `<div class="rank-badge">#${rank}</div>` : `<div class="rank-badge none">—</div>`}
-      <div class="school-info"><div class="school-name">${s.name}</div><div class="school-sub">${s.location} · ${s.type}</div></div>
-      ${rank!=null ? `<div class="school-score"><span class="score-num">${score}</span><span class="score-lbl">score</span></div>` : `<div class="school-score"><span class="unranked-tag">${missing} unrated</span></div>`}
+      <div class="school-info">
+        <div class="school-name">${s.name}</div>
+        <div class="school-sub">${s.location} · ${s.type}</div>
+      </div>
+      <div class="school-score">
+        ${rank!=null
+          ? `<span class="score-num">${score}</span><span class="score-lbl">score</span>`
+          : catProgress}
+      </div>
       <div class="card-actions">
-        <button class="btn-rate" data-edit="${s.id}">✏ Rate</button>
-        <button class="btn-rm" data-rm="${s.id}">✕</button>
+        <button class="btn-rm" data-rm="${s.id}" title="Remove school">✕</button>
       </div>`;
     list.appendChild(card);
   });
 }
 
 document.getElementById('schoolList').addEventListener('click', e => {
-  const edit = e.target.closest('[data-edit]')?.dataset.edit;
   const rm = e.target.closest('[data-rm]')?.dataset.rm;
-  if (edit) openRateModal(edit);
-  if (rm) { S.schools = S.schools.filter(s => s.id !== rm); computeObjectiveRanks(); save(); renderSchoolList(); renderCompare(); }
-});
-
-let editId = null, draftRankings = {};
-
-function openRateModal(id) {
-  const s = S.schools.find(x => x.id === id);
-  if (!s) return;
-  editId = id;
-  draftRankings = Object.assign({}, s.rankings);
-  document.getElementById('rateModalTitle').textContent = s.name;
-  renderRateModalBody();
-  document.getElementById('rateModal').style.display = 'flex';
-}
-
-function renderRateModalBody() {
-  const body = document.getElementById('rateModalBody');
-  const n = S.schools.length;
-  body.innerHTML = '';
-  USER_CATS.forEach(c => {
-    const rank = draftRankings[c.key];
-    const row = document.createElement('div');
-    row.className = 'cat-row';
-    row.innerHTML = `
-      <span class="cat-label">${c.label}</span>
-      <div class="rank-stepper">
-        <button class="rm-step" data-cat="${c.key}">−</button>
-        <span class="rank-val">${rank!=null?'#'+rank:'—'}</span>
-        <button class="rp-step" data-cat="${c.key}">+</button>
-      </div>
-      <span class="rank-clear" data-clear="${c.key}">clear</span>`;
-    row.querySelector('.rm-step').disabled = rank==null||rank<=1;
-    row.querySelector('.rp-step').disabled = rank!=null&&rank>=n;
-    body.appendChild(row);
-  });
-  const s = S.schools.find(x => x.id === editId);
-  const box = document.createElement('div');
-  box.className = 'computed-box';
-  box.innerHTML = `<div class="cb-title">Objective Metrics (auto-computed)</div><div class="cb-val">${s?.rankings?.objectiveMetrics!=null?'#'+s.rankings.objectiveMetrics:'N/A'}</div><div class="cb-sub">${s?._objScore!=null?'Score: '+s._objScore+' / 10':'Not enough data'}</div>`;
-  body.appendChild(box);
-}
-
-document.getElementById('rateModalBody').addEventListener('click', e => {
-  const plus=e.target.closest('.rp-step'), minus=e.target.closest('.rm-step'), clear=e.target.closest('[data-clear]');
-  const n = S.schools.length;
-  if (plus) {
-    const cat=plus.dataset.cat, cur=draftRankings[cat];
-    draftRankings[cat] = cur==null ? 1 : Math.min(cur+1,n);
-    renderRateModalBody();
-  } else if (minus) {
-    const cat=minus.dataset.cat, cur=draftRankings[cat];
-    if (cur==null) return;
-    if (cur<=1) delete draftRankings[cat]; else draftRankings[cat]=cur-1;
-    renderRateModalBody();
-  } else if (clear) {
-    delete draftRankings[clear.dataset.clear];
-    renderRateModalBody();
+  if (rm) {
+    S.schools = S.schools.filter(s => s.id !== rm);
+    computeObjectiveRanks(); save(); renderSchoolList(); renderCompare();
   }
 });
 
-document.getElementById('rateModalSave').addEventListener('click', () => {
-  const s = S.schools.find(x => x.id === editId);
-  if (s) USER_CATS.forEach(c => {
-    if (draftRankings[c.key]!=null) s.rankings[c.key]=draftRankings[c.key];
-    else delete s.rankings[c.key];
+/* ── CATEGORY RANKING MODAL ── */
+let catModalKey = null;
+let catOrder = []; // school IDs in ranked order (index 0 = rank 1)
+
+function openCatModal(key) {
+  catModalKey = key;
+  const cat = ALL_CATS.find(c => c.key === key);
+  document.getElementById('catModalTitle').textContent = 'Rank by: ' + cat.label;
+
+  // Build order: already-ranked schools sorted by current rank, then unranked appended
+  const ranked = S.schools.filter(s => s.rankings[key] != null)
+    .sort((a,b) => a.rankings[key] - b.rankings[key]);
+  const unranked = S.schools.filter(s => s.rankings[key] == null);
+  catOrder = [...ranked, ...unranked].map(s => s.id);
+
+  renderCatModalBody();
+  document.getElementById('catModal').style.display = 'flex';
+}
+
+function renderCatModalBody() {
+  const body = document.getElementById('catModalBody');
+  body.innerHTML = '';
+  catOrder.forEach((id, i) => {
+    const s = S.schools.find(x => x.id === id);
+    if (!s) return;
+    const row = document.createElement('div');
+    row.className = 'crr';
+    row.innerHTML = `
+      <div class="crr-pos">${i+1}</div>
+      <div class="crr-info">
+        <div class="crr-name">${s.name}</div>
+        <div class="crr-sub">${s.location}</div>
+      </div>
+      <div class="crr-btns">
+        <button class="crr-up" data-i="${i}" ${i===0?'disabled':''}>▲</button>
+        <button class="crr-dn" data-i="${i}" ${i===catOrder.length-1?'disabled':''}>▼</button>
+      </div>`;
+    body.appendChild(row);
+  });
+}
+
+document.getElementById('catModalBody').addEventListener('click', e => {
+  const up = e.target.closest('.crr-up'), dn = e.target.closest('.crr-dn');
+  if (up) {
+    const i = +up.dataset.i;
+    if (i > 0) { [catOrder[i-1], catOrder[i]] = [catOrder[i], catOrder[i-1]]; renderCatModalBody(); }
+  } else if (dn) {
+    const i = +dn.dataset.i;
+    if (i < catOrder.length-1) { [catOrder[i+1], catOrder[i]] = [catOrder[i], catOrder[i+1]]; renderCatModalBody(); }
+  }
+});
+
+document.getElementById('catModalSave').addEventListener('click', () => {
+  catOrder.forEach((id, i) => {
+    const s = S.schools.find(x => x.id === id);
+    if (s) s.rankings[catModalKey] = i + 1;
   });
   computeObjectiveRanks(); save(); renderSchoolList(); renderCompare();
-  document.getElementById('rateModal').style.display = 'none';
+  document.getElementById('catModal').style.display = 'none';
 });
 
-['rateModalClose','rateModalCancel'].forEach(id => {
-  document.getElementById(id).addEventListener('click', () => { document.getElementById('rateModal').style.display='none'; });
+['catModalClose','catModalCancel'].forEach(id => {
+  document.getElementById(id).addEventListener('click', () => {
+    document.getElementById('catModal').style.display = 'none';
+  });
 });
 
+/* ── ADD SCHOOL ── */
 document.getElementById('btnAddSchool').addEventListener('click', () => {
   document.getElementById('schoolSearch').value = '';
   renderSearchResults('');
@@ -493,6 +543,7 @@ function addSchool(c) {
   renderCompare();
 }
 
+/* ── COMPARE ── */
 let selectedForCompare = [], radarChart = null;
 
 function renderCompare() {
@@ -540,6 +591,7 @@ function drawRadar() {
   });
 }
 
+/* ── RECO ── */
 function renderReco() {
   const grid = document.getElementById('recoGrid');
   grid.innerHTML = '';
@@ -568,6 +620,7 @@ document.getElementById('recoGrid').addEventListener('click', e => {
   computeObjectiveRanks(); save(); renderSchoolList(); renderReco();
 });
 
+/* ── TABS ── */
 document.querySelectorAll('.ctab').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.ctab').forEach(t=>t.classList.remove('active'));
@@ -581,6 +634,7 @@ document.querySelectorAll('.ctab').forEach(btn => {
   });
 });
 
+/* ── THEME ── */
 const ThemeBtn = document.getElementById('btnTheme');
 function applyTheme(dark) {
   document.documentElement.setAttribute('data-theme', dark?'dark':'light');
@@ -589,6 +643,7 @@ function applyTheme(dark) {
 }
 ThemeBtn.addEventListener('click', () => applyTheme(document.documentElement.getAttribute('data-theme')!=='dark'));
 
+/* ── EXPORT ── */
 document.getElementById('btnExport').addEventListener('click', () => {
   const ranks=overallRank();
   const rows=[['School','Location','Overall Rank','Score',...ALL_CATS.map(c=>c.label)]];
@@ -597,10 +652,14 @@ document.getElementById('btnExport').addEventListener('click', () => {
   const a=document.createElement('a'); a.href='data:text/csv;charset=utf-8,'+encodeURIComponent(csv); a.download='college-rankings.csv'; a.click();
 });
 
-['rateModal','addModal'].forEach(id => {
-  document.getElementById(id).addEventListener('click', e => { if(e.target===document.getElementById(id)) document.getElementById(id).style.display='none'; });
+/* ── CLOSE ON BACKDROP CLICK ── */
+['catModal','addModal'].forEach(id => {
+  document.getElementById(id).addEventListener('click', e => {
+    if(e.target===document.getElementById(id)) document.getElementById(id).style.display='none';
+  });
 });
 
+/* ── INIT ── */
 const savedTheme=localStorage.getItem('theme');
 if (savedTheme) applyTheme(savedTheme==='dark');
 else applyTheme(window.matchMedia('(prefers-color-scheme: dark)').matches);
