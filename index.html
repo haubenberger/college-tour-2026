@@ -4,12 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>College Tour 2026</title>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN/WPcM=" crossorigin=""></script>
 <style>
-  .leaflet-map { height: 260px; border-radius: 10px; margin: 10px 0; border: 1px solid var(--border); }
-  .leaflet-stop-pin { background: #1a2e4a; color: #fff; border-radius: 50%; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.4); }
-  @media (prefers-color-scheme: dark) { .leaflet-stop-pin { background: #c8a84b; } }
+  .campus-tile-map { height: 260px; border-radius: 10px; margin: 10px 0; border: 1px solid var(--border); overflow: hidden; background: #e8e4e0; display: block; width: 100%; }
 </style>
 <style>
   :root {
@@ -456,11 +452,10 @@ function renderProfile(briefing) {
         </div>`;
     } else if (t.mapCenter) {
       const sid = briefing.schoolId;
-      window._leafMaps = window._leafMaps || {};
-      window._leafMapData = window._leafMapData || {};
-      window._leafMapData[sid] = { center: t.mapCenter, zoom: t.mapZoom || 16, stops: t.stops, link: t.mapLink, parking: t.parking };
+      window._tileMapData = window._tileMapData || {};
+      window._tileMapData[sid] = { center: t.mapCenter, zoom: t.mapZoom || 16, stops: t.stops };
       mapBlock = `
-        <div id="leafmap-${sid}" class="leaflet-map"></div>
+        <canvas id="tilemap-${sid}" class="campus-tile-map"></canvas>
         <div class="map-caption">
           ${t.parking ? esc(t.parking) + ' · ' : ''}<a href="${t.mapLink}" target="_blank" rel="noopener">Open in OpenStreetMap ↗</a>
         </div>`;
@@ -521,41 +516,92 @@ function toggleProfile(btn, id) {
   if (!profile) return;
   btn.classList.toggle('open');
   profile.classList.toggle('open');
-  if (profile.classList.contains('open')) initLeafMap(id);
+  if (profile.classList.contains('open')) requestAnimationFrame(() => initTileMap(id));
 }
 
-function initLeafMap(id) {
-  const data = (window._leafMapData || {})[id];
+function initTileMap(id) {
+  const data = (window._tileMapData || {})[id];
   if (!data) return;
-  if ((window._leafMaps || {})[id]) return; // already initialised
-  const el = document.getElementById('leafmap-' + id);
-  if (!el) return;
+  window._tileMapInited = window._tileMapInited || {};
+  if (window._tileMapInited[id]) return;
+  window._tileMapInited[id] = true;
 
-  const map = L.map(el, { scrollWheelZoom: false }).setView(data.center, data.zoom);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    maxZoom: 19
-  }).addTo(map);
+  const canvas = document.getElementById('tilemap-' + id);
+  if (!canvas) return;
 
-  data.stops.forEach(s => {
-    const icon = L.divIcon({
-      className: '',
-      html: `<div class="leaflet-stop-pin">${s.num}</div>`,
-      iconSize: [26, 26],
-      iconAnchor: [13, 13]
+  const TILE = 256, zoom = data.zoom;
+  const W = canvas.offsetWidth || canvas.parentElement.offsetWidth || 340;
+  const H = 260;
+  canvas.width = W;
+  canvas.height = H;
+
+  const ctx = canvas.getContext('2d');
+  const n = Math.pow(2, zoom);
+
+  function xf(lng) { return (lng + 180) / 360 * n; }
+  function yf(lat) {
+    const r = lat * Math.PI / 180;
+    return (1 - Math.log(Math.tan(r) + 1 / Math.cos(r)) / Math.PI) / 2 * n;
+  }
+
+  const [clat, clng] = data.center;
+  const ox = xf(clng) - W / 2 / TILE;
+  const oy = yf(clat) - H / 2 / TILE;
+
+  function toPixel(lat, lng) {
+    return [(xf(lng) - ox) * TILE, (yf(lat) - oy) * TILE];
+  }
+
+  function drawOverlay() {
+    // dashed route line
+    if (data.stops.length > 1) {
+      ctx.beginPath();
+      ctx.strokeStyle = '#c8a84b';
+      ctx.lineWidth = 2;
+      ctx.setLineDash([5, 4]);
+      data.stops.forEach((s, i) => {
+        const [px, py] = toPixel(s.lat, s.lng);
+        i === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py);
+      });
+      ctx.stroke();
+      ctx.setLineDash([]);
+    }
+    // numbered pins
+    data.stops.forEach(s => {
+      const [px, py] = toPixel(s.lat, s.lng);
+      ctx.beginPath();
+      ctx.arc(px, py, 11, 0, Math.PI * 2);
+      ctx.fillStyle = '#1a2e4a';
+      ctx.fill();
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+      ctx.fillStyle = '#fff';
+      ctx.font = 'bold 11px -apple-system,sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(s.num, px, py);
     });
-    L.marker([s.lat, s.lng], { icon })
-      .addTo(map)
-      .bindPopup(`<b>${s.num}. ${s.name}</b><br>${s.notes}`);
-  });
+  }
 
-  window._leafMaps = window._leafMaps || {};
-  window._leafMaps[id] = map;
-  // Two-stage invalidate: rAF gets us past display:none→block, timeout handles any remaining layout delay
-  requestAnimationFrame(() => {
-    map.invalidateSize();
-    setTimeout(() => map.invalidateSize(), 200);
-  });
+  const tx0 = Math.floor(ox), ty0 = Math.floor(oy);
+  const tx1 = Math.ceil(ox + W / TILE), ty1 = Math.ceil(oy + H / TILE);
+  let loaded = 0;
+  const total = (tx1 - tx0 + 1) * (ty1 - ty0 + 1);
+
+  for (let tx = tx0; tx <= tx1; tx++) {
+    for (let ty = ty0; ty <= ty1; ty++) {
+      const img = new Image();
+      const px = Math.round((tx - ox) * TILE);
+      const py = Math.round((ty - oy) * TILE);
+      img.onload = () => {
+        ctx.drawImage(img, px, py, TILE, TILE);
+        if (++loaded === total) drawOverlay();
+      };
+      img.onerror = () => { if (++loaded === total) drawOverlay(); };
+      img.src = `https://tile.openstreetmap.org/${zoom}/${((tx % n) + n) % n}/${ty}.png`;
+    }
+  }
 }
 
 function renderColleges(visits, briefings) {
