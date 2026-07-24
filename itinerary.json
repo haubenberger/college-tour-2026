@@ -1,7 +1,7 @@
 {
   "meta": {
-    "version": "6.9",
-    "created": "Jul 23, 2026 · 8:40 AM ET",
+    "version": "7.0",
+    "created": "Jul 24, 2026 · 8:15 AM ET",
     "title": "College Tour 2026",
     "travelers": "Dietrich, Theo & Simona — joined by Silke (Fri–Mon)",
     "disclaimer": "Times are planning targets; align with booked slots and confirm live schedules & rates."
@@ -130,20 +130,22 @@
     {
       "date": "2026-07-24",
       "label": "Fri Jul 24",
-      "title": "Ferry (7:30) → pick up Silke → Stony Brook → Brooklyn → Mets",
+      "title": "Ferry (7:30) → Silke → Stony Brook Exploration Day → Brooklyn → Mets",
       "leg": 1,
-      "alert": null,
+      "alert": "SSED scheduling notes: the 11:15 Campus Tour and the Honors Session run at the same time — the Honors Session repeats at 12:45, which is why the tour goes first. A Financial Aid Overview follows at 1:45–2:30; skippable (see section F for the numbers), but if you stay you'd leave ~2:30 and still make the 5:15 subway. Bonus: Shop Red in the Melville Library gives 10% off, July 24 only.",
       "entries": [
         { "time": "6:00 AM", "text": "Grab-and-go breakfast, check out." },
         { "time": "6:15 AM", "text": "Drive to Bridgeport ferry terminal, 1 Ferry Access Rd (~30–35 min)." },
         { "time": "7:30 AM", "text": "Car ferry Bridgeport → Port Jefferson (75 min) — conf. 20260717-32111128.", "ref": "B3" },
         { "time": "8:45 AM", "text": "Arrive Port Jefferson, 102 W Broadway; coffee/bagels in the village." },
         { "time": "9:24 AM", "text": "Pick up Silke at Port Jefferson Station (LIRR) — she joins through Monday." },
-        { "time": "9:50 AM", "text": "Park: Administration Parking Garage — GPS \"Administration Parking Garage, Stony Brook.\" (LIE Exit 62 N / Nicolls Rd Rte 97, ~9 mi to the West Campus main entrance, left on Shirley Kenny Dr, follow signs.) Hourly fee weekdays; a level-2 bridge leads straight into the Administration Building / Admissions." },
-        { "time": "10:00 AM", "text": "Stony Brook — self-guided walk (~90 min). Grab a map at Admissions (Admin Bldg, Rm 118). Briefing + map in D10.", "ref": "A9" },
-        { "time": "11:45 AM", "text": "Lunch — Jasmine in the Wang Center is directly across from Admissions, or head back to Port Jefferson village." },
-        { "time": "12:30 PM", "text": "Drive to Park Slope, Brooklyn (~1 hr 45 via LIE/BQE)." },
-        { "time": "~2:30 PM", "text": "Arrive Silke's in Park Slope; park the car, start laundry, settle in.", "ref": "C6" },
+        { "time": "9:50 AM", "text": "Park: Administration Parking Garage — GPS \"Administration Parking Garage, Stony Brook.\" (LIE Exit 62 N / Nicolls Rd Rte 97, ~9 mi to the West Campus main entrance, left on Shirley Kenny Dr, follow signs.) Hourly fee weekdays. Today the event runs from the Student Activities Center (SAC) — ~5-min walk from the garage." },
+        { "time": "10:15 AM", "text": "SEAWOLF SUMMER EXPLORATION DAY. Admissions Welcome & Presentation — SAC Auditorium (45 min). Briefing + campus map in D10.", "ref": "A9" },
+        { "time": "11:15 AM", "text": "Campus Tour (abridged, guided) — leaves from SAC, The Shore Club. Pick the ACADEMIC tour. Space limited: register in advance." },
+        { "time": "12:00 PM", "text": "Lunch — SAC Food Court (open 11–6), plus 'Ask Admissions' drop-in desk at The Shore Club." },
+        { "time": "12:45 PM", "text": "Honors Session — SAC Auditorium (45 min). RECOMMENDED: Stony Brook's merit money runs through the Honors College / University Scholars, so this is the money session for us." },
+        { "time": "1:30 PM", "text": "Depart for Park Slope, Brooklyn (~1 hr 45 via LIE/BQE)." },
+        { "time": "~3:15 PM", "text": "Arrive Silke's in Park Slope; park the car, start laundry, settle in.", "ref": "C6" },
         { "time": "5:15 PM", "text": "Subway together to Citi Field (~45–60 min)." },
         { "time": "7:10 PM", "text": "Mets vs. Dodgers @ Citi Field (Dietrich, Theo, Silke + Sam). Subway back to Park Slope; overnight.", "ref": "B2" }
       ]
@@ -163,7 +165,7 @@
         { "time": "Dietrich", "text": "Return the Hertz car; United terminal. UA 210, EWR 4:59 PM → SAN." },
         { "time": "Silke+Theo", "text": "AirTrain → Newark Airport rail station → Amtrak NE Regional 147, EWR 1:12 PM → Philadelphia 30th St 2:19 PM (conf. 97BF45, seats 3A/B).", "ref": "B4" },
         { "time": "Simona", "text": "AA 2955 lands PHL ~2:40 PM; pick up the Avis rental at PHL, 3:30 PM (conf. 20655662US6), drive to meet the others.", "ref": "B6" },
-        { "time": "~3:30 PM", "text": "Silke, Theo & Simona converge in Philadelphia; check into the Canopy. Leg 2 begins." },
+        { "time": "Meet", "text": "Silke, Theo & Simona converge in Philadelphia ~3:30–4:00 PM; check into the Canopy. Leg 2 begins." },
         { "time": "~4:00 PM", "text": "Check into Canopy by Hilton Philadelphia Center City, 1180 Ludlow St; dinner near Reading Terminal Market. Overnight Philly (night 1).", "ref": "C7" }
       ]
     },
@@ -380,13 +382,13 @@
     {
       "id": "A9",
       "school": "Stony Brook",
-      "date": "Fri Jul 24, ~10:00 AM",
-      "type": "Self-guided (~90 min)",
+      "date": "Fri Jul 24, Seawolf Summer Exploration Day",
+      "type": "Seawolf Summer Exploration Day — free drop-in admissions event. All sessions in the Student Activities Center (SAC).",
       "conf": null,
-      "checkin": "Stop at Undergraduate Admissions (Administration Building) for a self-guided map.",
-      "parking": "Visitor parking by the Administration Building.",
+      "checkin": null,
+      "parking": "Administration Parking Garage (hourly, weekdays); ~5-min walk to the SAC.",
       "contact": null,
-      "notes": "Walk: Academic Mall → Frank Melville Library → Charles B. Wang Center → Student Activities Center → Life Sciences / science quad."
+      "notes": "Our plan: 10:15 Admissions Welcome & Presentation (Auditorium) · 11:15 Campus Tour, academic track (from The Shore Club) · 12:00 lunch + Ask Admissions · 12:45 Honors Session (Auditorium) · depart 1:30. Register: stonybrook.edu/undergraduate-admissions/events/ssed.php. Also offered: Research/URECA overview, Student Support panel, Financial Aid Overview 1:45–2:30, drop-in Q&A until 3:45. Dining: SAC Food Court 11–6 · East Side Dining 11–2 · Starbucks in Melville Library 8:30–2:30."
     },
     {
       "id": "A10",
@@ -1231,6 +1233,58 @@
     { "schoolId": "A13", "school": "Princeton", "hasProfile": false },
     { "schoolId": "A14", "school": "Johns Hopkins", "hasProfile": false },
     { "schoolId": "A15", "school": "GWU", "hasProfile": false },
-    { "schoolId": "A16", "school": "Georgetown", "hasProfile": false }
+    { "schoolId": "A16", "school": "Georgetown", "hasProfile": false },
+    {
+      "schoolId": "F1",
+      "school": "UCLA",
+      "hasProfile": true,
+      "leg": 3,
+      "tentative": true,
+      "mapImage": null,
+      "stats": { "firstYears": "~6,600", "undergrads": "~33,000", "studentFaculty": "19:1", "meritAid": "Very ltd." },
+      "costNote": "~$41,000/yr all-in (in-state). Admit rate ~9%.",
+      "history": "UCLA is the only school on Theo's entire list that covers all four of his interests simultaneously: Political Science is one of its most popular and highest-ranked majors, Philosophy is nationally ranked, Neuroscience is one of the largest and strongest undergraduate programs in the country, and UCLA School of Law sits on campus. Add the most-applied-to university in America, a 9% admit rate, and Westwood.",
+      "programUniqueness": "The honest picture: at 19:1 with ~33,000 undergraduates, it is the least personal environment we are considering — big lectures, and the student who thrives is the one who goes and makes things happen. But in-state cost of roughly $41,000 all-in makes it an extraordinary value for a family paying sticker everywhere else. Reach on admission, bargain on price.",
+      "walkingTour": null
+    },
+    {
+      "schoolId": "F2",
+      "school": "UC San Diego",
+      "hasProfile": true,
+      "leg": 3,
+      "tentative": true,
+      "mapImage": null,
+      "stats": { "firstYears": "~6,200", "undergrads": "~33,000", "studentFaculty": "19:1", "meritAid": "Very ltd." },
+      "costNote": "~$37,000/yr all-in (in-state). Admit rate ~25%.",
+      "history": "UCSD may be the sharpest fit on this whole list, and Theo already has a foot in the door. Its Cognitive Science department essentially founded the field, Neurobiology is world-class, and its Philosophy department is a powerhouse in philosophy of science — which is precisely the seam between his neuroscience and philosophy interests. Political Science is strong; there is no law school. The campus is in La Jolla, twenty minutes from home.",
+      "programUniqueness": "Two things make this the standout. First, cost: at roughly $37,000 all-in it is the cheapest option on the list by a clear margin. Second, the internship — Theo has already done supervised neuroscience work here, which is the single most convertible asset in this whole search: a real research relationship and a potential recommendation letter from inside the institution. Worth being deliberate about keeping that connection warm.",
+      "walkingTour": null
+    },
+    {
+      "schoolId": "F3",
+      "school": "Gonzaga",
+      "hasProfile": true,
+      "leg": 3,
+      "tentative": true,
+      "mapImage": null,
+      "stats": { "firstYears": "~1,300", "undergrads": "5,163", "studentFaculty": "12:1", "meritAid": "Strong" },
+      "costNote": "~$50,000/yr est. after merit (sticker $76,700, avg net ~$40,300). Admit rate ~76%.",
+      "history": "The Jesuit option out west, and the counterweight to the UCs: small, personal, 12:1, with philosophy built into the core curriculum rather than tacked on — the same tradition that makes Boston College and Fordham interesting to Theo. Political science and pre-law advising are solid, and the psychology/biology side covers the brain interest, though not at UCLA or UCSD depth.",
+      "programUniqueness": "Where Gonzaga earns its place is the admissions and money math. It admits about 76% of applicants, with a median ACT of 28 — Theo's 35 sits above their 75th percentile, which makes him both a near-certain admit and a strong candidate for top merit. Sticker is $76,700, average net price about $40,300; a student of his profile should land at or below that. This is the safety that does not feel like a compromise.",
+      "walkingTour": null
+    },
+    {
+      "schoolId": "F4",
+      "school": "Stanford",
+      "hasProfile": true,
+      "leg": 3,
+      "tentative": true,
+      "mapImage": null,
+      "stats": { "firstYears": "~1,700", "undergrads": "~7,800", "studentFaculty": "6:1", "meritAid": "None" },
+      "costNote": "~$92,000/yr (full sticker, no merit). Admit rate ~4%.",
+      "history": "Stanford's specific draw for Theo is Symbolic Systems — the interdisciplinary program joining philosophy, cognitive science, linguistics and computer science, which is about as close as any university comes to a major designed for the philosophy-plus-neuroscience mind. Political Science is excellent, Stanford Law is perennially top-two, and at 6:1 with 7,800 undergraduates it is intimate for a research university of its stature.",
+      "programUniqueness": "The catch is blunt and worth stating plainly: roughly a 4% admit rate, and no merit aid whatsoever — need-based only. For us that means full sticker, around $92,000 a year, or about $368,000 over four years. It belongs on the list as a reach worth taking a shot at, not as a plan. If cost is the deciding lens, UCSD delivers a comparable share of what Theo wants for roughly 40 cents on the dollar.",
+      "walkingTour": null
+    }
   ]
 }
