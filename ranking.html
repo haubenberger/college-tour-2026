@@ -44,15 +44,15 @@ button{cursor:pointer;font-family:inherit}
 .ctab.active{color:var(--accent);border-bottom-color:var(--accent)}
 .main{display:flex;flex:1;overflow:hidden;position:relative}
 
-/* SIDEBAR */
+/* SIDEBAR — desktop (side column) */
 .sidebar{
-  width:260px;flex-shrink:0;background:var(--surface);
-  border-right:1px solid var(--border);overflow:hidden;
-  display:flex;flex-direction:column;
+  width:260px;flex-shrink:0;
+  background:var(--surface);border-right:1px solid var(--border);
+  overflow:hidden;display:flex;flex-direction:column;
   transition:width .22s ease;
 }
 .sidebar.collapsed{width:0;border-right:none}
-.sidebar-inner{padding:16px;width:260px;flex:1;overflow-y:auto;display:flex;flex-direction:column}
+.sidebar-inner{padding:16px;width:260px;flex:1;overflow-y:auto;display:flex;flex-direction:column;min-height:0}
 .sidebar-hd{display:flex;align-items:center;gap:6px;margin-bottom:12px}
 .sidebar-hd h2{flex:1;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--sub)}
 .btn-collapse{background:none;border:1px solid var(--border);border-radius:6px;width:24px;height:24px;font-size:11px;color:var(--sub);display:flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -73,14 +73,14 @@ button{cursor:pointer;font-family:inherit}
 .btn-reset{width:100%;padding:8px;border:1px solid var(--border);border-radius:8px;background:none;font-size:13px;color:var(--sub)}
 .btn-reset:hover{background:var(--border)}
 
-/* EXPAND TAB (visible when sidebar collapsed) */
+/* Expand tab — desktop (left edge) */
 .sidebar-expand{
   position:absolute;left:0;top:50%;transform:translateY(-50%);
   background:var(--surface);border:1px solid var(--border);border-left:none;
   border-radius:0 8px 8px 0;padding:12px 6px;
   display:none;z-index:10;cursor:pointer;
   writing-mode:vertical-rl;font-size:11px;font-weight:600;
-  color:var(--sub);gap:6px;align-items:center;
+  color:var(--sub);align-items:center;
   box-shadow:2px 0 8px rgba(0,0,0,.08);
 }
 .sidebar-expand:hover{background:var(--bg);color:var(--accent)}
@@ -103,7 +103,7 @@ button{cursor:pointer;font-family:inherit}
   border-radius:20px;font-size:12px;font-weight:600;
   background:var(--surface);color:var(--text);cursor:pointer;
   transition:border-color .15s,background .15s;
-  display:flex;align-items:center;gap:5px;
+  display:inline-flex;align-items:center;gap:5px;
 }
 .cat-chip:hover:not([disabled]){border-color:var(--accent);color:var(--accent)}
 .cat-chip.ranked{border-color:var(--green);color:var(--green);background:rgba(52,199,89,.07)}
@@ -148,29 +148,29 @@ button{cursor:pointer;font-family:inherit}
 .btn-save{padding:9px 18px;background:var(--accent);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:500}
 .btn-save:hover{background:var(--accent-h)}
 
-/* CATEGORY RANKING MODAL */
+/* CATEGORY RANKING MODAL ROWS */
 .cat-modal-hint{font-size:12px;color:var(--sub);margin-bottom:14px}
 .crr-list{display:flex;flex-direction:column;gap:6px}
 .crr{
   display:flex;align-items:center;gap:10px;padding:10px 12px;
   background:var(--bg);border-radius:10px;border:1.5px solid var(--border);
-  cursor:grab;user-select:none;
-  transition:box-shadow .15s,border-color .15s;
+  cursor:grab;user-select:none;touch-action:none;
+  transition:box-shadow .15s,border-color .15s,opacity .15s;
 }
 .crr:active{cursor:grabbing}
-.crr.dragging{opacity:.4;border-style:dashed}
-.crr.drag-over{border-color:var(--accent);box-shadow:0 0 0 2px rgba(0,113,227,.2)}
+.crr.dragging{opacity:.35;border-style:dashed}
+.crr.drag-over{border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,113,227,.18);transform:scale(1.01)}
 .crr-pos{width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.crr-drag{font-size:16px;color:var(--border);flex-shrink:0;line-height:1}
+.crr-drag{font-size:18px;color:var(--border);flex-shrink:0;line-height:1;letter-spacing:-2px}
 .crr-info{flex:1;min-width:0}
 .crr-name{font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .crr-sub{font-size:11px;color:var(--sub)}
 .crr-btns{display:flex;flex-direction:column;gap:3px;flex-shrink:0}
-.crr-btns button{width:28px;height:22px;border:1px solid var(--border);border-radius:5px;background:var(--surface);font-size:11px;color:var(--text);display:flex;align-items:center;justify-content:center;line-height:1;cursor:pointer}
+.crr-btns button{width:30px;height:24px;border:1px solid var(--border);border-radius:5px;background:var(--surface);font-size:12px;color:var(--text);display:flex;align-items:center;justify-content:center;line-height:1;cursor:pointer}
 .crr-btns button:hover:not(:disabled){background:var(--accent);color:#fff;border-color:var(--accent)}
 .crr-btns button:disabled{opacity:.25;cursor:default}
 
-/* ADD SCHOOL MODAL */
+/* ADD SCHOOL */
 .search-input{width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:10px;font-size:14px;background:var(--bg);color:var(--text);margin-bottom:12px}
 .search-input:focus{outline:none;border-color:var(--accent)}
 .search-results{max-height:320px;overflow-y:auto}
@@ -201,12 +201,48 @@ button{cursor:pointer;font-family:inherit}
 .btn-add-reco{margin-top:10px;width:100%;padding:7px;border:1px solid var(--accent);border-radius:8px;background:none;color:var(--accent);font-size:13px;font-weight:500}
 .btn-add-reco:hover{background:var(--accent);color:#fff}
 
+/* MOBILE */
 @media(max-width:680px){
   .main{flex-direction:column}
-  .sidebar{width:100%!important;border-right:none;border-bottom:1px solid var(--border)}
-  .sidebar.collapsed{width:0!important;border-bottom:none}
-  .sidebar-expand{writing-mode:horizontal-tb;top:auto;left:50%;bottom:0;transform:translateX(-50%);border-radius:8px 8px 0 0;border-left:1px solid var(--border);border-bottom:none;padding:6px 14px}
+
+  /* Sidebar becomes a top panel that collapses vertically */
+  .sidebar{
+    width:100%!important;
+    max-height:340px;
+    border-right:none;
+    border-bottom:1px solid var(--border);
+    transition:max-height .25s ease;
+    overflow:hidden;
+  }
+  .sidebar.collapsed{
+    max-height:0;
+    border-bottom:none;
+  }
+  .sidebar-inner{
+    width:100%;
+  }
+
+  /* Expand button becomes a horizontal bar at top of content */
+  .sidebar-expand{
+    position:relative;
+    writing-mode:horizontal-tb;
+    transform:none;
+    top:auto;left:auto;
+    width:100%;
+    border-radius:0;
+    border-left:1px solid var(--border);
+    border-right:1px solid var(--border);
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+    padding:8px 16px;
+    box-shadow:none;
+    justify-content:center;
+    font-size:13px;
+  }
+  /* On mobile the ~ sibling selector still works since DOM order is sidebar → expand → content */
   .sidebar.collapsed ~ .sidebar-expand{display:flex}
+
+  .content{padding:14px}
 }
 </style>
 </head>
@@ -251,7 +287,7 @@ button{cursor:pointer;font-family:inherit}
         </div>
       </div>
     </div>
-    <button class="sidebar-expand" id="btnExpand">▶ Weights</button>
+    <button class="sidebar-expand" id="btnExpand">▼ Weights</button>
     <div class="content">
       <div id="tab-rankings">
         <div class="content-top">
@@ -264,7 +300,7 @@ button{cursor:pointer;font-family:inherit}
           <div class="prog-label" id="progLabel"></div>
         </div>
         <div class="cat-chips-wrap">
-          <div class="cat-chips-label">Rank schools by category — click to open</div>
+          <div class="cat-chips-label">Rank schools by category — tap to open</div>
           <div class="cat-chips" id="catChips"></div>
         </div>
         <div class="school-list" id="schoolList"></div>
@@ -290,7 +326,7 @@ button{cursor:pointer;font-family:inherit}
       <button class="modal-close" id="catModalClose">✕</button>
     </div>
     <div class="modal-body">
-      <div class="cat-modal-hint">Drag rows or use ▲▼ — #1 = your favourite</div>
+      <div class="cat-modal-hint">Drag or use ▲▼ to reorder — #1 = your favourite</div>
       <div class="crr-list" id="catModalBody"></div>
     </div>
     <div class="modal-foot">
@@ -391,8 +427,8 @@ function overallRank() {
   return map;
 }
 
-/* ── SIDEBAR TOGGLE ── */
-const sidebarEl = document.getElementById('sidebar');
+/* ─ SIDEBAR TOGGLE ─ */
+const sidebarEl  = document.getElementById('sidebar');
 const btnCollapse = document.getElementById('btnCollapse');
 const btnExpand   = document.getElementById('btnExpand');
 
@@ -400,11 +436,10 @@ function setSidebar(collapsed) {
   sidebarEl.classList.toggle('collapsed', collapsed);
   localStorage.setItem('sidebar_collapsed', collapsed ? '1' : '0');
 }
-
 btnCollapse.addEventListener('click', () => setSidebar(true));
 btnExpand.addEventListener('click',   () => setSidebar(false));
 
-/* ── WEIGHTS ── */
+/* ─ WEIGHTS ─ */
 function renderWeights() {
   const used = wSum();
   document.getElementById('budgetFill').style.width = Math.min(used,100)+'%';
@@ -440,7 +475,7 @@ document.getElementById('btnResetWeights').addEventListener('click', () => {
   S.weights = defaultWeights(); save(); renderWeights(); renderSchoolList();
 });
 
-/* ── CATEGORY CHIPS ── */
+/* ─ CATEGORY CHIPS ─ */
 function renderCatChips() {
   const chips = document.getElementById('catChips');
   chips.innerHTML = '';
@@ -453,7 +488,7 @@ function renderCatChips() {
     const chip = document.createElement('button');
     chip.className = 'cat-chip' + (isAuto ? ' auto' : allRanked ? ' ranked' : partial ? ' partial' : '');
     chip.disabled = isAuto;
-    chip.title = isAuto ? 'Computed automatically' : 'Click to rank schools in this category';
+    chip.title = isAuto ? 'Computed automatically' : 'Tap to rank schools in this category';
     const progTxt = isAuto ? '' : (total > 0 ? ` <span class="chip-prog">${rankedCount}/${total}</span>` : '');
     chip.innerHTML = c.label + (allRanked ? ' ✓' : '') + progTxt;
     if (!isAuto) chip.addEventListener('click', () => openCatModal(c.key));
@@ -461,11 +496,9 @@ function renderCatChips() {
   });
 }
 
-/* ── SCHOOL LIST + PROGRESS ── */
+/* ─ SCHOOL LIST ─ */
 function renderSchoolList() {
   renderCatChips();
-
-  // overall progress bar
   const n = S.schools.length;
   const totalCells = USER_CATS.length * n;
   const filledCells = USER_CATS.reduce((t,c) => t + S.schools.filter(s => s.rankings[c.key] != null).length, 0);
@@ -479,9 +512,7 @@ function renderSchoolList() {
       catsLeft === 0
         ? '<strong>All categories ranked! ✨</strong>'
         : `<strong>${pct}%</strong> — ${catsLeft} categor${catsLeft!==1?'ies':'y'} left`;
-  } else {
-    progRow.style.display = 'none';
-  }
+  } else { progRow.style.display = 'none'; }
 
   const ws = wSum();
   const warn = document.getElementById('scoreWarn');
@@ -517,7 +548,7 @@ function renderSchoolList() {
           ? `<span class="score-num">${score}</span><span class="score-lbl">score</span>`
           : `<span style="font-size:11px;color:var(--sub)">${rankedCats}/${USER_CATS.length} cats</span>`}
       </div>
-      <button class="btn-rm" data-rm="${s.id}" title="Remove">✕</button>`;
+      <button class="btn-rm" data-rm="${s.id}">✕</button>`;
     list.appendChild(card);
   });
 }
@@ -530,10 +561,12 @@ document.getElementById('schoolList').addEventListener('click', e => {
   }
 });
 
-/* ── CATEGORY RANKING MODAL ── */
+/* ─ CATEGORY RANKING MODAL ─ */
 let catModalKey = null;
 let catOrder = [];
 let dragSrcIdx = null;
+let touchSrcIdx = null;
+let touchTargetIdx = null;
 
 function openCatModal(key) {
   catModalKey = key;
@@ -550,6 +583,7 @@ function openCatModal(key) {
 function renderCatModalBody() {
   const body = document.getElementById('catModalBody');
   body.innerHTML = '';
+
   catOrder.forEach((id, i) => {
     const s = S.schools.find(x => x.id === id);
     if (!s) return;
@@ -569,16 +603,16 @@ function renderCatModalBody() {
         <button class="crr-dn" data-i="${i}" ${i===catOrder.length-1?'disabled':''}>▼</button>
       </div>`;
 
-    /* drag events */
+    /* — Mouse drag — */
     row.addEventListener('dragstart', e => {
       dragSrcIdx = i;
       row.classList.add('dragging');
       e.dataTransfer.effectAllowed = 'move';
     });
     row.addEventListener('dragend', () => {
+      dragSrcIdx = null;
       row.classList.remove('dragging');
       document.querySelectorAll('.crr').forEach(r => r.classList.remove('drag-over'));
-      dragSrcIdx = null;
     });
     row.addEventListener('dragover', e => {
       e.preventDefault();
@@ -594,10 +628,43 @@ function renderCatModalBody() {
       renderCatModalBody();
     });
 
+    /* — Touch drag — */
+    row.addEventListener('touchstart', e => {
+      touchSrcIdx = i;
+      touchTargetIdx = i;
+      row.classList.add('dragging');
+    }, { passive: true });
+
+    row.addEventListener('touchmove', e => {
+      if (touchSrcIdx === null) return;
+      e.preventDefault(); // stop scroll while dragging
+      const touch = e.touches[0];
+      const el = document.elementFromPoint(touch.clientX, touch.clientY);
+      const targetRow = el?.closest('.crr');
+      document.querySelectorAll('.crr').forEach(r => r.classList.remove('drag-over'));
+      if (targetRow && targetRow !== row) {
+        touchTargetIdx = +targetRow.dataset.i;
+        targetRow.classList.add('drag-over');
+      }
+    }, { passive: false });
+
+    row.addEventListener('touchend', () => {
+      row.classList.remove('dragging');
+      document.querySelectorAll('.crr').forEach(r => r.classList.remove('drag-over'));
+      if (touchSrcIdx !== null && touchTargetIdx !== null && touchSrcIdx !== touchTargetIdx) {
+        const [item] = catOrder.splice(touchSrcIdx, 1);
+        catOrder.splice(touchTargetIdx, 0, item);
+        renderCatModalBody();
+      }
+      touchSrcIdx = null;
+      touchTargetIdx = null;
+    }, { passive: true });
+
     body.appendChild(row);
   });
 }
 
+/* Arrow buttons */
 document.getElementById('catModalBody').addEventListener('click', e => {
   const up = e.target.closest('.crr-up'), dn = e.target.closest('.crr-dn');
   if (up) {
@@ -624,14 +691,13 @@ document.getElementById('catModalSave').addEventListener('click', () => {
   });
 });
 
-/* ── ADD SCHOOL ── */
+/* ─ ADD SCHOOL ─ */
 document.getElementById('btnAddSchool').addEventListener('click', () => {
   document.getElementById('schoolSearch').value = '';
   renderSearchResults('');
   document.getElementById('addModal').style.display = 'flex';
   setTimeout(() => document.getElementById('schoolSearch').focus(), 50);
 });
-
 document.getElementById('schoolSearch').addEventListener('input', e => renderSearchResults(e.target.value));
 document.getElementById('addModalClose').addEventListener('click', () => { document.getElementById('addModal').style.display='none'; });
 
@@ -662,7 +728,7 @@ function addSchool(c) {
   renderCompare();
 }
 
-/* ── COMPARE ── */
+/* ─ COMPARE ─ */
 let selectedForCompare = [], radarChart = null;
 
 function renderCompare() {
@@ -710,7 +776,7 @@ function drawRadar() {
   });
 }
 
-/* ── RECO ── */
+/* ─ RECO ─ */
 function renderReco() {
   const grid = document.getElementById('recoGrid');
   grid.innerHTML = '';
@@ -739,7 +805,7 @@ document.getElementById('recoGrid').addEventListener('click', e => {
   computeObjectiveRanks(); save(); renderSchoolList(); renderReco();
 });
 
-/* ── TABS ── */
+/* ─ TABS ─ */
 document.querySelectorAll('.ctab').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.ctab').forEach(t=>t.classList.remove('active'));
@@ -753,7 +819,7 @@ document.querySelectorAll('.ctab').forEach(btn => {
   });
 });
 
-/* ── THEME ── */
+/* ─ THEME ─ */
 const ThemeBtn = document.getElementById('btnTheme');
 function applyTheme(dark) {
   document.documentElement.setAttribute('data-theme', dark?'dark':'light');
@@ -762,7 +828,7 @@ function applyTheme(dark) {
 }
 ThemeBtn.addEventListener('click', () => applyTheme(document.documentElement.getAttribute('data-theme')!=='dark'));
 
-/* ── EXPORT ── */
+/* ─ EXPORT ─ */
 document.getElementById('btnExport').addEventListener('click', () => {
   const ranks=overallRank();
   const rows=[['School','Location','Overall Rank','Score',...ALL_CATS.map(c=>c.label)]];
@@ -771,14 +837,14 @@ document.getElementById('btnExport').addEventListener('click', () => {
   const a=document.createElement('a'); a.href='data:text/csv;charset=utf-8,'+encodeURIComponent(csv); a.download='college-rankings.csv'; a.click();
 });
 
-/* ── CLOSE ON BACKDROP ── */
+/* ─ BACKDROP CLOSE ─ */
 ['catModal','addModal'].forEach(id => {
   document.getElementById(id).addEventListener('click', e => {
     if(e.target===document.getElementById(id)) document.getElementById(id).style.display='none';
   });
 });
 
-/* ── INIT ── */
+/* ─ INIT ─ */
 const savedTheme=localStorage.getItem('theme');
 if (savedTheme) applyTheme(savedTheme==='dark');
 else applyTheme(window.matchMedia('(prefers-color-scheme: dark)').matches);
