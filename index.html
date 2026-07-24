@@ -551,6 +551,11 @@ function initLeafMap(id) {
 
   window._leafMaps = window._leafMaps || {};
   window._leafMaps[id] = map;
+  // Two-stage invalidate: rAF gets us past display:none→block, timeout handles any remaining layout delay
+  requestAnimationFrame(() => {
+    map.invalidateSize();
+    setTimeout(() => map.invalidateSize(), 200);
+  });
 }
 
 function renderColleges(visits, briefings) {
