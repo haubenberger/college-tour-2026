@@ -4,7 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>College Tour 2026</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN/WPcM=" crossorigin=""></script>
 <style>
+  .leaflet-map { height: 260px; border-radius: 10px; margin: 10px 0; border: 1px solid var(--border); }
+  .leaflet-stop-pin { background: #1a2e4a; color: #fff; border-radius: 50%; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.4); }
+  @media (prefers-color-scheme: dark) { .leaflet-stop-pin { background: #c8a84b; } }
+</style>
   :root {
     --navy: #1a2e4a;
     --navy-mid: #233a5c;
@@ -437,15 +443,29 @@ function renderProfile(briefing) {
         <td><span class="stop-name">${esc(s.name)}</span>${esc(s.notes)}</td>
       </tr>
     `).join('');
-    const mapBlock = briefing.mapImage ? `
-      <div class="campus-map-wrap">
-        <img src="${esc(briefing.mapImage)}" alt="${esc(briefing.school)} campus map" loading="lazy">
-      </div>
-      <div class="map-caption">
-        ${esc(t.parking)} ·
-        <a href="${t.mapLink}" target="_blank" rel="noopener">Open in OpenStreetMap ↗</a>
-      </div>
-    ` : '';
+    let mapBlock;
+    if (briefing.mapImage) {
+      mapBlock = `
+        <div class="campus-map-wrap">
+          <img src="${esc(briefing.mapImage)}" alt="${esc(briefing.school)} campus map" loading="lazy">
+        </div>
+        <div class="map-caption">
+          ${esc(t.parking)} ·
+          <a href="${t.mapLink}" target="_blank" rel="noopener">Open in OpenStreetMap ↗</a>
+        </div>`;
+    } else if (t.mapCenter) {
+      const sid = briefing.schoolId;
+      window._leafMaps = window._leafMaps || {};
+      window._leafMapData = window._leafMapData || {};
+      window._leafMapData[sid] = { center: t.mapCenter, zoom: t.mapZoom || 16, stops: t.stops, link: t.mapLink, parking: t.parking };
+      mapBlock = `
+        <div id="leafmap-${sid}" class="leaflet-map"></div>
+        <div class="map-caption">
+          ${t.parking ? esc(t.parking) + ' · ' : ''}<a href="${t.mapLink}" target="_blank" rel="noopener">Open in OpenStreetMap ↗</a>
+        </div>`;
+    } else {
+      mapBlock = '';
+    }
     return `
       <div class="profile-section">
         <div class="profile-section-title">Campus Walking Tour — ${esc(t.duration)} · ${esc(t.startNote)}</div>
@@ -500,6 +520,36 @@ function toggleProfile(btn, id) {
   if (!profile) return;
   btn.classList.toggle('open');
   profile.classList.toggle('open');
+  if (profile.classList.contains('open')) initLeafMap(id);
+}
+
+function initLeafMap(id) {
+  const data = (window._leafMapData || {})[id];
+  if (!data) return;
+  if ((window._leafMaps || {})[id]) return; // already initialised
+  const el = document.getElementById('leafmap-' + id);
+  if (!el) return;
+
+  const map = L.map(el, { scrollWheelZoom: false }).setView(data.center, data.zoom);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 19
+  }).addTo(map);
+
+  data.stops.forEach(s => {
+    const icon = L.divIcon({
+      className: '',
+      html: `<div class="leaflet-stop-pin">${s.num}</div>`,
+      iconSize: [26, 26],
+      iconAnchor: [13, 13]
+    });
+    L.marker([s.lat, s.lng], { icon })
+      .addTo(map)
+      .bindPopup(`<b>${s.num}. ${s.name}</b><br>${s.notes}`);
+  });
+
+  window._leafMaps = window._leafMaps || {};
+  window._leafMaps[id] = map;
 }
 
 function renderColleges(visits, briefings) {
