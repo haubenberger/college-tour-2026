@@ -1,7 +1,7 @@
 {
   "meta": {
-    "version": "6.8",
-    "created": "Jul 23, 2026 · 1:35 PM ET",
+    "version": "6.9",
+    "created": "Jul 23, 2026 · 8:40 AM ET",
     "title": "College Tour 2026",
     "travelers": "Dietrich, Theo & Simona — joined by Silke (Fri–Mon)",
     "disclaimer": "Times are planning targets; align with booked slots and confirm live schedules & rates."
@@ -9,7 +9,7 @@
   "summary": {
     "legs": "Leg 1: Rochester → New York (Jul 18–25, car) • Leg 2: Philadelphia → Washington DC (Jul 25–31, car)",
     "flights": "Sat Jul 18 SAN→IAD; onward upstate-NY flights cancelled by storms — overnight Reston (Dulles). Sun Jul 19 UA4335 IAD→Buffalo (BUF) + Ithaca Limousine BUF→ROC (rebooked). Dietrich home Jul 25 EWR 4:59 PM→SAN (JX3T42) · Simona Jul 25 AA 2955 → PHL 2:40 PM",
-    "cars": "Leg 1: Hertz Camry — pick up ROC Sun Jul 19 ~4:30 PM (conf. L6042669403) → EWR Jul 25. Leg 2: Avis — PHL 3:30 PM Jul 25 → DCA 8:30 AM Jul 31 (conf. 20655662US6)",
+    "cars": "Leg 1: Hertz Camry — pick up ROC Sun Jul 19 ~4:30 PM (moved from Sat) → EWR Jul 25 (L6042669403). Leg 2: Avis — PHL 3:30 PM Jul 25 → DCA 8:30 AM Jul 31 (20655662US6)",
     "keyEvents": "World Cup Final Sun Jul 19 · The Odyssey IMAX 70mm Wed Jul 22 9:45 PM, Providence · Red Sox Tue Jul 21 7:10 PM · Mets Fri Jul 24 7:10 PM · Phillies Sun Jul 26"
   },
   "timeline": [
@@ -139,8 +139,9 @@
         { "time": "7:30 AM", "text": "Car ferry Bridgeport → Port Jefferson (75 min) — conf. 20260717-32111128.", "ref": "B3" },
         { "time": "8:45 AM", "text": "Arrive Port Jefferson, 102 W Broadway; coffee/bagels in the village." },
         { "time": "9:24 AM", "text": "Pick up Silke at Port Jefferson Station (LIRR) — she joins through Monday." },
-        { "time": "10:00 AM", "text": "Stony Brook — self-guided walk (~90 min): map at Admissions, Academic Mall, library, Wang Center, science quad.", "ref": "A9" },
-        { "time": "11:45 AM", "text": "Lunch (Port Jefferson / Stony Brook)." },
+        { "time": "9:50 AM", "text": "Park: Administration Parking Garage — GPS \"Administration Parking Garage, Stony Brook.\" (LIE Exit 62 N / Nicolls Rd Rte 97, ~9 mi to the West Campus main entrance, left on Shirley Kenny Dr, follow signs.) Hourly fee weekdays; a level-2 bridge leads straight into the Administration Building / Admissions." },
+        { "time": "10:00 AM", "text": "Stony Brook — self-guided walk (~90 min). Grab a map at Admissions (Admin Bldg, Rm 118). Briefing + map in D10.", "ref": "A9" },
+        { "time": "11:45 AM", "text": "Lunch — Jasmine in the Wang Center is directly across from Admissions, or head back to Port Jefferson village." },
         { "time": "12:30 PM", "text": "Drive to Park Slope, Brooklyn (~1 hr 45 via LIE/BQE)." },
         { "time": "~2:30 PM", "text": "Arrive Silke's in Park Slope; park the car, start laundry, settle in.", "ref": "C6" },
         { "time": "5:15 PM", "text": "Subway together to Citi Field (~45–60 min)." },
@@ -155,7 +156,8 @@
       "alert": null,
       "entries": [
         { "time": "8:15 AM", "text": "Depart Park Slope; coffee/bagels en route." },
-        { "time": "9:00 AM", "text": "Drive to Fordham Rose Hill, 2691 Southern Blvd, Bronx (~40 min); self-guided walk (~45–60 min).", "ref": "A10" },
+        { "time": "9:00 AM", "text": "Fordham Rose Hill — GPS: 2691 Southern Blvd (the main gate, directly across from the NY Botanical Garden entrance). Pay the daily visitor fee at the guard booth; park in the 5-level garage just inside the gate." },
+        { "time": "9:15 AM", "text": "Self-guided Rose Hill walk (~45–60 min). Briefing + map in section D11.", "ref": "A10" },
         { "time": "10:15 AM", "text": "Drive Fordham → Newark (EWR), ~45–60 min." },
         { "time": "~11:15 AM", "text": "At EWR — the group splits:" },
         { "time": "Dietrich", "text": "Return the Hertz car; United terminal. UA 210, EWR 4:59 PM → SAN." },
@@ -1170,8 +1172,60 @@
         ]
       }
     },
-    { "schoolId": "A9", "school": "Stony Brook", "hasProfile": false },
-    { "schoolId": "A10", "school": "Fordham", "hasProfile": false },
+    {
+      "schoolId": "A9",
+      "school": "Stony Brook",
+      "hasProfile": true,
+      "mapImage": null,
+      "stats": { "firstYears": "4,042", "undergrads": "~18,000", "studentFaculty": "19:1", "meritAid": "Yes" },
+      "history": "Founded in 1957 and moved to its wooded 1,000-acre Long Island campus in 1962, Stony Brook is the youngest school on this trip and the fastest-rising — a SUNY flagship that made it into the Association of American Universities, co-manages Brookhaven National Laboratory, and in 2023 received a $500 million Simons Foundation gift, the largest ever to a U.S. public university. Nobel laureate C.N. Yang built its physics reputation. The campus is brick and modernist, organized along a central Academic Mall rather than a Gothic quad.",
+      "programUniqueness": "Two things make Stony Brook genuinely interesting for Theo. First, the academics line up: Neurobiology & Behavior plus Psychology give it real neuroscience depth (his UCSD through-line), and its Philosophy department is one of the leading centers for continental philosophy in the country — a distinctive strength, not a generic one. Political Science is solid; there's no law school. Second, and unusually for this trip: the money works. Merit scholarships are automatic for all admitted first-years (no separate application), the Honors College carries scholarship support, and out-of-state tuition runs roughly half a private's sticker. This is the clearest value play on the itinerary.",
+      "walkingTour": {
+        "duration": "~90 min (self-guided)",
+        "startNote": "Start at the Administration Building (Rm 118) to pick up a campus map. Park in the Administration Parking Garage — GPS \"Administration Parking Garage, Stony Brook\" (LIE Exit 62 N / Nicolls Rd Rte 97).",
+        "parking": "Administration Parking Garage (hourly fee weekdays); level-2 bridge leads into the Administration Building.",
+        "mapCenter": [40.9142, -73.1229],
+        "mapZoom": 15,
+        "mapLink": "https://www.openstreetmap.org/?mlat=40.9142&mlon=-73.1229#map=15/40.9142/-73.1229",
+        "stops": [
+          { "num": 1, "name": "Charles B. Wang Center", "lat": 40.9159, "lng": -73.1232, "notes": "Asian-American cultural center + Jasmine dining — across from Admissions. Start here." },
+          { "num": 2, "name": "Staller Center for the Arts", "lat": 40.9155, "lng": -73.1243, "notes": "Performing-arts complex on the plaza, diagonally from the Administration Building." },
+          { "num": 3, "name": "Melville Library", "lat": 40.9148, "lng": -73.1247, "notes": "The main library anchoring the Academic Mall." },
+          { "num": 4, "name": "Harriman Hall", "lat": 40.9140, "lng": -73.1257, "notes": "Philosophy — the continental-philosophy program that sets Stony Brook apart." },
+          { "num": 5, "name": "Psychology Building", "lat": 40.9133, "lng": -73.1249, "notes": "Psychology + cognitive science — half of Theo's neuro picture." },
+          { "num": 6, "name": "Administration Building", "lat": 40.9148, "lng": -73.1237, "notes": "Undergraduate Admissions (Rm 118); grab the campus map and any handouts." },
+          { "num": 7, "name": "Social & Behavioral Sciences", "lat": 40.9128, "lng": -73.1241, "notes": "Political Science and the social sciences — Theo's poli-sci base." },
+          { "num": 8, "name": "Life Sciences Building", "lat": 40.9122, "lng": -73.1228, "notes": "Neurobiology & Behavior — the research core for undergraduate neuroscience." }
+        ]
+      }
+    },
+    {
+      "schoolId": "A10",
+      "school": "Fordham",
+      "hasProfile": true,
+      "mapImage": null,
+      "stats": { "firstYears": "~2,478", "undergrads": "10,396", "studentFaculty": "14:1", "meritAid": "Yes" },
+      "history": "Founded in 1841 as St. John's College and handed to the Jesuits soon after, Fordham is New York City's Jesuit university — and Rose Hill is its surprise: 85 green, Gothic acres in the Bronx, bordered on two sides by the New York Botanical Garden with the Bronx Zoo across the street. Keating Hall's clock tower presides over Edwards Parade, the central lawn. Edgar Allan Poe's cottage sits a few blocks away, and Arthur Avenue — the real Little Italy — is a short walk. It feels like a New England campus that happens to have a subway.",
+      "programUniqueness": "Fordham is a strong practical fit. The Jesuit core makes Philosophy central rather than optional (a real draw for Theo), Political Science is well-placed for NYC internships, Integrative Neuroscience covers the brain side, and Fordham Law in Manhattan gives the pre-law interest a visible pipeline. On money it lands well too: Fordham awards real merit — Dean's Scholarships start around $10,000/year and Presidential Scholarships go to students at the top of their class — so a 35 ACT puts Theo squarely in scholarship range. Worth taking seriously as a merit-plus-city option.",
+      "walkingTour": {
+        "duration": "~45–60 min (self-guided)",
+        "startNote": "Enter the main Southern Blvd gate (2691 Southern Blvd); park in the 5-level garage just inside the gate. Pay the daily visitor fee at the guard booth. Walk the loop 1→8 around Edwards Parade.",
+        "parking": "5-level garage just inside the main gate at 2691 Southern Blvd (pay at booth).",
+        "mapCenter": [40.8605, -73.8854],
+        "mapZoom": 16,
+        "mapLink": "https://www.openstreetmap.org/?mlat=40.8605&mlon=-73.8854#map=16/40.8605/-73.8854",
+        "stops": [
+          { "num": 1, "name": "Duane Hall / Admission", "lat": 40.8601, "lng": -73.8862, "notes": "Undergraduate Admission — the natural starting point just inside the gate." },
+          { "num": 2, "name": "Edwards Parade", "lat": 40.8607, "lng": -73.8856, "notes": "The great central lawn — the heart of Rose Hill, framed by the Gothic core." },
+          { "num": 3, "name": "Keating Hall", "lat": 40.8614, "lng": -73.8849, "notes": "The 1936 clock-tower icon; its steps and terrace are the campus's signature view." },
+          { "num": 4, "name": "McGinley Campus Center", "lat": 40.8618, "lng": -73.8839, "notes": "Student life hub — dining, the ballroom, and the everyday pulse of campus." },
+          { "num": 5, "name": "University Church", "lat": 40.8622, "lng": -73.8845, "notes": "The 1845 parish church — the Jesuit heart of the campus." },
+          { "num": 6, "name": "Collins Hall", "lat": 40.8616, "lng": -73.8858, "notes": "Philosophy — central to the Jesuit core curriculum, and to Theo's interests." },
+          { "num": 7, "name": "Dealy Hall", "lat": 40.8609, "lng": -73.8865, "notes": "Psychology and the social sciences — the neuroscience and poli-sci side." },
+          { "num": 8, "name": "Walsh Family Library", "lat": 40.8598, "lng": -73.8869, "notes": "The main library — modern counterweight to the Gothic, on the west edge." }
+        ]
+      }
+    },
     { "schoolId": "A11", "school": "Penn", "hasProfile": false },
     { "schoolId": "A12", "school": "Villanova", "hasProfile": false },
     { "schoolId": "A13", "school": "Princeton", "hasProfile": false },
