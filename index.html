@@ -429,22 +429,35 @@ function renderProfile(briefing) {
   }
 
   const t = briefing.walkingTour;
-  const stops = t.stops.map(s => `
-    <tr>
-      <td class="stop-num">${s.num}</td>
-      <td><span class="stop-name">${esc(s.name)}</span>${esc(s.notes)}</td>
-    </tr>
-  `).join('');
 
-  const mapBlock = briefing.mapImage ? `
-    <div class="campus-map-wrap">
-      <img src="${esc(briefing.mapImage)}" alt="${esc(briefing.school)} campus map" loading="lazy">
-    </div>
-    <div class="map-caption">
-      ${esc(t.parking)} ·
-      <a href="${t.mapLink}" target="_blank" rel="noopener">Open in OpenStreetMap ↗</a>
-    </div>
-  ` : '';
+  const tourBlock = t ? (() => {
+    const stops = t.stops.map(s => `
+      <tr>
+        <td class="stop-num">${s.num}</td>
+        <td><span class="stop-name">${esc(s.name)}</span>${esc(s.notes)}</td>
+      </tr>
+    `).join('');
+    const mapBlock = briefing.mapImage ? `
+      <div class="campus-map-wrap">
+        <img src="${esc(briefing.mapImage)}" alt="${esc(briefing.school)} campus map" loading="lazy">
+      </div>
+      <div class="map-caption">
+        ${esc(t.parking)} ·
+        <a href="${t.mapLink}" target="_blank" rel="noopener">Open in OpenStreetMap ↗</a>
+      </div>
+    ` : '';
+    return `
+      <div class="profile-section">
+        <div class="profile-section-title">Campus Walking Tour — ${esc(t.duration)} · ${esc(t.startNote)}</div>
+        ${mapBlock}
+        <div class="tour-table-wrap">
+          <table class="tour-table">
+            <thead><tr><th>#</th><th>Stop &amp; What to See</th></tr></thead>
+            <tbody>${stops}</tbody>
+          </table>
+        </div>
+      </div>`;
+  })() : `<div class="profile-coming">Walking tour map — will be added once visit dates are set.</div>`;
 
   const statsBlock = briefing.stats ? (() => {
     const s = briefing.stats;
@@ -457,9 +470,16 @@ function renderProfile(briefing) {
     </div>`;
   })() : '';
 
+  const costBlock = briefing.costNote ? `
+    <div class="profile-section">
+      <div class="profile-section-title">Cost &amp; Admissions</div>
+      <div class="profile-text">${esc(briefing.costNote)}</div>
+    </div>` : '';
+
   return `
     <div class="college-profile" id="profile-${briefing.schoolId}">
       ${statsBlock}
+      ${costBlock}
       <div class="profile-section">
         <div class="profile-section-title">Historical Context</div>
         <div class="profile-text">${esc(briefing.history)}</div>
@@ -470,16 +490,7 @@ function renderProfile(briefing) {
         <div class="profile-text">${esc(briefing.programUniqueness)}</div>
       </div>
 
-      <div class="profile-section">
-        <div class="profile-section-title">Campus Walking Tour — ${esc(t.duration)} · ${esc(t.startNote)}</div>
-        ${mapBlock}
-        <div class="tour-table-wrap">
-          <table class="tour-table">
-            <thead><tr><th>#</th><th>Stop &amp; What to See</th></tr></thead>
-            <tbody>${stops}</tbody>
-          </table>
-        </div>
-      </div>
+      ${tourBlock}
     </div>
   `;
 }
@@ -495,7 +506,9 @@ function renderColleges(visits, briefings) {
   const briefingMap = {};
   (briefings || []).forEach(b => { briefingMap[b.schoolId] = b; });
 
-  return visits.map(v => {
+  const visitIds = new Set(visits.map(v => v.id));
+
+  const leg12Cards = visits.map(v => {
     const briefing = briefingMap[v.id];
     const hasProfile = briefing && briefing.hasProfile;
     const profileBadge = hasProfile
@@ -528,6 +541,37 @@ function renderColleges(visits, briefings) {
       </div>
     `;
   }).join('');
+
+  const leg3Briefings = (briefings || []).filter(b => b.leg === 3 && !visitIds.has(b.schoolId));
+  let leg3Section = '';
+  if (leg3Briefings.length) {
+    const leg3Cards = leg3Briefings.map(b => `
+      <div class="school-card" id="${b.schoolId}">
+        <div class="school-header" onclick="toggleCard(this.parentElement)">
+          <div style="flex:1">
+            <div class="school-name">${esc(b.school)}<span style="font-size:.65rem;font-weight:700;padding:2px 7px;border-radius:8px;background:color-mix(in srgb,var(--accent) 20%,transparent);color:var(--accent);margin-left:6px;">PROFILE</span></div>
+            <div class="school-date">Leg 3 — date TBD${b.tentative ? ' · tentative' : ''}</div>
+          </div>
+          <div class="day-chevron">▼</div>
+        </div>
+        <div class="school-body">
+          <div class="profile-toggle" onclick="toggleProfile(this, '${b.schoolId}')">
+            📋 Campus Profile
+            <span class="ptchev">▼</span>
+          </div>
+          ${renderProfile(b)}
+        </div>
+      </div>
+    `).join('');
+    leg3Section = `
+      <div style="margin:24px 0 8px;padding:10px 14px;border-radius:10px;background:color-mix(in srgb,var(--accent) 10%,transparent);font-size:.8rem;font-weight:700;letter-spacing:.06em;color:var(--accent);text-transform:uppercase;">
+        Leg 3 — West Coast Candidates (dates TBD)
+      </div>
+      ${leg3Cards}
+    `;
+  }
+
+  return leg12Cards + leg3Section;
 }
 
 function renderEvents(items) {
