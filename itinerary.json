@@ -1,7 +1,7 @@
 {
   "meta": {
-    "version": "7.0",
-    "created": "Jul 24, 2026 · 8:15 AM ET",
+    "version": "7.1",
+    "created": "Jul 24, 2026 · 11:50 AM ET",
     "title": "College Tour 2026",
     "travelers": "Dietrich, Theo & Simona — joined by Silke (Fri–Mon)",
     "disclaimer": "Times are planning targets; align with booked slots and confirm live schedules & rates."
@@ -1181,7 +1181,7 @@
       "mapImage": null,
       "stats": { "firstYears": "4,042", "undergrads": "~18,000", "studentFaculty": "19:1", "meritAid": "Yes" },
       "history": "Founded in 1957 and moved to its wooded 1,000-acre Long Island campus in 1962, Stony Brook is the youngest school on this trip and the fastest-rising — a SUNY flagship that made it into the Association of American Universities, co-manages Brookhaven National Laboratory, and in 2023 received a $500 million Simons Foundation gift, the largest ever to a U.S. public university. Nobel laureate C.N. Yang built its physics reputation. The campus is brick and modernist, organized along a central Academic Mall rather than a Gothic quad.",
-      "programUniqueness": "Two things make Stony Brook genuinely interesting for Theo. First, the academics line up: Neurobiology & Behavior plus Psychology give it real neuroscience depth (his UCSD through-line), and its Philosophy department is one of the leading centers for continental philosophy in the country — a distinctive strength, not a generic one. Political Science is solid; there's no law school. Second, and unusually for this trip: the money works. Merit scholarships are automatic for all admitted first-years (no separate application), the Honors College carries scholarship support, and out-of-state tuition runs roughly half a private's sticker. This is the clearest value play on the itinerary.",
+      "programUniqueness": "Two things make Stony Brook genuinely interesting for Theo. First, the academics line up: Neurobiology & Behavior plus Psychology give it real neuroscience depth (his UCSD through-line), and its Philosophy department is one of the leading centers for continental philosophy in the country — a distinctive strength, not a generic one. Political Science is solid; there's no law school. Second, and unusually for this trip: the money works. Merit scholarships are automatic for all admitted first-years (no separate application), the Honors College carries scholarship support, and out-of-state tuition runs roughly half a private's sticker. Among the schools on this trip it is the clearest value play — but see section F: we pay out-of-state here, and UCSD and UCLA in-state both undercut it.",
       "walkingTour": {
         "duration": "~90 min (self-guided)",
         "startNote": "Start at the Administration Building (Rm 118) to pick up a campus map. Park in the Administration Parking Garage — GPS \"Administration Parking Garage, Stony Brook\" (LIE Exit 62 N / Nicolls Rd Rte 97).",
@@ -1228,12 +1228,168 @@
         ]
       }
     },
-    { "schoolId": "A11", "school": "Penn", "hasProfile": false },
-    { "schoolId": "A12", "school": "Villanova", "hasProfile": false },
-    { "schoolId": "A13", "school": "Princeton", "hasProfile": false },
-    { "schoolId": "A14", "school": "Johns Hopkins", "hasProfile": false },
-    { "schoolId": "A15", "school": "GWU", "hasProfile": false },
-    { "schoolId": "A16", "school": "Georgetown", "hasProfile": false },
+    {
+      "schoolId": "A11",
+      "school": "Penn",
+      "hasProfile": true,
+      "mapImage": null,
+      "stats": { "firstYears": "~2,395", "undergrads": "~10,500", "studentFaculty": "6:1", "meritAid": "No" },
+      "history": "Founded in 1740 by Benjamin Franklin, Penn is the only Ivy started by a private citizen rather than a church, and the first American institution to call itself a university. Franklin wanted useful education standing beside the classical kind, and the place still feels like that. Locust Walk — a car-free brick spine lined with statues, including Ben on his bench — runs the length of campus; College Hall's green serpentine stone (1873) is the icon, and Frank Furness's 1891 Fisher Fine Arts Library is one of the great interiors in American architecture.",
+      "programUniqueness": "Penn's real signature for Theo is permission to cross lines. The 'One University' policy lets undergraduates take courses in all four schools, and dual-degree and coordinated programs are normal rather than exotic. Philosophy sits in Claudia Cohen Hall, Political Science moved into the new Perelman Center, and the Biological Basis of Behavior program in the Levin Building is one of the oldest undergraduate neuroscience majors in the country — a direct line from his UCSD work. Penn Law is top-tier and on campus. The money is the usual Ivy story: aid is entirely need-based, with no merit scholarships of any kind.",
+      "walkingTour": {
+        "duration": "~60–75 min (self-guided)",
+        "startNote": "Tour meets at College Hall. Loop 1→8 east along Locust Walk, north to the libraries, then back southwest.",
+        "parking": "Penn Garage or 34th Street Garage (paid); street parking limited on weekdays.",
+        "mapCenter": [39.9522, -75.1932],
+        "mapZoom": 16,
+        "mapLink": "https://www.openstreetmap.org/?mlat=39.9522&mlon=-75.1932#map=16/39.9522/-75.1932",
+        "stops": [
+          { "num": 1, "name": "College Hall", "lat": 39.9522, "lng": -75.1931, "notes": "Undergraduate Admissions — the 1873 green serpentine-stone icon; tour check-in." },
+          { "num": 2, "name": "Houston Hall", "lat": 39.9518, "lng": -75.1926, "notes": "America's first student union (1896) — the model every campus copied." },
+          { "num": 3, "name": "Irvine Auditorium", "lat": 39.9514, "lng": -75.1920, "notes": "Gothic hall housing the vast Curtis Organ." },
+          { "num": 4, "name": "Fisher Fine Arts Library", "lat": 39.9521, "lng": -75.1916, "notes": "Frank Furness's 1891 masterpiece — step inside for the reading room." },
+          { "num": 5, "name": "Van Pelt Library", "lat": 39.9528, "lng": -75.1922, "notes": "The main undergraduate library, off Locust Walk." },
+          { "num": 6, "name": "Perelman Center", "lat": 39.9534, "lng": -75.1940, "notes": "Political Science & Economics — Theo's poli-sci base, opened 2018." },
+          { "num": 7, "name": "Claudia Cohen Hall", "lat": 39.9525, "lng": -75.1939, "notes": "The Philosophy department." },
+          { "num": 8, "name": "Levin Building", "lat": 39.9511, "lng": -75.1945, "notes": "Biological Basis of Behavior + Psychology — the neuroscience core." }
+        ]
+      }
+    },
+    {
+      "schoolId": "A12",
+      "school": "Villanova",
+      "hasProfile": true,
+      "mapImage": null,
+      "stats": { "firstYears": "~1,700", "undergrads": "7,063", "studentFaculty": "10:1", "meritAid": "Yes" },
+      "history": "Founded in 1842 by the Augustinian friars, Villanova is Pennsylvania's oldest Catholic university, set on a leafy 260-acre campus on the Main Line about twelve miles west of Philadelphia. The twin spires of St. Thomas of Villanova Church are the landmark you see first, and the Augustinian motto — Veritas, Unitas, Caritas — is stamped on the place. Basketball is genuinely part of the identity here, not a footnote.",
+      "programUniqueness": "The Augustinian core means philosophy and ethics are required of everyone rather than chosen by a few, and Villanova's Philosophy department has real depth. Political Science places well into Philadelphia and DC, pre-law advising is strong, and a growing Cognitive & Behavioral Neuroscience major in Mendel Hall covers the brain side. The reason it matters on our list, though, is money: Villanova awards substantial merit, its Presidential Scholarship covers full tuition, and Theo's 35 ACT sits above their median of 33 — which puts him in genuine scholarship territory at a school that would otherwise cost close to $70,000 a year.",
+      "walkingTour": {
+        "duration": "~60 min (self-guided)",
+        "startNote": "Tour meets at Austin Hall. Loop 1→8 through the student core, up to the library and sciences, back via the church.",
+        "parking": "Visitor parking near Austin Hall off Ithan Avenue.",
+        "mapCenter": [40.0358, -75.3390],
+        "mapZoom": 16,
+        "mapLink": "https://www.openstreetmap.org/?mlat=40.0358&mlon=-75.3390#map=16/40.0358/-75.3390",
+        "stops": [
+          { "num": 1, "name": "Austin Hall", "lat": 40.0356, "lng": -75.3396, "notes": "Undergraduate Admission — tour check-in." },
+          { "num": 2, "name": "Connelly Center", "lat": 40.0360, "lng": -75.3388, "notes": "The student union — dining, cinema, the daily crossroads." },
+          { "num": 3, "name": "Dougherty Hall", "lat": 40.0354, "lng": -75.3388, "notes": "Dining and student life on the south quad." },
+          { "num": 4, "name": "St. Augustine Center", "lat": 40.0362, "lng": -75.3380, "notes": "Philosophy and Political Science — Theo's two humanities anchors." },
+          { "num": 5, "name": "Falvey Memorial Library", "lat": 40.0366, "lng": -75.3378, "notes": "The main library and study heart of campus." },
+          { "num": 6, "name": "Mendel Hall", "lat": 40.0370, "lng": -75.3373, "notes": "The sciences, incl. Cognitive & Behavioral Neuroscience." },
+          { "num": 7, "name": "Tolentine Hall", "lat": 40.0365, "lng": -75.3407, "notes": "The 1929 landmark with the clock tower." },
+          { "num": 8, "name": "St. Thomas of Villanova Church", "lat": 40.0350, "lng": -75.3395, "notes": "The twin-spired Augustinian heart of the campus." }
+        ]
+      }
+    },
+    {
+      "schoolId": "A13",
+      "school": "Princeton",
+      "hasProfile": true,
+      "mapImage": null,
+      "stats": { "firstYears": "1,408", "undergrads": "~5,600", "studentFaculty": "5:1", "meritAid": "No" },
+      "history": "Founded in 1746 and the fourth-oldest college in America, Princeton wears its history openly: Nassau Hall served briefly as the capitol of the United States in 1783 and took cannon fire during the Revolution. What sets Princeton apart from every other university on this list is what it does not have — no business school, no law school, no medical school. The institution's whole weight points at the undergraduate college. Every senior writes a thesis, the residential colleges organize the first years, and the eating clubs on Prospect Avenue run the social life.",
+      "programUniqueness": "For Theo this may be the deepest thinking environment we will see. Princeton's Philosophy department is arguably the strongest in the English-speaking world. The School of Public and International Affairs in Robertson Hall is a political-science powerhouse, and the Princeton Neuroscience Institute runs an outstanding undergraduate program whose certificate structure would let him formally pair neuroscience with philosophy rather than choosing. There is no law school, but pre-law outcomes are exceptional. Aid is need-based only — no merit — though Princeton's need-based program is the most generous in the country if circumstances ever changed.",
+      "walkingTour": {
+        "duration": "~75 min (self-guided)",
+        "startNote": "Tour meets at Frist Campus Center. Loop 1→8 west to Nassau Hall, back through the libraries, ending south at PNI.",
+        "parking": "Lot 7 or Lot 21 near Frist (visitor passes at the gatehouse).",
+        "mapCenter": [40.3445, -74.6565],
+        "mapZoom": 15,
+        "mapLink": "https://www.openstreetmap.org/?mlat=40.3445&mlon=-74.6565#map=15/40.3445/-74.6565",
+        "stops": [
+          { "num": 1, "name": "Frist Campus Center", "lat": 40.3440, "lng": -74.6545, "notes": "Visitor start and the student hub — tour check-in." },
+          { "num": 2, "name": "Nassau Hall", "lat": 40.3449, "lng": -74.6576, "notes": "1756 — briefly the U.S. capitol, and shelled in the Revolution." },
+          { "num": 3, "name": "Blair Arch", "lat": 40.3442, "lng": -74.6590, "notes": "The postcard Gothic archway and steps." },
+          { "num": 4, "name": "Firestone Library", "lat": 40.3451, "lng": -74.6561, "notes": "One of the largest open-stack libraries in the world." },
+          { "num": 5, "name": "University Chapel", "lat": 40.3455, "lng": -74.6562, "notes": "A vast Gothic chapel — among the largest at any university." },
+          { "num": 6, "name": "Marx Hall", "lat": 40.3457, "lng": -74.6548, "notes": "Philosophy — the top-ranked department in the field." },
+          { "num": 7, "name": "Robertson Hall", "lat": 40.3455, "lng": -74.6545, "notes": "School of Public & International Affairs — the poli-sci core." },
+          { "num": 8, "name": "Princeton Neuroscience Institute", "lat": 40.3416, "lng": -74.6528, "notes": "The neuro home; the certificate pairs cleanly with philosophy." }
+        ]
+      }
+    },
+    {
+      "schoolId": "A14",
+      "school": "Johns Hopkins",
+      "hasProfile": true,
+      "mapImage": null,
+      "stats": { "firstYears": "1,297", "undergrads": "5,600", "studentFaculty": "6:1", "meritAid": "Limited" },
+      "history": "Founded in 1876 as America's first research university, Hopkins was built deliberately on the German model of the professor-scholar — and every other American research university followed the template it set. The Homewood campus is red-brick Georgian on 140 wooded acres in north Baltimore, arranged around Keyser Quad and named for the 1801 Carroll family house still standing at its edge. Hopkins spends more money on research than any other university in the country, about $3.4 billion a year.",
+      "programUniqueness": "The combination that matters for Theo: enormous research capacity attached to a genuinely small undergraduate college of about 5,600. Philosophy sits in Gilman Hall, Political Science in Mergenthaler, and Psychological & Brain Sciences plus the neuroscience major in Ames Hall — and Hopkins reports that around 80% of undergraduates get at least one research experience, which is exactly the pipeline a student arriving with a neuroscience internship should want. On money it is mostly need-based, but unlike the Ivies there is real merit: the Hodson Trust Scholarship gives roughly twenty students a year $42,000 annually, with automatic consideration and no separate application.",
+      "walkingTour": {
+        "duration": "~60–75 min (self-guided)",
+        "startNote": "Tour meets at Mason Hall. Loop 1→8 north into Keyser Quad, through the libraries, and back past Homewood Museum.",
+        "parking": "North Parking Garage off San Martin Drive; visitor spaces available.",
+        "mapCenter": [39.3300, -76.6205],
+        "mapZoom": 16,
+        "mapLink": "https://www.openstreetmap.org/?mlat=39.3300&mlon=-76.6205#map=16/39.3300/-76.6205",
+        "stops": [
+          { "num": 1, "name": "Mason Hall", "lat": 39.3289, "lng": -76.6225, "notes": "Admissions & Visitor Center — tour check-in at the campus entrance." },
+          { "num": 2, "name": "Shriver Hall", "lat": 39.3295, "lng": -76.6212, "notes": "The neoclassical auditorium just inside the gates." },
+          { "num": 3, "name": "Gilman Hall", "lat": 39.3303, "lng": -76.6201, "notes": "Philosophy and the humanities — the clock-tower centerpiece of Keyser Quad." },
+          { "num": 4, "name": "Mergenthaler Hall", "lat": 39.3306, "lng": -76.6198, "notes": "Political Science — Theo's poli-sci base." },
+          { "num": 5, "name": "Milton S. Eisenhower Library", "lat": 39.3308, "lng": -76.6198, "notes": "Famously built downward — six levels below ground." },
+          { "num": 6, "name": "Brody Learning Commons", "lat": 39.3306, "lng": -76.6193, "notes": "The glass-and-light modern study heart." },
+          { "num": 7, "name": "Ames Hall", "lat": 39.3304, "lng": -76.6196, "notes": "Psychological & Brain Sciences — the neuroscience base." },
+          { "num": 8, "name": "Homewood Museum", "lat": 39.3312, "lng": -76.6186, "notes": "The 1801 Carroll house that gave the campus its name." }
+        ]
+      }
+    },
+    {
+      "schoolId": "A15",
+      "school": "GWU",
+      "hasProfile": true,
+      "mapImage": null,
+      "stats": { "firstYears": "~2,700", "undergrads": "~11,000", "studentFaculty": "12:1", "meritAid": "Yes" },
+      "history": "Chartered by Congress in 1821, GW fulfilled George Washington's own wish for a national university in the capital. There is no gate and no wall — GW simply is Foggy Bottom, four blocks from the White House and a short walk from the State Department, the World Bank, and the Kennedy Center. University Yard and Kogan Plaza are the closest things to a campus green; otherwise the city and the university are the same fabric.",
+      "programUniqueness": "For a student pointed at political science and law, the location is not a perk — it is the curriculum. GW places undergraduates in internships on Capitol Hill, in federal agencies, at think tanks and NGOs at a scale almost no other school can match, and it does so during the school year rather than only in summers. The Elliott School is a leading international-affairs school and GW Law is highly ranked and on campus; Philosophy sits in Phillips Hall and there is a solid undergraduate neuroscience program in the Science & Engineering Hall. The distinguishing point against Georgetown across town: GW awards real merit, with Presidential Academic Scholarships considered automatically for every first-year applicant. DC access plus merit money is a rare combination.",
+      "walkingTour": {
+        "duration": "~60 min (self-guided)",
+        "startNote": "Self-orient from University Yard (Admissions, 800 21st St NW). Loop 1→8 through the academic core, ending at Elliott.",
+        "parking": "GW's parking garage at 2121 Eye St NW or street meters on 21st St.",
+        "mapCenter": [38.8997, -77.0472],
+        "mapZoom": 16,
+        "mapLink": "https://www.openstreetmap.org/?mlat=38.8997&mlon=-77.0472#map=16/38.8997/-77.0472",
+        "stops": [
+          { "num": 1, "name": "University Yard", "lat": 38.8997, "lng": -77.0469, "notes": "The campus green; Admissions at 800 21st St NW." },
+          { "num": 2, "name": "Kogan Plaza", "lat": 38.9001, "lng": -77.0476, "notes": "The central gathering space — the heart of such campus as there is." },
+          { "num": 3, "name": "Gelman Library", "lat": 38.8999, "lng": -77.0477, "notes": "The main library." },
+          { "num": 4, "name": "Phillips Hall", "lat": 38.8998, "lng": -77.0479, "notes": "The Philosophy department." },
+          { "num": 5, "name": "Science & Engineering Hall", "lat": 38.9003, "lng": -77.0476, "notes": "Eight stories of labs — the neuroscience research base." },
+          { "num": 6, "name": "Monroe Hall", "lat": 38.8996, "lng": -77.0468, "notes": "Political Science — Theo's poli-sci base." },
+          { "num": 7, "name": "Stockton Hall", "lat": 38.8996, "lng": -77.0460, "notes": "GW Law School — a top-ranked law school right on campus." },
+          { "num": 8, "name": "Elliott School", "lat": 38.8988, "lng": -77.0463, "notes": "International Affairs, on E Street — blocks from the State Department." }
+        ]
+      }
+    },
+    {
+      "schoolId": "A16",
+      "school": "Georgetown",
+      "hasProfile": true,
+      "mapImage": null,
+      "stats": { "firstYears": "~1,650", "undergrads": "~7,500", "studentFaculty": "11:1", "meritAid": "No" },
+      "history": "Founded in 1789 by John Carroll, Georgetown is the oldest Catholic and oldest Jesuit university in the United States — chartered the same year the Constitution took effect. Healy Hall's spire above the Potomac is the icon, and Old North (1792) has hosted a long line of presidents beginning with Washington, who spoke from its steps. Unlike GW, Georgetown sits on its own bluff above the river, self-contained and clearly bounded, in the Georgetown neighborhood.",
+      "programUniqueness": "This is probably the strongest government and political-science environment on Theo's entire list: the Department of Government and the School of Foreign Service are national institutions, and the pipeline to the Hill, State, and the policy world is unmatched. The Jesuit core requires two philosophy courses of everyone, and the Philosophy department in New North is strong; neuroscience runs through Regents Hall and the Medical Center. Georgetown Law is top-tier, though downtown rather than on this campus. The catch is money: Georgetown awards need-based aid only, with no merit scholarships — so like the Ivies it is a fit-and-prestige choice, and GW across town is the merit-paying alternative in the very same city.",
+      "walkingTour": {
+        "duration": "~60–75 min (self-guided)",
+        "startNote": "Tour meets at Healy Hall. Loop 1→8 around the front gates, down to Lauinger, then north through the academic core.",
+        "parking": "Visitor parking in the car park off Canal Road or street parking in Georgetown neighborhood.",
+        "mapCenter": [38.9076, -77.0723],
+        "mapZoom": 16,
+        "mapLink": "https://www.openstreetmap.org/?mlat=38.9076&mlon=-77.0723#map=16/38.9076/-77.0723",
+        "stops": [
+          { "num": 1, "name": "Healy Hall & John Carroll statue", "lat": 38.9076, "lng": -77.0724, "notes": "The 1879 Flemish Romanesque icon — the face of Georgetown." },
+          { "num": 2, "name": "Dahlgren Chapel", "lat": 38.9073, "lng": -77.0725, "notes": "The quiet Gothic chapel in the courtyard behind Healy." },
+          { "num": 3, "name": "Old North", "lat": 38.9074, "lng": -77.0728, "notes": "1792 — George Washington spoke from these steps." },
+          { "num": 4, "name": "New North", "lat": 38.9073, "lng": -77.0729, "notes": "The Philosophy department — two courses required of every student." },
+          { "num": 5, "name": "Lauinger Library", "lat": 38.9066, "lng": -77.0722, "notes": "Brutalist, and a deliberate abstraction of Healy's silhouette." },
+          { "num": 6, "name": "White-Gravenor Hall", "lat": 38.9083, "lng": -77.0716, "notes": "The collegiate Gothic classroom building on the main quad." },
+          { "num": 7, "name": "Bunn Intercultural Center", "lat": 38.9080, "lng": -77.0720, "notes": "Government + the School of Foreign Service — the poli-sci core." },
+          { "num": 8, "name": "Regents Hall", "lat": 38.9086, "lng": -77.0729, "notes": "The sciences building — neuroscience labs." }
+        ]
+      }
+    },
     {
       "schoolId": "F1",
       "school": "UCLA",
